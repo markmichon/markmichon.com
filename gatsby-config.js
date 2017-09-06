@@ -39,9 +39,3 @@ module.exports = {
     }
   ]
 }
-
-exports.modifyBabelrc = ({ babelrc }) => {
-  return Object.assign({}, babelrc, {
-    plugins: ["babel-plugin-styled-components"]
-  })
-}
