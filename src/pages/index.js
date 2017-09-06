@@ -17,6 +17,9 @@ const Section = styled.section`
   background-color: ${props => (props.dark ? colors.dark : colors.background)};
   color: ${props => (props.dark ? colors.light : colors.copy)};
   padding: 1rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
 `
 
 const Name = styled.h1`
@@ -29,7 +32,6 @@ const IntroAbout = styled.p`
   font-weight: normal;
   // font-size: ${typography.sizes[5]};
   font-family: ${typography.sansSerif};
-  max-width: 30rem;
   
 `
 
@@ -65,6 +67,10 @@ export default function Index({ data }) {
       </Section>
       <Section>
         <SectionHeading title="Projects">Selected Projects</SectionHeading>
+        <p>Coming soon...</p>
+      </Section>
+      <Section>
+        <SectionHeading title="Currently">Current Projects</SectionHeading>
         <p>Coming soon...</p>
       </Section>
     </main>

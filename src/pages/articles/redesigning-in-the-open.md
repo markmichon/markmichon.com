@@ -1,6 +1,6 @@
 ---
 path: "/redesigning-in-the-open"
-date: "2017-08-15"
+date: "2017-09-06"
 title: "Redesigning in the Open"
 subtitle: "This site is in flux! Learn more about the state of disarray"
 ---
@@ -17,4 +17,10 @@ For now, the initial hosting will be handled by [Netlify](https://www.netlify.co
 
 ## More to Come
 
-With many drastic changes to the core of the site, and an overhaul of content, expect new articles and projects based around the technology that goes into the site. Watch this space!
+With many drastic changes to the core of the site, and an overhaul of content, expect new articles and projects based around the technology that goes into the site. So far, here's a light todo list of items to come:
+
+- Serviceworker integration with more PWA and offline features
+- Design finalization
+- Details on deployment workflow
+- Possible integration with micro.blog
+- Further perf optimizations

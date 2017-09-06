@@ -481,6 +481,12 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-styled-components@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.2.0.tgz#8bb8f9e69119bb8dee408c8d36a0dfef5191f3c7"
+  dependencies:
+    stylis "^3.2.1"
+
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
@@ -996,7 +1002,7 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.6.1:
+babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0, babel-runtime@^6.6.1:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -2690,6 +2696,14 @@ gatsby-plugin-feed-generator@^1.0.5:
     pify "^3.0.0"
     rss "^1.2.2"
 
+gatsby-plugin-preact@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-preact/-/gatsby-plugin-preact-1.0.6.tgz#69545ecf7e559dc19b972c08e4cd5c03656815eb"
+  dependencies:
+    babel-runtime "^6.26.0"
+    preact "^8.1.0"
+    preact-compat "^3.16.0"
+
 gatsby-plugin-react-helmet@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-1.0.1.tgz#98d60ed796f9115dc08daba89ac6a622c94e1897"
@@ -3260,6 +3274,12 @@ icss-replace-symbols@^1.1.0:
 ieee754@^1.1.4:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
+
+immutability-helper@^2.1.2:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/immutability-helper/-/immutability-helper-2.3.1.tgz#8ccfce92157208c120b2afad7ed05c11114c086e"
+  dependencies:
+    invariant "^2.2.0"
 
 immutable@^3.8.1:
   version "3.8.1"
@@ -5373,6 +5393,30 @@ postcss@^6.0.1:
     source-map "^0.5.6"
     supports-color "^4.2.0"
 
+preact-compat@^3.16.0:
+  version "3.17.0"
+  resolved "https://registry.yarnpkg.com/preact-compat/-/preact-compat-3.17.0.tgz#528cfdfc301190c1a0f47567336be1f4be0266b3"
+  dependencies:
+    immutability-helper "^2.1.2"
+    preact-render-to-string "^3.6.0"
+    preact-transition-group "^1.1.0"
+    prop-types "^15.5.8"
+    standalone-react-addons-pure-render-mixin "^0.1.1"
+
+preact-render-to-string@^3.6.0:
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-3.6.3.tgz#481d0d5bdac9192d3347557437d5cd00aa312043"
+  dependencies:
+    pretty-format "^3.5.1"
+
+preact-transition-group@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/preact-transition-group/-/preact-transition-group-1.1.1.tgz#f0a49327ea515ece34ea2be864c4a7d29e5d6e10"
+
+preact@^8.1.0:
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.2.5.tgz#cbfa3962a8012768159f6d01d46f9c1eb3213c0a"
+
 prepend-http@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
@@ -5388,6 +5432,10 @@ prettier@^1.3.1, prettier@^1.5.2:
 pretty-bytes@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
+
+pretty-format@^3.5.1:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-3.8.0.tgz#bfbed56d5e9a776645f4b1ff7aa1a3ac4fa3c385"
 
 prismjs@^1.6.0:
   version "1.6.0"
@@ -6460,6 +6508,10 @@ stackframe@^0.3.1:
 stackframe@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.0.3.tgz#fe64ab20b170e4ce49044b126c119dfa0e5dc7cc"
+
+standalone-react-addons-pure-render-mixin@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/standalone-react-addons-pure-render-mixin/-/standalone-react-addons-pure-render-mixin-0.1.1.tgz#3c7409f4c79c40de9ac72c616cf679a994f37551"
 
 state-toggle@^1.0.0:
   version "1.0.0"

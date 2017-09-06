@@ -11,6 +11,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-preact`,
 
     {
       resolve: `gatsby-source-filesystem`,
@@ -37,4 +38,10 @@ module.exports = {
       }
     }
   ]
+}
+
+exports.modifyBabelrc = ({ babelrc }) => {
+  return Object.assign({}, babelrc, {
+    plugins: ["babel-plugin-styled-components"]
+  })
 }
