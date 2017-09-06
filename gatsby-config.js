@@ -30,12 +30,6 @@ module.exports = {
           }
         ]
       }
-    },
-    {
-      resolve: `gatsby-plugin-feed-generator`,
-      options: {
-        generator: "markmichon.com"
-      }
     }
   ]
 }
