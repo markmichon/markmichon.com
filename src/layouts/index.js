@@ -56,7 +56,7 @@ const TemplateWrapper = ({ children }) =>
     />
     <Banner>
       This site is being redesigned in the open. Learn more{" "}
-      <Link to="redesigning-in-the-open">Here</Link>
+      <Link to="/redesigning-in-the-open">Here</Link>
     </Banner>
     <Nav />
     <section>
