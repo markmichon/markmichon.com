@@ -13,5 +13,8 @@ const Footer = styled.footer`
   a {
     color: hsla(207, 69%, 68%, 1.00);
   }
+  p {
+    margin-bottom: 0;
+  }
 `
 export default Footer
