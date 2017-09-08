@@ -1,12 +1,9 @@
-import React from "react"
-import Helmet from "react-helmet"
-import Link from "gatsby-link"
-import Logo from "../components/Logo"
-import styled, { injectGlobal } from "styled-components"
-import colors from "../styles/colors"
-import units from "../styles/spacing"
-import typography from "../styles/typography"
-require("prismjs/themes/prism-okaidia.css")
+import React from 'react'
+import Helmet from 'react-helmet'
+import styled, { injectGlobal } from 'styled-components'
+import units from '../styles/spacing'
+import typography from '../styles/typography'
+require('prismjs/themes/prism-okaidia.css')
 
 injectGlobal`
 article {

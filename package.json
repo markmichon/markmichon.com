@@ -17,13 +17,17 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf public/*.html"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "babel-plugin-styled-components": "^1.2.0",
+    "eslint": "^4.6.1",
+    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.3.0",
     "gatsby-plugin-styled-components": "^1.0.1",
-    "prettier": "^1.5.2"
+    "prettier": "^1.5.2",
+    "prettier-eslint-cli": "^4.3.0"
   }
 }

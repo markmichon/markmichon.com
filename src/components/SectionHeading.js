@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import typography from "../styles/typography"
+import React from 'react'
+import styled from 'styled-components'
+import typography from '../styles/typography'
 const SectionHeading = styled.h2`
   font-family: ${typography.sansSerif};
   font-weight: bold;
