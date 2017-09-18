@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import styled, { injectGlobal } from 'styled-components'
-import units from '../styles/spacing'
-import typography from '../styles/typography'
-require('prismjs/themes/prism-okaidia.css')
+import React from "react"
+import Helmet from "react-helmet"
+import styled, { injectGlobal } from "styled-components"
+import units from "../styles/spacing"
+import typography from "../styles/typography"
+require("prismjs/themes/prism-okaidia.css")
 
 injectGlobal`
 article {
@@ -16,11 +16,11 @@ article {
   h2 { font-size: 1.25rem; }
   h3 { font-size: 1rem; }
   h2,h3,h4,h5 {
-    margin-bottom: ${units.halfUnit};
+    margin-bottom: ${p => p.theme.halfUnit};
   }
 
   p, ul, ol {
-    margin-bottom: ${units.baseUnit};
+    margin-bottom: ${p => p.theme.baseUnit};
   }
 
   ol, ul {
@@ -31,7 +31,7 @@ article {
   }
   ol { list-style-type: decimal;}
   ul {lis-style-type: disc;}
-  li {margin-bottom: ${units.halfUnit};}
+  li {margin-bottom: ${p => p.theme.halfUnit};}
   .gatsby-highlight, figure {
     
     margin-left: auto;
@@ -56,7 +56,7 @@ article {
 
 const ArticleTitle = styled.h1`
   text-align: center;
-  font-family: ${typography.sansSerif};
+  font-family: ${p => p.theme.sansSerif};
 `
 
 export default function Template({ data }) {
@@ -64,9 +64,7 @@ export default function Template({ data }) {
   return (
     <article>
       <Helmet title={`Mark Michon - ${post.frontmatter.title}`} />
-      <ArticleTitle>
-        {post.frontmatter.title}
-      </ArticleTitle>
+      <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
       <div className="" dangerouslySetInnerHTML={{ __html: post.html }} />
     </article>
   )

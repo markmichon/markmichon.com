@@ -1,21 +1,21 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import styled from 'styled-components'
-import Logo from '../components/Logo'
-import colors from '../styles/colors'
-import typography from '../styles/typography'
-import SectionHeading from '../components/SectionHeading'
+import React from "react"
+import Link from "gatsby-link"
+import Helmet from "react-helmet"
+import styled from "styled-components"
+import Logo from "../components/Logo"
+import colors from "../styles/colors"
+import typography from "../styles/typography"
+import SectionHeading from "../components/SectionHeading"
 
 const IntroSection = styled.section`
   padding: 1rem;
-  background-color: ${colors.dark};
+  background-color: ${p => p.theme.dark};
   margin-bottom: 1rem;
 `
 
 const Section = styled.section`
-  background-color: ${props => (props.dark ? colors.dark : colors.background)};
-  color: ${props => (props.dark ? colors.light : colors.copy)};
+  background-color: ${p => (p.dark ? p.theme.dark : p.theme.background)};
+  color: ${p => (p.dark ? p.theme.light : p.theme.copy)};
   padding: 1rem;
   max-width: 900px;
   width: 100%;
@@ -24,14 +24,14 @@ const Section = styled.section`
 
 const Name = styled.h1`
   font-weight: bold;
-  font-family: ${typography.sansSerif};
+  font-family: ${p => p.theme.sansSerif};
 
   font-size: ${typography.sizes[1]};
 `
 const IntroAbout = styled.p`
   font-weight: normal;
   // font-size: ${typography.sizes[5]};
-  font-family: ${typography.sansSerif};
+  font-family: ${p => p.theme.sansSerif};
   
 `
 
@@ -43,7 +43,8 @@ export default function Index({ data }) {
         <Name>Mark Michon</Name>
         <IntroAbout>
           I'm a design-focused developer with a penchant for teaching. I focus
-          on building accessible and performant user experiences.
+          on building accessible and performant user experiences.{" "}
+          <Link to={"about"}>Learn more</Link>
         </IntroAbout>
       </Section>
       <Section>
@@ -53,13 +54,9 @@ export default function Index({ data }) {
           .map(({ node: post }) => (
             <div key={post.id}>
               <h3>
-                <Link to={post.frontmatter.path}>
-                  {post.frontmatter.title}
-                </Link>
+                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h3>
-              <p>
-                {post.frontmatter.subtitle}
-              </p>
+              <p>{post.frontmatter.subtitle}</p>
             </div>
           ))}
       </Section>

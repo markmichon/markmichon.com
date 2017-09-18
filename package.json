@@ -4,15 +4,15 @@
   "version": "0.5.0",
   "author": "Mark Michon <michon@gmail.com>",
   "dependencies": {
-    "gatsby": "^1.6.5",
-    "gatsby-link": "^1.6.5",
-    "gatsby-plugin-catch-links": "^1.0.1",
+    "gatsby": "^latest",
+    "gatsby-link": "^1.6.16",
+    "gatsby-plugin-catch-links": "^1.0.8",
     "gatsby-plugin-feed-generator": "^1.0.5",
-    "gatsby-plugin-preact": "^1.0.6",
-    "gatsby-plugin-react-helmet": "^1.0.1",
-    "gatsby-remark-prismjs": "^1.2.0",
-    "gatsby-source-filesystem": "^1.4.1",
-    "gatsby-transformer-remark": "^1.6.3"
+    "gatsby-plugin-preact": "^1.0.11",
+    "gatsby-plugin-react-helmet": "^1.0.6",
+    "gatsby-remark-prismjs": "^1.2.8",
+    "gatsby-source-filesystem": "^1.4.12",
+    "gatsby-transformer-remark": "^1.7.7"
   },
   "scripts": {
     "build": "gatsby build",
@@ -21,13 +21,14 @@
     "clean": "rm -rf public/*.html"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0",
     "babel-plugin-styled-components": "^1.2.0",
     "eslint": "^4.6.1",
-    "eslint-config-prettier": "^2.4.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.3.0",
-    "gatsby-plugin-styled-components": "^1.0.1",
-    "prettier": "^1.5.2",
-    "prettier-eslint-cli": "^4.3.0"
+    "gatsby-plugin-styled-components": "^1.0.5",
+    "prettier": "^1.6.1",
+    "prettier-eslint": "^8.0.0"
   }
 }

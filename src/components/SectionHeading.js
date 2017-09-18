@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import typography from '../styles/typography'
+import React from "react"
+import styled from "styled-components"
+
 const SectionHeading = styled.h2`
-  font-family: ${typography.sansSerif};
+  font-family: ${p => p.theme.sansSerif};
   font-weight: bold;
   position: relative;
   line-height: 1;
@@ -15,7 +15,7 @@ const SectionHeading = styled.h2`
     top: 0;
     bottom:0;
     font-size: 3em;
-    font-family: ${typography.sansSerif};
+    font-family: ${p => p.theme.sansSerif};
     font-weight: 800;
     line-height: 1;
     color: hsla(213, 12%, 43%, .10);
