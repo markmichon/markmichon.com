@@ -16,7 +16,7 @@ export default function Template({ data }) {
     <Article>
       <Helmet title={`Mark Michon - ${post.frontmatter.title}`} />
       <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
-      <div className="" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Article>
   )
 }
