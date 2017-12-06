@@ -6,6 +6,7 @@ const SectionHeading = styled.h2`
   font-weight: bold;
   position: relative;
   line-height: 1;
+  margin-top: 0;
   padding-top: 1em;
   padding-bottom: 1em;
 

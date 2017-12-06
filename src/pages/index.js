@@ -3,8 +3,7 @@ import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import Logo from "../components/Logo"
-import colors from "../styles/colors"
-import typography from "../styles/typography"
+
 import SectionHeading from "../components/SectionHeading"
 
 const IntroSection = styled.section`
@@ -14,10 +13,9 @@ const IntroSection = styled.section`
 `
 
 const Section = styled.section`
-  background-color: ${p => (p.dark ? p.theme.dark : p.theme.background)};
-  color: ${p => (p.dark ? p.theme.light : p.theme.copy)};
-  padding: 1rem;
-  max-width: 900px;
+  color: ${p => p.theme.copy};
+  padding: ${p => p.theme.halfUnit};
+  max-width: ${p => p.theme.measure};
   width: 100%;
   margin: 0 auto;
 `
@@ -25,12 +23,12 @@ const Section = styled.section`
 const Name = styled.h1`
   font-weight: bold;
   font-family: ${p => p.theme.sansSerif};
-
-  font-size: ${typography.sizes[1]};
+  font-size: ${p => p.theme.sizes.xxxl};
+  line-height: 1;
 `
 const IntroAbout = styled.p`
   font-weight: normal;
-  // font-size: ${typography.sizes[5]};
+  // font-size: ${p => p.theme.sizes.m};
   font-family: ${p => p.theme.sansSerif};
   
 `
