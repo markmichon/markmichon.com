@@ -4,7 +4,7 @@
   "version": "0.5.0",
   "author": "Mark Michon <michon@gmail.com>",
   "dependencies": {
-    "gatsby": "^latest",
+    "gatsby": "^1.9.49",
     "gatsby-link": "^1.6.16",
     "gatsby-plugin-catch-links": "^1.0.8",
     "gatsby-plugin-feed-generator": "^1.0.5",
