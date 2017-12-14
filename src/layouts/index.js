@@ -27,6 +27,14 @@ html {
   }
 }
 
+body {
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width:1200px) {
+    max-width: 80%;
+  }
+}
+
 a {
   color: ${theme.brand};
   text-decoration: none;
@@ -42,7 +50,6 @@ img {
 }
 article {
   margin: 0 auto;
-  max-width: ${theme.measure};
   width: 100%;
 }
   h1 { font-size: 2rem; line-height: 1.25;}
@@ -76,8 +83,6 @@ article {
   }
   p, ul, ol, h1,h2,h3,h4 {
     
-    margin-left: auto;
-    margin-right: auto;
     @media (min-width:44rem) {
       
     }
@@ -103,11 +108,11 @@ const TemplateWrapper = ({ children }) => (
         <Link to="/redesigning-in-the-open">Here</Link>
       </Banner> */}
       <Nav />
-      <section>{children()}</section>
+      <main>{children()}</main>
       <Footer>
         <p>&copy;2012-2017 Mark Michon</p>
         <p>
-          <a href="https://github.com/markmichon">Github</a> {" "}
+          <a href="https://github.com/markmichon">Github</a>{" "}
           <a href="https://twitter.com/markmichon">Twitter</a>
         </p>
       </Footer>

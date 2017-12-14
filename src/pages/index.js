@@ -2,49 +2,22 @@ import React from "react"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import styled from "styled-components"
-import Logo from "../components/Logo"
+import Intro from "../components/Intro"
 
 import SectionHeading from "../components/SectionHeading"
 
-const IntroSection = styled.section`
-  padding: 1rem;
-  background-color: ${p => p.theme.dark};
-  margin-bottom: 1rem;
-`
-
 const Section = styled.section`
   color: ${p => p.theme.copy};
-  padding: ${p => p.theme.halfUnit};
-  max-width: ${p => p.theme.measure};
-  width: 100%;
+  padding: ${p => p.theme.baseUnit};
+  ${"" /* max-width: ${p => p.theme.measure}; */} width: 100%;
   margin: 0 auto;
-`
-
-const Name = styled.h1`
-  font-weight: bold;
-  font-family: ${p => p.theme.sansSerif};
-  font-size: ${p => p.theme.sizes.xxxl};
-  line-height: 1;
-`
-const IntroAbout = styled.p`
-  font-weight: normal;
-  // font-size: ${p => p.theme.sizes.m};
-  font-family: ${p => p.theme.sansSerif};
-  
 `
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark
   return (
-    <main>
-      <Section>
-        <Name>Mark Michon</Name>
-        <IntroAbout>
-          I'm a design-focused developer with a penchant for teaching. I focus
-          on building accessible and performant user experiences.{" "}
-          <Link to={"about"}>Learn more</Link>
-        </IntroAbout>
-      </Section>
+    <div>
+      <Intro />
       <Section>
         <SectionHeading title="Articles">Selected Articles</SectionHeading>
         {posts
@@ -66,7 +39,7 @@ export default function Index({ data }) {
         <SectionHeading title="Currently">Current Projects</SectionHeading>
         <p>Coming soon...</p>
       </Section>
-    </main>
+    </div>
   )
 }
 
