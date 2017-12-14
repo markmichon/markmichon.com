@@ -11,7 +11,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-preact",
+    // "gatsby-plugin-preact",
 
     {
       resolve: "gatsby-source-filesystem",
