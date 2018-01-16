@@ -1,3 +1,4 @@
+require("dotenv").config()
 const config = require("./data/config")
 
 module.exports = {
@@ -11,7 +12,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-styled-components",
-    // "gatsby-plugin-preact",
 
     {
       resolve: "gatsby-source-filesystem",
@@ -38,5 +38,44 @@ module.exports = {
         ]
       }
     }
+    // {
+    //   resolve: "gatsby-source-github-gql",
+    //   options: {
+    //     auth: process.env.GITHUB_TOKEN,
+    //     query: `{
+    //       viewer {
+    //         name
+    //         repositories(last: 10) {
+    //           edges {
+    //             node {
+    //               id
+    //               name
+    //               url
+    //               description
+    //               assignableUsers(last: 5) {
+    //                 edges{
+    //                   node {
+    //                     id
+    //                     name
+    //                   }
+    //                 }
+    //               }
+    //               watchers(last: 5) {
+    //                edges {
+    //                 node {
+    //                   id
+    //                   name
+    //                 }
+    //               }
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+
+    //     `
+    //   }
+    // }
   ]
 }
