@@ -38,19 +38,3 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     })
   })
 }
-
-// Remove trailing slashes
-
-exports.onCreatePage = ({ page, boundActionCreators }) => {
-  const { createPage, deletePage } = boundActionCreators
-
-  return new Promise(resolve => {
-    const oldPath = page.path
-    page.path = page.path === "/" ? page.path : page.path.replace(/\/$/, "")
-    if (page.path !== oldPath) {
-      deletePage({ path: oldPath })
-      createPage(page)
-    }
-    resolve()
-  })
-}
