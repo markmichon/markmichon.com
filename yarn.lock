@@ -84,8 +84,8 @@ acorn@^3.0.0, acorn@^3.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
 acorn@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.2.1.tgz#317ac7821826c22c702d66189ab8359675f135d7"
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.3.0.tgz#7446d39459c54fb49a80e6ee6478149b940ec822"
 
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
@@ -463,8 +463,8 @@ babel-core@^6.24.1, babel-core@^6.26.0:
     source-map "^0.5.6"
 
 babel-eslint@^8.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.1.0.tgz#b6f32d598559f96127fa608bd19574626325d5b7"
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-8.1.2.tgz#a39230b0c20ecbaa19a35d5633bf9b9ca2c8116f"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.31"
     "@babel/traverse" "7.0.0-beta.31"
@@ -2163,6 +2163,13 @@ cross-env@^3.1.1:
     cross-spawn "^5.1.0"
     is-windows "^1.0.0"
 
+cross-fetch@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-1.1.1.tgz#dede6865ae30f37eae62ac90ebb7bdac002b05a0"
+  dependencies:
+    node-fetch "1.7.3"
+    whatwg-fetch "2.0.3"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2215,6 +2222,10 @@ crypto-browserify@^3.11.0:
 crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
+
+crypto@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/crypto/-/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
 
 css-color-function@^1.2.0:
   version "1.3.3"
@@ -3638,6 +3649,13 @@ gatsby-source-filesystem@^1.4.12:
     slash "^1.0.0"
     valid-url "^1.0.9"
 
+"gatsby-source-github-gql@file:../gatsby-source-github-gql":
+  version "0.1.0"
+  dependencies:
+    crypto "^1.0.1"
+    graphql-request "^1.4.1"
+    lodash "^4.17.4"
+
 gatsby-transformer-remark@^1.7.7:
   version "1.7.26"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-1.7.26.tgz#58c273517b6039489b183fc4194ad07ee46e71ff"
@@ -4011,6 +4029,12 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.4,
 graphql-relay@^0.5.1:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/graphql-relay/-/graphql-relay-0.5.4.tgz#58050cfe16118595f82ab3aabfc974546ce755a8"
+
+graphql-request@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-1.4.1.tgz#0772743cfac8dfdd4d69d36106a96c9bdd191ce8"
+  dependencies:
+    cross-fetch "1.1.1"
 
 graphql-skip-limit@^1.0.9:
   version "1.0.9"
@@ -5727,7 +5751,7 @@ node-eta@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/node-eta/-/node-eta-0.9.0.tgz#9fb0b099bcd2a021940e603c64254dc003d9a7a8"
 
-node-fetch@^1.0.1:
+node-fetch@1.7.3, node-fetch@^1.0.1:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
@@ -6905,9 +6929,10 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
 prettier-eslint@^8.0.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-8.6.0.tgz#b88af92d1a630a1dc2f504fbfe56dca3f6b3aaff"
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-8.7.0.tgz#c54ce5affee129674958bd40a7899f97128c975a"
   dependencies:
+    babel-runtime "^6.26.0"
     common-tags "^1.4.0"
     dlv "^1.1.0"
     eslint "^4.0.0"
@@ -9306,7 +9331,7 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@2.0.3, whatwg-fetch@>=0.10.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
