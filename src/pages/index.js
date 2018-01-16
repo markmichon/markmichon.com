@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Intro from "../components/Intro"
 
 import SectionHeading from "../components/SectionHeading"
-
+import { ArticleList, ArticleListItem } from "../components/SectionList"
 const Section = styled.section`
   color: ${p => p.theme.copy};
   padding: ${p => p.theme.baseUnit};
@@ -20,24 +20,29 @@ export default function Index({ data }) {
       <Intro />
       <Section>
         <SectionHeading title="Articles">Selected Articles</SectionHeading>
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-          .map(({ node: post }) => (
-            <div key={post.id}>
-              <h3>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h3>
-              <p>{post.frontmatter.subtitle}</p>
-            </div>
-          ))}
+        <ArticleList>
+          {posts
+            .filter(post => post.node.frontmatter.title.length > 0)
+            .map(({ node: post }) => (
+              <ArticleListItem key={post.id}>
+                <h3>
+                  <Link to={post.frontmatter.path}>
+                    {post.frontmatter.title}
+                  </Link>
+                </h3>
+                <p>{post.frontmatter.subtitle}</p>
+              </ArticleListItem>
+            ))}
+        </ArticleList>
       </Section>
       <Section>
         <SectionHeading title="Projects">Selected Projects</SectionHeading>
-        <p>Coming soon...</p>
-      </Section>
-      <Section>
-        <SectionHeading title="Currently">Current Projects</SectionHeading>
-        <p>Coming soon...</p>
+        <p>
+          Coming soon! For now, have a look at{" "}
+          <a href="https://github.com/markmichon" title="Mark Michon on GitHub">
+            GitHub
+          </a>
+        </p>
       </Section>
     </div>
   )
