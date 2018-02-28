@@ -1,11 +1,16 @@
 import react from "react"
 import styled from "styled-components"
 
-const Article = styled.article`
-  color: ${p => p.theme.copy};
-  padding: ${p => p.theme.baseUnit};
+export const ArticleTitle = styled.h1`
+  text-align: center;
+  font-family: ${p => p.theme.serif};
   max-width: ${p => p.theme.measure};
-  width: 100%;
-  margin: 0 auto;
+  font-size: ${p => p.theme.sizes.xxxl};
+  margin-top: 0.25rem;
+  margin-bottom: 1em;
 `
-export default Article
+
+export const Article = styled.article`
+  color: ${p => p.theme.copy};
+  width: 100%;
+`

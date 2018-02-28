@@ -1,9 +1,9 @@
 import React from "react"
 import Link from "gatsby-link"
-import ArticleTitle from "../components/ArticleTitle"
+import { Article, ArticleTitle } from "../components"
 import Helmet from "react-helmet"
 const About = () => (
-  <article>
+  <Article>
     <Helmet title={`Mark Michon - About`} />
     <ArticleTitle>About</ArticleTitle>
     <p>Hi, my name is Mark Michon.</p>
@@ -57,7 +57,7 @@ const About = () => (
       some of the things I’m working on, head over to{" "}
       <a href="http://github.com/markmichon">GitHub</a>.
     </p>
-  </article>
+  </Article>
 )
 
 export default About

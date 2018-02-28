@@ -4,10 +4,11 @@ import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import config from "../../data/config"
 import { injectGlobal, ThemeProvider } from "styled-components"
-import Banner from "../components/Banner"
-import Footer from "../components/Footer"
-import Nav from "../components/Nav"
+
+// require("../styles/baseline.css")
 import theme from "../styles/theme"
+
+import { Banner, Footer, Nav, Alert } from "../components"
 injectGlobal`
 * {
   margin: 0;
@@ -19,19 +20,11 @@ html {
   font-family: ${theme.sansSerif};
   font-size: calc( 14px + (18 - 14) * ( (100vw - 320px) / (1000 - 320)));
   line-height:1.6;
-  background-color: ${theme.background};
+  background-color: hsl(0, 0%, 100%);
   color: ${theme.text};
 
   @media (min-width: 37.5rem) {
     
-  }
-}
-
-body {
-  margin-left: auto;
-  margin-right: auto;
-  @media (min-width:1200px) {
-    max-width: 80%;
   }
 }
 
@@ -77,6 +70,7 @@ article {
     
     margin-left: auto;
     margin-right: auto;
+    font-size: .75rem;
   }
   figcaption {
     text-align: center;
@@ -104,18 +98,11 @@ const TemplateWrapper = ({ children }) => (
         ]}
       />
       {/* <Banner>
-        This site is being redesigned in the open. Learn more{" "}
-        <Link to="/redesigning-in-the-open">Here</Link>
+        This site is being redesigned in the open.{" "}
+        <Link to="/redesigning-in-the-open">Learn more about it here.</Link>
       </Banner> */}
-      <Nav />
-      <main>{children()}</main>
-      <Footer>
-        <p>&copy;2012-2017 Mark Michon</p>
-        <p>
-          <a href="https://github.com/markmichon">Github</a>{" "}
-          <a href="https://twitter.com/markmichon">Twitter</a>
-        </p>
-      </Footer>
+      {/* <Nav /> */}
+      {children()}
     </div>
   </ThemeProvider>
 )

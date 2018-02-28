@@ -7,7 +7,7 @@ const ArticleList = styled.ul`
   padding: 0;
 
   li {
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
   }
 
   &:hover li {
@@ -16,6 +16,9 @@ const ArticleList = styled.ul`
 
   &:hover li:hover {
     opacity: 1;
+  }
+  h3 {
+    font-family: Georgia;
   }
 `
 

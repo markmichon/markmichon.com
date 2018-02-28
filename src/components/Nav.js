@@ -2,21 +2,31 @@ import React from "react"
 import styled from "styled-components"
 import Link from "gatsby-link"
 import Logo from "./Logo"
-
+import theme from "../styles/theme"
 const NavContainer = styled.nav`
-  text-align: center;
   width: 100%;
-  padding: ${p => p.theme.baseUnit};
+  background-color: #333;
+  padding: ${theme.baseUnit};
   display: flex;
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 800px) {
+    display: block;
+  }
 `
 
 const NavList = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   align-items: center;
+
+  @media (min-width: 800px) {
+    display: block;
+  }
   li {
     margin-bottom: 0;
   }
@@ -28,7 +38,7 @@ const NavList = styled.ul`
 const Nav = () => (
   <NavContainer>
     <Link to="/">
-      <Logo color={p => p.theme.brand} />
+      <Logo color={theme.light} />Mark Michon
     </Link>
     <NavList>
       <li>

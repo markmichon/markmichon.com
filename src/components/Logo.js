@@ -2,8 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import IconBase from "./Icon"
 const LogoContainer = styled.div`
-  width: 3rem;
-  margin: 0 auto;
+  width: ${p => (p.width ? p.width : "3rem")};
 `
 
 const LogoSVG = props => (
@@ -20,7 +19,7 @@ const LogoSVG = props => (
 )
 
 const Logo = props => (
-  <LogoContainer>
+  <LogoContainer {...props}>
     <LogoSVG {...props} />
   </LogoContainer>
 )

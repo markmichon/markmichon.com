@@ -2,24 +2,49 @@ import React from "react"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import styled from "styled-components"
-import Intro from "../components/Intro"
-
-import SectionHeading from "../components/SectionHeading"
+import PropTypes from "prop-types"
+import { Intro, SectionHeading, Footer } from "../components"
 import { ArticleList, ArticleListItem } from "../components/SectionList"
+import theme from "../styles/theme"
 const Section = styled.section`
   color: ${p => p.theme.copy};
   padding: ${p => p.theme.baseUnit};
-  ${"" /* max-width: ${p => p.theme.measure}; */} width: 100%;
-  margin: 0 auto;
+  ${"" /* background-color: ${p => (p.bgColor ? p.bgColor : `inherit`)}; */} width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 `
 
-export default function Index({ data }) {
+const HomeContainer = styled.div`
+  width: 100%;
+  @media (min-width: 832px) {
+    ${"" /* height: 100vh; */}
+    ${"" /* display: grid; */}
+    ${"" /* grid-template-columns: repeat(2, 1fr); */}
+  }
+`
+
+const HomeScrollView = styled.div`
+  background-color: ${theme.background};
+
+  @media (min-width: 832px) {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+`
+
+const Index = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
   return (
-    <div>
+    <HomeContainer>
       <Intro />
-      <Section>
-        <SectionHeading title="Articles">Selected Articles</SectionHeading>
+
+      <Section bgColor={theme.light}>
+        <SectionHeading>
+          <SectionHeading.Heading title="Articles">
+            Selected Articles
+          </SectionHeading.Heading>
+          <SectionHeading.ViewMore>View More</SectionHeading.ViewMore>
+        </SectionHeading>
         <ArticleList>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
@@ -36,7 +61,12 @@ export default function Index({ data }) {
         </ArticleList>
       </Section>
       <Section>
-        <SectionHeading title="Projects">Selected Projects</SectionHeading>
+        <SectionHeading>
+          <SectionHeading.Heading title="Projects">
+            Selected Projects
+          </SectionHeading.Heading>
+          <SectionHeading.ViewMore>View More</SectionHeading.ViewMore>
+        </SectionHeading>
         <p>
           Coming soon! For now, have a look at{" "}
           <a href="https://github.com/markmichon" title="Mark Michon on GitHub">
@@ -44,9 +74,14 @@ export default function Index({ data }) {
           </a>
         </p>
       </Section>
-    </div>
+      {/* <Footer /> */}
+    </HomeContainer>
   )
 }
+Index.propTypes = {
+  data: PropTypes.object.isRequired
+}
+export default Index
 
 export const pageQuery = graphql`
   query IndexQuery {

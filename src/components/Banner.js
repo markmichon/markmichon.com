@@ -5,13 +5,16 @@ import typography from "../styles/typography"
 const Banner = styled.div`
   background-color: ${p => p.theme.brand};
   color: ${p => p.theme.light};
-  line-height: 3;
+  line-height: 1.5;
   text-align: center;
   font-size: 0.75rem;
   font-family: ${p => p.theme.sansSerif};
+  font-style: italic;
+  padding: 0.5rem 1rem;
 
   a {
-    color: hsla(207, 69%, 68%, 1);
+    color: hsl(270, 25%, 98%);
+    font-weight: bold;
   }
 `
 export default Banner
