@@ -4,7 +4,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     createElement("link", {
       key: "fonts",
-      href: `https://fonts.googleapis.com/css?family=Playfair+Display`,
+      href: `https://use.typekit.net/jyo4jyv.css`,
       rel: "stylesheet"
     })
   ])

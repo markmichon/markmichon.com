@@ -3,7 +3,7 @@ const color = {
   background: "#fff",
   text: "#333",
   // dark: "hsl(211, 15%, 28%)",
-  dark: "hsl(0,0%,10%)",
+  dark: "hsl(220, 2%, 26%)",
   light: "hsla(210, 20%, 95%, 1.00)",
   link: "hsla(163, 71%, 35%, 1.00)"
 }
@@ -11,7 +11,8 @@ const color = {
 const typography = {
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-  serif: '"ff-meta-serif-web-pro", "Georgia", "Times New Roman", serif',
+  serif: '"ff-meta-serif-web-pro", Georgia, "Times New Roman", serif',
+  fancy: '"ff-meta-serif-web-pro", Georgia, serif',
   sizes: {
     xxxl: "3em",
     xxl: "2.25em",

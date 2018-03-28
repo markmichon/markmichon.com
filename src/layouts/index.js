@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import config from "../../data/config"
-import { injectGlobal, ThemeProvider } from "styled-components"
+import styled, { injectGlobal, ThemeProvider } from "styled-components"
 
 // require("../styles/baseline.css")
 import theme from "../styles/theme"
@@ -20,7 +20,7 @@ html {
   font-family: ${theme.sansSerif};
   font-size: calc( 14px + (18 - 14) * ( (100vw - 320px) / (1000 - 320)));
   line-height:1.6;
-  background-color: hsl(0, 0%, 100%);
+  background-color: hsl(38, 32%, 90%);
   color: ${theme.text};
 
   @media (min-width: 37.5rem) {
@@ -64,7 +64,7 @@ article {
     }
   }
   ol { list-style-type: decimal;}
-  ul {lis-style-type: disc;}
+  ul {list-style-type: disc;}
   li {margin-bottom: ${theme.halfUnit};}
   .gatsby-highlight, figure {
     
@@ -87,9 +87,14 @@ article {
   }
 `
 
+const PageContainer = styled.div`
+  margin: 1rem;
+  background-color: hsl(0, 0%, 100%);
+`
+
 const TemplateWrapper = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <div>
+    <PageContainer>
       <Helmet
         title={config.siteTitle}
         meta={[
@@ -103,7 +108,7 @@ const TemplateWrapper = ({ children }) => (
       </Banner> */}
       {/* <Nav /> */}
       {children()}
-    </div>
+    </PageContainer>
   </ThemeProvider>
 )
 
