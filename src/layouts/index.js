@@ -23,20 +23,9 @@ html {
   background-color: hsl(38, 32%, 90%);
   color: ${theme.text};
 
-  @media (min-width: 37.5rem) {
-    
-  }
+
 }
 
-a {
-  color: ${theme.brand};
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-    text-decoration-skip: ink;
-  }
-}
 
 img {
   max-width: 100%;
@@ -77,9 +66,7 @@ article {
   }
   p, ul, ol, h1,h2,h3,h4 {
     
-    @media (min-width:44rem) {
-      
-    }
+
   }
   
   pre, code {
@@ -88,8 +75,12 @@ article {
 `
 
 const PageContainer = styled.div`
-  margin: 1rem;
+  margin: 0.5rem;
   background-color: hsl(0, 0%, 100%);
+
+  @media (min-width: ${theme.breakpoints.m}) {
+    margin: 1rem;
+  }
 `
 
 const TemplateWrapper = ({ children }) => (

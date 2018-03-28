@@ -1,11 +1,18 @@
 const color = {
-  brand: "hsla(163, 71%, 35%, 1.00)",
+  brand: "hsl(357, 92%, 36%)",
   background: "#fff",
   text: "#333",
   // dark: "hsl(211, 15%, 28%)",
+  black: "hsl(0, 0%, 20%)",
   dark: "hsl(220, 2%, 26%)",
+  medium: "hsl(209, 11%, 50%)",
   light: "hsla(210, 20%, 95%, 1.00)",
   link: "hsla(163, 71%, 35%, 1.00)"
+}
+
+const breakpoints = {
+  m: "800px",
+  l: "1000px"
 }
 
 const typography = {
@@ -33,6 +40,12 @@ const spacing = {
 
 const scale = {}
 
-const theme = { ...color, ...typography, ...spacing }
+const theme = {
+  ...color,
+  ...typography,
+  ...spacing,
+  color: color,
+  breakpoints: breakpoints
+}
 
 export default theme

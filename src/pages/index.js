@@ -1,5 +1,5 @@
 import React from "react"
-import Link from "gatsby-link"
+import { Link, UnstyledLink } from "../components/Links"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import PropTypes from "prop-types"
@@ -9,15 +9,22 @@ import theme from "../styles/theme"
 import { paddingSetup } from "../styles/utils"
 const Section = styled.section`
   color: ${p => p.theme.copy};
-  width: 100%;
+  max-width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: ${theme.breakpoints.m}) {
+    max-width: 60%;
+  }
+
+  @media (min-width: ${theme.breakpoints.l}) {
+    max-width: 50%;
+  }
 `
 
 const HomeContainer = styled.div`
   width: 100%;
-  @media (min-width: 832px) {
-    ${"" /* height: 100vh; */}
-    ${"" /* display: grid; */}
-    ${"" /* grid-template-columns: repeat(2, 1fr); */}
+  @media (min-width: ${theme.breakpoints.m}) {
   }
 `
 const ArticleList = styled.ul`
@@ -27,54 +34,37 @@ const ArticleList = styled.ul`
 `
 
 const ArticleListItem = styled.li`
-  margin-bottom: -0.5rem;
+  margin-bottom: 1rem;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  &:hover h3::before {
-    right: 0;
+  color: ${theme.black};
+  h3,
+  h4 {
+    transition: color 400ms ease-in-out;
+    margin: 0;
   }
 
-  &:hover h3 {
-    color: ${theme.light};
+  h3 {
+    font-family: ${theme.serif};
+    font-weight: bold;
+    font-size: ${theme.sizes.xl};
   }
-`
-const ArticleHeading = styled.h3`
-  color: ${theme.copy};
-  font-family: ${theme.serif};
-  font-weight: normal;
-  font-size: 1.25rem;
-  padding: 1rem 2rem;
-  width: auto;
-  margin: 0;
-  z-index: 2;
-  position: relative;
-  transition: color 400ms ease-in-out;
+  h4 {
+    font-size: ${theme.sizes.s};
+    font-weight: normal;
+  }
 
-  ${paddingSetup("left")};
-
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: -1rem;
-    top: 0;
-    bottom: 0;
-    right: calc(100% + 1rem);
-    transition: all 300ms ease-in-out;
-    background-color: hsl(211, 13%, 35%);
+  &:hover h3,
+  &:hover h4 {
+    color: ${theme.color.brand};
   }
 `
-const ArticleSubtitle = styled.p`
-  background-color: hsl(42, 36%, 95%);
-  padding: 2rem 2rem 0.5rem;
-  margin: 0;
-  transform: translate(0, -1.5rem);
-  z-index: 1;
 
-  ${"" /* ${paddingSetup("left")}; */};
+const ArticleDate = styled.span`
+  display: block;
+  color: ${theme.color.medium};
+  font-weight: bold;
+  font-family: ${theme.sansSerif};
+  font-size: ${theme.sizes.xs};
 `
 
 const Index = ({ data }) => {
@@ -89,16 +79,21 @@ const Index = ({ data }) => {
             Selected Articles
           </SectionHeading.Heading>
           {/* <SectionHeading.ViewMore>View More</SectionHeading.ViewMore> */}
+          <SectionHeading.Details>
+            The following are a few chosen articles. Have a look around the
+            Archive to see more.
+          </SectionHeading.Details>
         </SectionHeading>
         <ArticleList>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({ node: post }) => (
               <ArticleListItem key={post.id}>
-                {/* <Link to={post.frontmatter.path}> */}
-                <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
-                {/* <ArticleSubtitle>{post.frontmatter.subtitle}</ArticleSubtitle> */}
-                {/* </Link> */}
+                <UnstyledLink to={post.frontmatter.path}>
+                  <ArticleDate>{post.frontmatter.date}</ArticleDate>
+                  <h3>{post.frontmatter.title}</h3>
+                  <h4>{post.frontmatter.subtitle}</h4>
+                </UnstyledLink>
               </ArticleListItem>
             ))}
         </ArticleList>

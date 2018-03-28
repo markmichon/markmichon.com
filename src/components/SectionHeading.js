@@ -32,34 +32,33 @@ const Heading = styled.h2`
   font-family: ${theme.sansSerif};
   font-weight: 800;
   line-height: 1;
-  padding: 1rem 2rem;
+  padding: 1rem 0 0;
   display: block;
   position:relative;
-  color: hsl(211, 13%, 35%);
-  width: auto;
-  margin-bottom: .5rem;
+  color: ${theme.black};
+  margin-bottom:0;
   z-index:1;
-  overflow:hidden;
-  ${paddingSetup("left")};
+  overflow:visible;
+  width: 100%;
 
 &::before {
   content: '${props => props.title}';
   position: absolute;
   top: 0;
-  right:1rem;
   font-size:2.5em;
   font-family: ${theme.serif};
   font-weight: 400;
   font-style: italic;
   line-height: 1;
+  
   z-index: -1;
   color: hsl(42, 36%, 95%);
 
-  @media (min-width:800px) {
+  @media (min-width:${theme.breakpoints.m}) {
     
   }
-  @media (min-width:1000px) {
-  top: -.1em;
+  @media (min-width:${theme.breakpoints.l}) {
+  top: -.2em;
   font-size: 3em;
 
   }
@@ -67,7 +66,12 @@ const Heading = styled.h2`
 `
 
 const SectionHeading = styled.div`
-  display: flex;
+  margin-bottom: 0.5rem;
+`
+const Details = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.sizes.xs};
 `
 
 const ViewMore = styled(Link)`
@@ -76,5 +80,6 @@ const ViewMore = styled(Link)`
 
 SectionHeading.Heading = Heading
 SectionHeading.ViewMore = ViewMore
+SectionHeading.Details = Details
 
 export default SectionHeading
