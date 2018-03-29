@@ -21,14 +21,14 @@ const typography = {
   serif: '"ff-meta-serif-web-pro", Georgia, "Times New Roman", serif',
   fancy: '"ff-meta-serif-web-pro", Georgia, serif',
   sizes: {
-    xxxl: "3em",
-    xxl: "2.25em",
-    xl: "1.5em",
-    l: "1.25em",
-    m: "1em",
-    s: ".875em",
-    xs: ".75em",
-    xxs: ".5em"
+    xxxl: "3rem",
+    xxl: "2.25rem",
+    xl: "1.5rem",
+    l: "1.25rem",
+    m: "1rem",
+    s: ".875rem",
+    xs: ".75rem",
+    xxs: ".5rem"
   },
   measure: "36em"
 }

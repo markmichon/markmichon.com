@@ -18,7 +18,7 @@ injectGlobal`
 
 html {
   font-family: ${theme.sansSerif};
-  font-size: calc( 14px + (18 - 14) * ( (100vw - 320px) / (1000 - 320)));
+  font-size: calc( 16px + (20 - 16) * ( (100vw - 320px) / (1000 - 320)));
   line-height:1.6;
   background-color: hsl(38, 32%, 90%);
   color: ${theme.text};

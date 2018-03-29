@@ -5,8 +5,9 @@ import theme from "../styles/theme"
 export const Link = styled(GatsbyLink)`
   color: inherit;
   text-decoration: none;
-
-  box-shadow: 0 0.25rem 0 ${theme.color.brand};
+  transition: color 200ms ease-in-out;
+  box-shadow: inset 0 -0.25em 0 ${theme.color.brand};
+  padding: 0.125em;
 
   &:hover {
     color: ${theme.color.brand};

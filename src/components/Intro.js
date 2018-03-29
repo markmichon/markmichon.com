@@ -1,18 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Link from "gatsby-link"
+import Link from "../components/Links"
 import Logo from "./Logo"
 import theme from "../styles/theme"
 import { paddingSetup } from "../styles/utils"
-
-const columnMQ = (direciton, start, end, push) => `
-  @media (min-width:800px) {
-    padding-${side}: ${breakpoints[0]};
-  }
-  @media (min-width:1000px) {
-    padding-${side}: ${breakpoints[1]};
-  }
-  `
 
 const Landing = styled.div`
   padding-top: 1rem;
@@ -101,13 +92,16 @@ const Intro = () => (
     </NavBlock>
     <OffsetBlock>
       <Name>Mark Michon</Name>
-      <Tagline>Building a better web.</Tagline>
+      <Tagline>Let&#1370;s build a better web.</Tagline>
       <SubTagline>Designer, Developer, Teacher</SubTagline>
       <About>
         <p>
-          Hi, I'm a software designer working in education. Code can be found on
-          GitHub, short thoughts on Twitter, and adventures on Instagram. Have
-          an interesting opportunity you’d like to discuss? Say Hello!
+          Hi, I&#1370;m a software designer working in education. Code can be
+          found on <Link to="https://github.com/markmichon">GitHub</Link>, short
+          thoughts on <Link to="https://twitter.com/markmichon">Twitter</Link>,
+          and adventures on{" "}
+          <Link to="https://instagram.com/markmichon">Instagram</Link>. Have an
+          interesting opportunity you’d like to discuss? Say Hello!
         </p>
       </About>
     </OffsetBlock>
