@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import PropTypes from "prop-types"
 import {
   Intro,
@@ -12,28 +12,6 @@ import {
 } from "../components"
 
 import theme from "../styles/theme"
-
-const fill = keyframes`
-from {
-  transform-origin: 0%;
-  transform: scaleX(0);
-  
-}
-to {
-  transform: scaleX(1);
-  
-}
-`
-
-const empty = keyframes`
-from {
-transform-origin: 100%;
-transform: scaleX(1);
-}
-to {
-  transform: scaleX(0);
-}
-`
 
 const Section = styled.section`
   color: ${p => p.theme.copy};
@@ -52,11 +30,7 @@ const Section = styled.section`
   }
 `
 
-const HomeContainer = styled.div`
-  width: 100%;
-  @media (min-width: ${theme.breakpoints.m}) {
-  }
-`
+const HomeContainer = styled.div``
 
 const Index = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark

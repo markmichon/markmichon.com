@@ -38,44 +38,5 @@ module.exports = {
         ]
       }
     }
-    // {
-    //   resolve: "gatsby-source-github-gql",
-    //   options: {
-    //     auth: process.env.GITHUB_TOKEN,
-    //     query: `{
-    //       viewer {
-    //         name
-    //         repositories(last: 10) {
-    //           edges {
-    //             node {
-    //               id
-    //               name
-    //               url
-    //               description
-    //               assignableUsers(last: 5) {
-    //                 edges{
-    //                   node {
-    //                     id
-    //                     name
-    //                   }
-    //                 }
-    //               }
-    //               watchers(last: 5) {
-    //                edges {
-    //                 node {
-    //                   id
-    //                   name
-    //                 }
-    //               }
-    //               }
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-
-    //     `
-    //   }
-    // }
   ]
 }

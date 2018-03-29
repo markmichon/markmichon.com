@@ -74,6 +74,12 @@ const NavBlock = styled.nav`
   width: auto;
   padding: 1rem 1rem 1rem 2rem;
   margin-left: 0;
+  transition: padding 200ms cubic-bezier(0.31, -0.44, 0.33, 1.63);
+
+  &:hover {
+    padding-left: 4rem;
+  }
+
   &::before {
     content: "";
     height: 100%;
@@ -88,7 +94,7 @@ const NavBlock = styled.nav`
 const Intro = () => (
   <Landing>
     <NavBlock>
-      <Logo color={theme.light} width="4rem" />
+      <Logo color={theme.light} width="3rem" />
     </NavBlock>
     <OffsetBlock>
       <Name>Mark Michon</Name>
