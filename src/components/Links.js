@@ -3,9 +3,13 @@ import styled from "styled-components"
 import theme from "../styles/theme"
 
 export const Link = styled(GatsbyLink)`
-  color: ${theme.brand};
+  color: inherit;
   text-decoration: none;
+
+  box-shadow: 0 0.25rem 0 ${theme.color.brand};
+
   &:hover {
+    color: ${theme.color.brand};
   }
 `
 

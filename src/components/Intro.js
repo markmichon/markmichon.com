@@ -30,7 +30,11 @@ const Tagline = styled.h2`
   font-size: ${theme.sizes.xxl};
   line-height: 1;
   margin-top: ${theme.halfUnit};
-  color: hsl(211, 13%, 35%);
+  color: ${theme.color.light};
+  background-color: ${theme.color.brand};
+  padding: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
   @media (min-width: ${theme.breakpoints.m}) {
     font-size: ${theme.sizes.xxxl};
   }
@@ -47,7 +51,7 @@ const SubTagline = styled.h3`
   }
 `
 
-const IntroAbout = styled.div`
+const About = styled.div`
   font-weight: normal;
   font-size: ${p => p.theme.sizes.s};
   font-family: ${p => p.theme.sansSerif};
@@ -63,6 +67,9 @@ const OffsetBlock = styled.div`
   margin-bottom: 2rem;
   margin-top: 1rem;
   max-width: calc(100% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   @media (min-width: ${theme.breakpoints.m}) {
     max-width: 70%;
   }
@@ -70,11 +77,21 @@ const OffsetBlock = styled.div`
 
 const NavBlock = styled.nav`
   background-color: ${theme.dark};
+  position: relative;
   display: inline-flex;
   flex-direction: row-reverse;
   width: auto;
   padding: 1rem 1rem 1rem 2rem;
-  margin-left: -1rem;
+  margin-left: 0;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 1rem;
+    left: -1rem;
+    top: 0;
+    position: absolute;
+    background-color: inherit;
+  }
 `
 
 const Intro = () => (
@@ -86,13 +103,13 @@ const Intro = () => (
       <Name>Mark Michon</Name>
       <Tagline>Building a better web.</Tagline>
       <SubTagline>Designer, Developer, Teacher</SubTagline>
-      <IntroAbout>
+      <About>
         <p>
           Hi, I'm a software designer working in education. Code can be found on
           GitHub, short thoughts on Twitter, and adventures on Instagram. Have
           an interesting opportunity you’d like to discuss? Say Hello!
         </p>
-      </IntroAbout>
+      </About>
     </OffsetBlock>
   </Landing>
 )
