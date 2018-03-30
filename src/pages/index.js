@@ -14,7 +14,7 @@ import {
 import theme from "../styles/theme"
 
 const Section = styled.section`
-  color: ${p => p.theme.copy};
+  color: ${theme.color.black};
   max-width: calc(100% - 2rem);
   margin-left: auto;
   margin-right: auto;
@@ -30,7 +30,59 @@ const Section = styled.section`
   }
 `
 
-const HomeContainer = styled.div``
+const lineColor = `hsl(38,32%,90%)`
+const HomeContainer = styled.div`
+  background-size: 100% 0;
+  background-repeat: no-repeat;
+
+  transition: background-size 1000ms linear;
+  &:hover {
+    background-size: 100% 100%;
+  }
+
+  @media (min-width: ${theme.breakpoints.l}) {
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        transparent 15%,
+        ${lineColor} 15%,
+        ${lineColor} calc(15% + 1px),
+        transparent calc(15% + 1px)
+      ),
+      linear-gradient(
+        90deg,
+        transparent,
+        transparent 25%,
+        ${lineColor} 25%,
+        ${lineColor} calc(25% + 1px),
+        transparent calc(25% + 1px)
+      ),
+      linear-gradient(
+        90deg,
+        transparent,
+        transparent 50%,
+        ${lineColor} 50%,
+        ${lineColor} calc(50% + 1px),
+        transparent calc(50% + 1px)
+      ),
+      linear-gradient(
+        90deg,
+        transparent,
+        transparent 75%,
+        ${lineColor} 75%,
+        ${lineColor} calc(75% + 1px),
+        transparent calc(75% + 1px)
+      ),
+      linear-gradient(
+        90deg,
+        transparent,
+        transparent 85%,
+        ${lineColor} 85%,
+        ${lineColor} calc(85% + 1px),
+        transparent calc(85% + 1px)
+      );
+  }
+`
 
 const Index = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
@@ -38,7 +90,7 @@ const Index = ({ data }) => {
     <HomeContainer>
       <Intro />
 
-      <Section bgColor={theme.light}>
+      <Section bgColor={theme.color.white}>
         <SectionHeading>
           <SectionHeading.Heading title="Articles">
             Selected Articles
