@@ -1,8 +1,9 @@
-import { default as GatsbyLink } from "gatsby-link"
+import GatsbyLink from "gatsby-link"
+import React from "react"
 import styled from "styled-components"
 import theme from "../styles/theme"
 
-export const Link = styled(GatsbyLink)`
+const BaseLink = styled.a`
   color: inherit;
   text-decoration: none;
   transition: color 200ms ease-in-out;
@@ -14,7 +15,9 @@ export const Link = styled(GatsbyLink)`
   }
 `
 
-export const NavLink = styled(GatsbyLink)`
+const InternalLink = BaseLink.withComponent(GatsbyLink)
+
+export const NavLink = styled(InternalLink)`
   color: inherit;
   text-decoration: none;
 `
@@ -26,5 +29,20 @@ export const UnstyledLink = styled(GatsbyLink)`
     color: inherit;
   }
 `
+export const Link = ({ children, to, props }) => {
+  const external = /^http[s]?/.test(to)
+  if (external) {
+    return (
+      <BaseLink href={to} {...props}>
+        {children}
+      </BaseLink>
+    )
+  }
+  return (
+    <InternalLink to={to} {...props}>
+      {children}
+    </InternalLink>
+  )
+}
 
 export default Link

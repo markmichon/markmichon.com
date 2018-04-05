@@ -12,6 +12,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-catch-links",
     "gatsby-plugin-styled-components",
+    "gatsby-plugin-sharp",
 
     {
       resolve: "gatsby-source-filesystem",
@@ -34,6 +35,12 @@ module.exports = {
           {
             resolve: "gatsby-remark-prismjs",
             options: {}
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200
+            }
           }
         ]
       }

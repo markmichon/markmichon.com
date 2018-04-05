@@ -8,7 +8,7 @@ import styled, { injectGlobal, ThemeProvider } from "styled-components"
 // require("../styles/baseline.css")
 import theme from "../styles/theme"
 
-import { Banner, Footer, Nav, Alert } from "../components"
+import { Footer, Nav, Alert } from "../components"
 injectGlobal`
 * {
   margin: 0;
@@ -93,11 +93,7 @@ const TemplateWrapper = ({ children }) => (
           { name: "keywords", content: "sample, something" }
         ]}
       />
-      {/* <Banner>
-        This site is being redesigned in the open.{" "}
-        <Link to="/redesigning-in-the-open">Learn more about it here.</Link>
-      </Banner> */}
-      {/* <Nav /> */}
+
       {children()}
     </PageContainer>
   </ThemeProvider>

@@ -13,8 +13,9 @@ import {
 } from "../components"
 require("prismjs/themes/prism-okaidia.css")
 
+import theme from "../styles/theme"
 const ArticleBody = styled.div`
-  max-width: ${p => p.theme.measure};
+  max-width: ${theme.measure};
   margin-left: auto;
   margin-right: auto;
   font-family: Georgia;

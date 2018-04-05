@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import theme from "../styles/theme"
+import { UnstyledLink } from "./Links"
 
 const ArticleList = styled.ul`
   list-style-type: none;
@@ -61,6 +62,12 @@ const Item = styled.li`
   }
 `
 
+const LinkContainer = UnstyledLink.extend`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`
+
 const ItemDate = styled.span`
   display: block;
   color: ${theme.color.medium};
@@ -72,5 +79,6 @@ const ItemDate = styled.span`
 
 ArticleList.Item = Item
 ArticleList.Date = ItemDate
+ArticleList.Link = LinkContainer
 
 export default ArticleList

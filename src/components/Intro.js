@@ -10,8 +10,8 @@ const Landing = styled.div`
 `
 const Name = styled.h1`
   font-weight: normal;
-  font-family: ${p => p.theme.sansSerif};
-  font-size: ${p => p.theme.sizes.l};
+  font-family: ${theme.sansSerif};
+  font-size: ${theme.sizes.l};
   line-height: 1;
 `
 
@@ -21,7 +21,7 @@ const Tagline = styled.h2`
   font-size: ${theme.sizes.xxl};
   line-height: 1;
   margin-top: ${theme.halfUnit};
-  color: ${theme.color.light};
+  color: ${theme.color.white};
   background-color: ${theme.color.brand};
   padding: 1rem;
   margin-left: -1rem;
@@ -33,10 +33,10 @@ const Tagline = styled.h2`
 const SubTagline = styled.h3`
   font-weight: bold;
   font-family: ${theme.fancy};
-  font-size: ${p => p.theme.sizes.m};
+  font-size: ${theme.sizes.m};
   line-height: 1.5;
   font-style: italic;
-  margin-top: ${p => p.theme.halfUnit};
+  margin-top: ${theme.halfUnit};
   @media (min-width: ${theme.breakpoints.m}) {
     font-size: ${theme.sizes.l};
   }
@@ -44,8 +44,8 @@ const SubTagline = styled.h3`
 
 const About = styled.div`
   font-weight: normal;
-  font-size: ${p => p.theme.sizes.s};
-  font-family: ${p => p.theme.sansSerif};
+  font-size: ${theme.sizes.s};
+  font-family: ${theme.sansSerif};
   z-index: 1;
   @media (min-width: ${theme.breakpoints.m}) {
     padding: 0.25rem 0 0 0;
@@ -67,17 +67,16 @@ const OffsetBlock = styled.div`
 `
 
 const NavBlock = styled.nav`
-  background-color: ${theme.dark};
+  background-color: ${theme.color.black};
   position: relative;
-  display: inline-flex;
-  flex-direction: row-reverse;
-  width: auto;
+  display: flex;
+  width: 10%;
   padding: 1rem 1rem 1rem 2rem;
   margin-left: 0;
-  transition: padding 200ms cubic-bezier(0.31, -0.44, 0.33, 1.63);
+  transition: width 200ms ease-in-out;
 
   &:hover {
-    padding-left: 4rem;
+    width: 15%;
   }
 
   &::before {
@@ -93,9 +92,6 @@ const NavBlock = styled.nav`
 
 const Intro = () => (
   <Landing>
-    <NavBlock>
-      <Logo color={theme.light} width="3rem" />
-    </NavBlock>
     <OffsetBlock>
       <Name>Mark Michon</Name>
       <Tagline>Let&#1370;s build a better web.</Tagline>

@@ -1,6 +1,5 @@
 import Alert from "./Alert"
 import { Article, ArticleTitle } from "./Article"
-import Banner from "./Banner"
 import Content from "./Content"
 import Footer from "./Footer"
 import Icon from "./Icon"
@@ -17,7 +16,6 @@ export default {
   Alert,
   Article,
   ArticleTitle,
-  Banner,
   Content,
   Footer,
   Icon,

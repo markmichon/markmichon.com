@@ -8,7 +8,8 @@ import {
   Footer,
   ArticleList,
   Link,
-  UnstyledLink
+  UnstyledLink,
+  Nav
 } from "../components"
 
 import theme from "../styles/theme"
@@ -88,6 +89,7 @@ const Index = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
   return (
     <HomeContainer>
+      <Nav />
       <Intro />
 
       <Section bgColor={theme.color.white}>
@@ -106,11 +108,11 @@ const Index = ({ data }) => {
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({ node: post }) => (
               <ArticleList.Item key={post.id}>
-                <UnstyledLink to={post.frontmatter.path}>
+                <ArticleList.Link to={post.frontmatter.path}>
                   <ArticleList.Date>{post.frontmatter.date}</ArticleList.Date>
                   <h3>{post.frontmatter.title}</h3>
                   <h4>{post.frontmatter.subtitle}</h4>
-                </UnstyledLink>
+                </ArticleList.Link>
               </ArticleList.Item>
             ))}
         </ArticleList>

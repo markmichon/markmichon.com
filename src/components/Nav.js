@@ -1,31 +1,43 @@
 import React from "react"
 import styled from "styled-components"
-import Link from "gatsby-link"
+import { NavLink } from "./Links"
 import Logo from "./Logo"
 import theme from "../styles/theme"
-const NavContainer = styled.nav`
-  width: 100%;
-  background-color: #333;
-  padding: ${theme.baseUnit};
+
+const NavBlock = styled.nav`
+  background-color: ${theme.color.black};
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  @media (min-width: 800px) {
-    display: block;
+
+  padding: 1rem 1rem 1rem 2rem;
+  margin-left: 0;
+  transition: width 200ms ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 1rem;
+    left: -1rem;
+    top: 0;
+    position: absolute;
+    background-color: ${theme.color.black};
+    z-index: 1;
   }
 `
 
 const NavList = styled.ul`
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 2rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   list-style: none;
-  align-items: center;
+  color: ${theme.color.white};
 
   @media (min-width: 800px) {
-    display: block;
   }
   li {
     margin-bottom: 0;
@@ -36,19 +48,17 @@ const NavList = styled.ul`
 `
 
 const Nav = () => (
-  <NavContainer>
-    <Link to="/">
-      <Logo color={theme.light} />Mark Michon
-    </Link>
+  <NavBlock>
+    <Logo color={theme.color.white} width="3rem" />
     <NavList>
       <li>
-        <Link to="/">Articles</Link>
+        <NavLink to="/">Articles</NavLink>
       </li>
       <li>
-        <Link to="/">Projects</Link>
+        <NavLink to="/">Projects</NavLink>
       </li>
     </NavList>
-  </NavContainer>
+  </NavBlock>
 )
 
 export default Nav
