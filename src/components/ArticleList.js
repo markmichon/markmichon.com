@@ -27,7 +27,7 @@ const Item = styled.li`
   h3 {
     font-family: ${theme.serif};
     font-weight: bold;
-    font-size: ${theme.sizes.xl};
+    font-size: ${theme.sizes.l};
 
     position: relative;
     width: auto;
@@ -35,6 +35,10 @@ const Item = styled.li`
     transition-property: color;
     transition-duration: 0ms;
     overflow: hidden;
+
+    @media (min-width: ${theme.breakpoints.l}) {
+      font-size: ${theme.sizes.xl};
+    }
     &::before {
       content: "";
       top: 0;

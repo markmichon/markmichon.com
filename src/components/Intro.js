@@ -18,7 +18,7 @@ const Name = styled.h1`
 const Tagline = styled.h2`
   font-weight: 800;
   font-family: ${theme.sansSerif};
-  font-size: ${theme.sizes.xxl};
+  font-size: ${theme.sizes.xl};
   line-height: 1;
   margin-top: ${theme.halfUnit};
   color: ${theme.color.white};
@@ -26,7 +26,11 @@ const Tagline = styled.h2`
   padding: 1rem;
   margin-left: -1rem;
   margin-right: -1rem;
+
   @media (min-width: ${theme.breakpoints.m}) {
+    font-size: ${theme.sizes.xxl};
+  }
+  @media (min-width: ${theme.breakpoints.l}) {
     font-size: ${theme.sizes.xxxl};
   }
 `
