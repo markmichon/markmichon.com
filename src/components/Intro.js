@@ -93,12 +93,11 @@ const NavBlock = styled.nav`
 const Intro = () => (
   <Landing>
     <OffsetBlock>
-      <Name>Mark Michon</Name>
       <Tagline>Let&#1370;s build a better web.</Tagline>
       <SubTagline>Designer, Developer, Teacher</SubTagline>
       <About>
         <p>
-          Hi, I&#1370;m a software designer working in education. Code can be
+          Mark Michon is a software designer working in education. Code can be
           found on <Link to="https://github.com/markmichon">GitHub</Link>, short
           thoughts on <Link to="https://twitter.com/markmichon">Twitter</Link>,
           and adventures on{" "}

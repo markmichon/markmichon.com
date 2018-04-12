@@ -7,12 +7,11 @@ import theme from "../styles/theme"
 const NavBlock = styled.nav`
   background-color: ${theme.color.black};
   position: relative;
-  display: flex;
-
+  display: inline-flex;
+  margin-top: 1rem;
   padding: 1rem 1rem 1rem 2rem;
   margin-left: 0;
   transition: width 200ms ease-in-out;
-  overflow: hidden;
 
   &:hover {
   }
@@ -33,7 +32,9 @@ const NavList = styled.ul`
   margin: 0;
   padding: 0 0 0 2rem;
   display: flex;
-  flex-wrap: no-wrap;
+  align-items: center;
+  font-size: ${theme.sizes.xs};
+
   list-style: none;
   color: ${theme.color.white};
 
