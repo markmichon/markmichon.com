@@ -7,7 +7,7 @@ const BaseLink = styled.a`
   color: inherit;
   text-decoration: none;
   transition: color 200ms ease-in-out;
-  box-shadow: inset 0 -0.25em 0 ${theme.color.brand};
+  box-shadow: inset 0 -0.125em 0 ${theme.color.brand};
   padding: 0.125em;
 
   &:hover {
@@ -18,8 +18,10 @@ const BaseLink = styled.a`
 const InternalLink = BaseLink.withComponent(GatsbyLink)
 
 export const NavLink = styled(InternalLink)`
-  color: inherit;
+  color: ${theme.color.medium};
   text-decoration: none;
+  font-weight: bold;
+  box-shadow: none;
 `
 
 export const UnstyledLink = styled(GatsbyLink)`

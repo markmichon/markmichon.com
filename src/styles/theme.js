@@ -1,11 +1,11 @@
 const color = {
-  brand: "hsl(358, 85%, 52%)",
+  brand: "hsl(352, 68%, 50%)",
   background: "#fff",
   text: "#333",
   black: "hsl(0, 0%, 20%)",
   white: "hsl(0,0%,100%)",
   dark: "hsl(220, 2%, 26%)",
-  medium: "hsl(0, 0%, 60%)",
+  medium: "hsl(0, 0%, 40%)",
   light: "hsla(210, 20%, 95%, 1.00)",
   link: "hsla(163, 71%, 35%, 1.00)"
 }

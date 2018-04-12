@@ -4,12 +4,10 @@ import { NavLink } from "./Links"
 import Logo from "./Logo"
 import theme from "../styles/theme"
 
-const NavBlock = styled.nav`
+const LogoTab = styled.div`
   background-color: ${theme.color.black};
   position: relative;
-  display: inline-flex;
-  margin-top: 1rem;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem 1rem 1rem 1rem;
   margin-left: 0;
   transition: width 200ms ease-in-out;
 
@@ -28,15 +26,23 @@ const NavBlock = styled.nav`
   }
 `
 
+const NavBlock = styled.nav`
+  display: flex;
+  padding-top: 1rem;
+  margin-left: 0;
+  justify-content: space-between;
+  align-items: center;
+`
+
 const NavList = styled.ul`
   margin: 0;
-  padding: 0 0 0 2rem;
+  padding: 1rem 1rem 1rem 1rem;
   display: flex;
   align-items: center;
   font-size: ${theme.sizes.xs};
 
   list-style: none;
-  color: ${theme.color.white};
+  color: ${theme.color.black};
 
   @media (min-width: 800px) {
   }
@@ -50,7 +56,9 @@ const NavList = styled.ul`
 
 const Nav = () => (
   <NavBlock>
-    <Logo color={theme.color.white} width="3rem" />
+    <LogoTab>
+      <Logo color={theme.color.white} width="3rem" />
+    </LogoTab>
     <NavList>
       <li>
         <NavLink to="/">Articles</NavLink>

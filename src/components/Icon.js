@@ -8,7 +8,8 @@ const IconBase = ({ children, color, size, width, height, ...props }) => (
     height={height}
     {...props}
     style={{
-      verticalAlign: "middle"
+      verticalAlign: "middle",
+      width: width || "auto"
     }}
   >
     {children}

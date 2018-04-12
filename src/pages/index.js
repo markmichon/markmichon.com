@@ -38,7 +38,7 @@ const HomeContainer = styled.div`
 
   transition: background-size 1000ms linear;
   &:hover {
-    background-size: 100% 100%;
+    ${"" /* background-size: 100% 100%; */};
   }
 
   @media (min-width: ${theme.breakpoints.l}) {
