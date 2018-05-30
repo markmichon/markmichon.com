@@ -11,11 +11,13 @@
     "gatsby-plugin-feed-generator": "^1.0.5",
     "gatsby-plugin-preact": "^1.0.11",
     "gatsby-plugin-react-helmet": "^1.0.6",
+    "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sharp": "^1.6.41",
     "gatsby-remark-images": "^1.5.60",
     "gatsby-remark-prismjs": "^1.2.8",
     "gatsby-source-filesystem": "^1.4.12",
-    "gatsby-transformer-remark": "^1.7.7"
+    "gatsby-transformer-remark": "^1.7.7",
+    "rehype-react": "^3.0.2"
   },
   "scripts": {
     "build": "gatsby build",

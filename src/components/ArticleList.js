@@ -44,7 +44,7 @@ const Item = styled.li`
       top: 0;
 
       position: absolute;
-      background-color: ${theme.color.brand};
+      background-color: ${theme.color.brand[1]};
       height: 100%;
       width: 100%;
 
@@ -62,7 +62,7 @@ const Item = styled.li`
   }
 
   &:hover h3 {
-    color: ${theme.color.brand};
+    color: ${theme.color.brand[1]};
   }
 `
 

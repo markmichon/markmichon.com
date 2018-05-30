@@ -5,9 +5,12 @@ export const ArticleTitle = styled.h1`
   text-align: center;
   font-family: ${theme.serif};
   max-width: ${theme.measure};
-  font-size: ${theme.sizes.xxxl};
-  margin-top: 0.25rem;
+  margin-top: 3rem;
   margin-bottom: 1em;
+  font-size: ${theme.sizes.xl};
+  @media screen and (min-width: ${theme.breakpoints.m}) {
+    font-size: ${theme.sizes.xxxl};
+  }
 `
 
 export const Article = styled.article`

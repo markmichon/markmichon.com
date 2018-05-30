@@ -14,6 +14,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         edges {
           node {
             html
+            htmlAst
             id
             frontmatter {
               date

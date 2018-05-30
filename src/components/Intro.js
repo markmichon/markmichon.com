@@ -22,7 +22,7 @@ const Tagline = styled.h2`
   line-height: 1;
   margin-top: ${theme.halfUnit};
   color: ${theme.color.white};
-  background-color: ${theme.color.brand};
+  background-color: ${theme.color.brand[1]};
   padding: 1rem;
   margin-left: -1rem;
   margin-right: -1rem;
@@ -102,10 +102,10 @@ const Intro = () => (
       <About>
         <p>
           Mark Michon is a software designer working in education. Code can be
-          found on <Link to="https://github.com/markmichon">GitHub</Link>, short
-          thoughts on <Link to="https://twitter.com/markmichon">Twitter</Link>,
+          found on <Link href="https://github.com/markmichon">GitHub</Link>, short
+          thoughts on <Link href="https://twitter.com/markmichon">Twitter</Link>,
           and adventures on{" "}
-          <Link to="https://instagram.com/markmichon">Instagram</Link>. Have an
+          <Link href="https://instagram.com/markmichon">Instagram</Link>. Have an
           interesting opportunity you’d like to discuss? Say Hello!
         </p>
       </About>

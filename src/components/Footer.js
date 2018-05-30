@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   padding-bottom: ${theme.halfUnit};
   
   a {
-    color: ${theme.color.brand};
+    color: ${theme.color.brand[1]};
   }
   p {
     margin-bottom: 0;

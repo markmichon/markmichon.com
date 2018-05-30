@@ -13,6 +13,7 @@ module.exports = {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-react-next",
 
     {
       resolve: "gatsby-source-filesystem",
@@ -28,6 +29,19 @@ module.exports = {
         name: "articles"
       }
     },
+    // {
+    //   resolve: "@markmichon/gatsby-source-github",
+    //   options: {
+    //     repository: "mm-content",
+    //     tree: true,
+    //     releases: false,
+    //     user: "markmichon",
+    //     directory: "articles",
+    //     secrets: {
+    //       token: process.env.GITHUB_TOKEN
+    //     }
+    //   }
+    // },
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -44,6 +58,9 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-feed-generator`
     }
   ]
 }
