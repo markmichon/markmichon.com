@@ -85,7 +85,7 @@ const PageContainer = styled.div`
   }
 `
 
-class CoreLayout extends React.Component {
+class Layout extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -118,4 +118,4 @@ class CoreLayout extends React.Component {
   }
 }
 
-export default CoreLayout
+export default Layout

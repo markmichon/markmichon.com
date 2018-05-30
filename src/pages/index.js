@@ -18,7 +18,7 @@ import {
 import { Link, UnstyledLink } from "../components/Links"
 
 import Nav from "../components/Nav"
-import CoreLayout from "../layouts"
+import Layout from "../components/Layout"
 import theme from "../styles/theme"
 
 const Section = styled.section`
@@ -96,7 +96,7 @@ class Index extends React.Component {
     const { edges: posts } = this.props.data.allMarkdownRemark
 
     return (
-      <CoreLayout>
+      <Layout>
         <HomeContainer>
           <Nav />
           <Intro />
@@ -126,7 +126,7 @@ class Index extends React.Component {
             </ArticleList>
           </Section>
         </HomeContainer>
-      </CoreLayout>
+      </Layout>
     )
   }
 }

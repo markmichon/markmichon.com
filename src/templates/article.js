@@ -8,7 +8,7 @@ import { MarkdownAST } from "../components/Markdown"
 import { Article, ArticleTitle } from "../components/Article"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import CoreLayout from "../layouts"
+import Layout from "../components/Layout"
 import theme from "../styles/theme"
 
 require("prismjs/themes/prism-okaidia.css")
@@ -24,7 +24,7 @@ const ArticleBody = styled.div`
 const Template = ({ data }) => {
   const { markdownRemark: post } = data
   return (
-    <CoreLayout>
+    <Layout>
       <Nav />
 
       <Article>
@@ -37,7 +37,7 @@ const Template = ({ data }) => {
       </Article>
 
       <Footer />
-    </CoreLayout>
+    </Layout>
   )
 }
 
