@@ -1,5 +1,4 @@
 const color = {
-  brand: "hsl(352, 68%, 50%)",
   brand: ["hsl(352, 68%, 59%)", "hsl(352, 68%, 50%)", "hsl(352, 68%, 41%)"],
   background: "#fff",
   text: "#333",
@@ -39,8 +38,6 @@ const spacing = {
   halfUnit: ".5rem",
   doubleUnit: "2rem"
 }
-
-const scale = {}
 
 const theme = {
   ...color,

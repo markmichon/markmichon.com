@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import theme from "../styles/theme"
 const StyledFooter = styled.footer`
-  // background-color: ${theme.brand};
-  // color: ${theme.white};
+  background-color: ${theme.brand};
+  color: ${theme.white};
   line-height: 1.6;
   text-align: center;
   font-size: 0.75rem;
@@ -11,7 +11,7 @@ const StyledFooter = styled.footer`
   margin-top: ${theme.baseUnit};
   padding-top: ${theme.halfUnit};
   padding-bottom: ${theme.halfUnit};
-  
+
   a {
     color: ${theme.color.brand[1]};
   }

@@ -4,17 +4,15 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import Link from "../components/Links"
 import { MarkdownAST } from "../components/Markdown"
-import {
-  Article,
-  ArticleTitle,
-  Nav,
-  PageContainer,
-  Content,
-  Footer
-} from "../components"
+
+import { Article, ArticleTitle } from "../components/Article"
+import Nav from "../components/Nav"
+import Footer from "../components/Footer"
+import CoreLayout from "../layouts"
+import theme from "../styles/theme"
+
 require("prismjs/themes/prism-okaidia.css")
 
-import theme from "../styles/theme"
 const ArticleBody = styled.div`
   max-width: ${theme.measure};
   margin-left: auto;
@@ -26,7 +24,7 @@ const ArticleBody = styled.div`
 const Template = ({ data }) => {
   const { markdownRemark: post } = data
   return (
-    <div>
+    <CoreLayout>
       <Nav />
 
       <Article>
@@ -39,7 +37,7 @@ const Template = ({ data }) => {
       </Article>
 
       <Footer />
-    </div>
+    </CoreLayout>
   )
 }
 

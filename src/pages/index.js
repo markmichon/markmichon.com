@@ -2,16 +2,23 @@ import React from "react"
 import Helmet from "react-helmet"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import Intro from "../components/Intro"
 import {
-  Intro,
-  SectionHeading,
-  Footer,
+  SectionHeadingTitle,
+  SectionHeadingContainer,
+  SectionHeadingDetails
+} from "../components/SectionHeading"
+import Footer from "../components/Footer"
+import {
   ArticleList,
-  Link,
-  UnstyledLink,
-  Nav
-} from "../components"
+  ArticleListDate,
+  ArticleListItem,
+  ArticleListLink
+} from "../components/ArticleList"
+import { Link, UnstyledLink } from "../components/Links"
 
+import Nav from "../components/Nav"
+import CoreLayout from "../layouts"
 import theme from "../styles/theme"
 
 const Section = styled.section`
@@ -40,7 +47,6 @@ const HomeContainer = styled.div`
   &:hover {
     ${"" /* background-size: 100% 100%; */};
   }
-
   @media (min-width: ${theme.breakpoints.l}) {
     background-image: linear-gradient(
         90deg,
@@ -85,40 +91,44 @@ const HomeContainer = styled.div`
   }
 `
 
-const Index = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark
-  return (
-    <HomeContainer>
-      <Nav />
-      <Intro />
+class Index extends React.Component {
+  render() {
+    const { edges: posts } = this.props.data.allMarkdownRemark
 
-      <Section bgColor={theme.color.white}>
-        <SectionHeading>
-          <SectionHeading.Heading title="Articles">
-            Selected Articles
-          </SectionHeading.Heading>
+    return (
+      <CoreLayout>
+        <HomeContainer>
+          <Nav />
+          <Intro />
+          <Section bgColor={theme.color.white}>
+            <SectionHeadingContainer>
+              <SectionHeadingTitle title="Articles">
+                Selected Articles
+              </SectionHeadingTitle>
 
-          <SectionHeading.Details>
-            The following are a few chosen articles. Have a look around the{" "}
-            <Link to="#">Archive</Link> to see more.
-          </SectionHeading.Details>
-        </SectionHeading>
-        <ArticleList>
-          {posts
-            .filter(post => post.node.frontmatter.title.length > 0)
-            .map(({ node: post }) => (
-              <ArticleList.Item key={post.id}>
-                <ArticleList.Link to={post.frontmatter.path}>
-                  <ArticleList.Date>{post.frontmatter.date}</ArticleList.Date>
-                  <h3>{post.frontmatter.title}</h3>
-                  <h4>{post.frontmatter.subtitle}</h4>
-                </ArticleList.Link>
-              </ArticleList.Item>
-            ))}
-        </ArticleList>
-      </Section>
-    </HomeContainer>
-  )
+              <SectionHeadingDetails>
+                The following are a few chosen articles. Have a look around the{" "}
+                <Link to="#">Archive</Link> to see more.
+              </SectionHeadingDetails>
+            </SectionHeadingContainer>
+            <ArticleList>
+              {posts
+                .filter(post => post.node.frontmatter.title.length > 0)
+                .map(({ node: post }) => (
+                  <ArticleListItem key={post.id}>
+                    <ArticleListLink to={post.frontmatter.path}>
+                      <ArticleListDate>{post.frontmatter.date}</ArticleListDate>
+                      <h3>{post.frontmatter.title}</h3>
+                      <h4>{post.frontmatter.subtitle}</h4>
+                    </ArticleListLink>
+                  </ArticleListItem>
+                ))}
+            </ArticleList>
+          </Section>
+        </HomeContainer>
+      </CoreLayout>
+    )
+  }
 }
 Index.propTypes = {
   data: PropTypes.object.isRequired

@@ -7,12 +7,21 @@ import Intro from "./Intro"
 import Logo from "./Logo"
 import Nav from "./Nav"
 import PageContainer from "./PageContainer"
-import SectionHeading from "./SectionHeading"
+import {
+  SectionHeadingTitle,
+  SectionHeadingContainer,
+  SectionHeadingDetails
+} from "./SectionHeading"
 import SectionList from "./SectionList"
 import { Link, NavLink, UnstyledLink } from "./Links"
-import ArticleList from "./ArticleList"
+import {
+  ArticleList,
+  ArticleListItem,
+  ArticleListDate,
+  ArticleListLink
+} from "./ArticleList"
 
-export default {
+export {
   Alert,
   Article,
   ArticleTitle,
@@ -23,10 +32,15 @@ export default {
   Logo,
   Nav,
   PageContainer,
-  SectionHeading,
+  SectionHeadingTitle,
+  SectionHeadingContainer,
+  SectionHeadingDetails,
   SectionList,
   Link,
   NavLink,
   UnstyledLink,
-  ArticleList
+  ArticleList,
+  ArticleListItem,
+  ArticleListDate,
+  ArticleListLink
 }

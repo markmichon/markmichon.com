@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import theme from "../styles/theme"
 
-const Heading = styled.h2`
+export const SectionHeadingTitle = styled.h2`
   font-family: ${theme.sansSerif};
   font-weight: 800;
   line-height: 1;
@@ -32,16 +32,11 @@ const Heading = styled.h2`
   }
 `
 
-const SectionHeading = styled.div`
+export const SectionHeadingContainer = styled.div`
   margin-bottom: 0.5rem;
 `
-const Details = styled.p`
+export const SectionHeadingDetails = styled.p`
   margin: 0;
   padding: 0;
   font-size: ${theme.sizes.xs};
 `
-
-SectionHeading.Heading = Heading
-SectionHeading.Details = Details
-
-export default SectionHeading

@@ -1,4 +1,5 @@
 import React from "react"
+/* eslint-disable */
 import styled from "styled-components"
 import IconBase from "./Icon"
 const LogoContainer = styled.div`

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import theme from "../styles/theme"
 import { UnstyledLink } from "./Links"
 
-const ArticleList = styled.ul`
+export const ArticleList = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ const ArticleList = styled.ul`
   align-items: flex-start;
 `
 
-const Item = styled.li`
+export const ArticleListItem = styled.li`
   margin-bottom: 1rem;
   width: auto;
   color: ${theme.black};
@@ -66,13 +66,13 @@ const Item = styled.li`
   }
 `
 
-const LinkContainer = UnstyledLink.extend`
+export const ArticleListLink = UnstyledLink.extend`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `
 
-const ItemDate = styled.span`
+export const ArticleListDate = styled.span`
   display: block;
   color: ${theme.color.medium};
   font-weight: bold;
@@ -80,9 +80,3 @@ const ItemDate = styled.span`
   font-size: ${theme.sizes.xxs};
   text-transform: uppercase;
 `
-
-ArticleList.Item = Item
-ArticleList.Date = ItemDate
-ArticleList.Link = LinkContainer
-
-export default ArticleList

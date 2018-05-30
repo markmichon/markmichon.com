@@ -13,7 +13,6 @@ module.exports = {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-react-next",
 
     {
       resolve: "gatsby-source-filesystem",
