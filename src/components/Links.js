@@ -30,6 +30,7 @@ export const UnstyledLink = styled(GatsbyLink)`
   text-decoration: none;
   &:hover {
     color: inherit;
+    text-decoration: none;
   }
 `
 export const Link = ({ children, props, to, href }) => {

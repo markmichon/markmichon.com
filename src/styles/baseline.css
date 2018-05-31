@@ -1,5 +1,4 @@
 :root {
-  /* Currently not working until gatsby v2 */
   /* Units */
   --baseUnit: 1rem;
   --halfUnit: 0.5rem;
@@ -32,21 +31,15 @@
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: calc(14px + (18 - 14) * ( (100vw - 320px) / (1000 - 320)));
+  font-family: var(--sans-serif);
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1000 - 320)));
   line-height: 1.6;
-  /* background-color: ${theme.background}; */
-  /* color: ${theme.text}; */
 }
 
 a {
-  /* color: ${theme.brand}; */
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
-  text-decoration-skip: ink;
 }
 
 img {

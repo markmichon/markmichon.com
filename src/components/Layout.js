@@ -6,75 +6,10 @@ import Helmet from "react-helmet"
 import config from "../../data/config"
 import styled, { injectGlobal, ThemeProvider } from "styled-components"
 
-// require("../styles/baseline.css")
 import theme from "../styles/theme"
 
 import { Footer, Nav, Alert } from "../components"
-injectGlobal`
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-family: ${theme.sansSerif};
-  font-size: calc( 16px + (20 - 16) * ( (100vw - 320px) / (1000 - 320)));
-  font-display: fallback;
-  line-height:1.6;
-  background-color: hsl(38, 32%, 90%);
-  color: ${theme.text};
-
-
-}
-
-
-img {
-  max-width: 100%;
-}
-article {
-  margin: 0 auto;
-  width: 100%;
-}
-  h1 { font-size: 2rem; line-height: 1.25;}
-  h2 { font-size: 1.25rem; }
-  h3 { font-size: 1rem; }
-  h2,h3,h4,h5 {
-    line-height: 1.25;
-    margin-top: ${theme.baseUnit};
-  }
-
-  p, ul, ol {
-    margin-top: ${theme.halfUnit};
-  }
-
-  ol, ul {
-    list-style: inside;
-    @media (min-width: 25rem) {
-      list-style: outside;
-    }
-  }
-  ol { list-style-type: decimal;}
-  ul {list-style-type: disc;}
-  li {margin-bottom: ${theme.halfUnit};}
-  .gatsby-highlight, figure {
-    
-    margin-left: auto;
-    margin-right: auto;
-    font-size: .75rem;
-  }
-  figcaption {
-    text-align: center;
-  }
-  p, ul, ol, h1,h2,h3,h4 {
-    
-
-  }
-  
-  pre, code {
-    overflow-x: scroll;
-  }
-`
+require("../styles/baseline.css")
 
 const PageContainer = styled.div`
   margin: 0.5rem;

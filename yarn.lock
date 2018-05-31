@@ -1452,7 +1452,7 @@ babel-plugin-remove-graphql-queries@^2.0.1-7:
   version "2.0.1-7"
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.0.1-7.tgz#bc0a62aa5759d40302ca6f6fbc8bc1c9079b6455"
 
-babel-plugin-styled-components@^1.2.0:
+babel-plugin-styled-components@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.5.1.tgz#31dbeb696d1354d1585e60d66c7905f5e474afcd"
   dependencies:
