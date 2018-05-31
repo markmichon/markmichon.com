@@ -7,24 +7,16 @@ import config from "../../data/config"
 import styled, { injectGlobal, ThemeProvider } from "styled-components"
 
 import theme from "../styles/theme"
-
+import system from "../styles/system"
 import { Footer, Nav, Alert } from "../components"
+import { Box } from "../components/Radicals"
 require("../styles/baseline.css")
-
-const PageContainer = styled.div`
-  margin: 0.5rem;
-  background-color: hsl(0, 0%, 100%);
-
-  @media (min-width: ${theme.breakpoints.m}) {
-    margin: 1rem;
-  }
-`
 
 class Layout extends React.Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <PageContainer>
+      <ThemeProvider theme={system}>
+        <Box bg="hsl(0, 0%, 100%)" m={[2, 3]}>
           <Helmet
             title={config.siteTitle}
             meta={[
@@ -47,7 +39,7 @@ class Layout extends React.Component {
             </script>
           </Helmet>
           <div>{this.props.children}</div>
-        </PageContainer>
+        </Box>
       </ThemeProvider>
     )
   }

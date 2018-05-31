@@ -57,7 +57,7 @@ const NavList = styled.ul`
 const Nav = () => (
   <NavBlock>
     <LogoTab>
-      <Logo color={theme.color.white} width="3rem" />
+      <Logo color={theme.color.white} size="48" />
     </LogoTab>
     <NavList>
       <li>
