@@ -1,6 +1,7 @@
-import react from "react"
-import styled from "styled-components"
-import theme from "../styles/theme"
+import react from 'react'
+import styled from 'styled-components'
+import theme from '../styles/theme'
+
 export const ArticleTitle = styled.h1`
   text-align: center;
   font-family: ${theme.serif};

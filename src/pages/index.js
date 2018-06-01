@@ -1,72 +1,62 @@
-import React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import Intro from "../components/Intro"
-import {
-  SectionHeadingTitle,
-  SectionHeadingContainer,
-  SectionHeadingDetails
-} from "../components/SectionHeading"
-import Footer from "../components/Footer"
-import {
-  ArticleList,
-  ArticleListDate,
-  ArticleListItem,
-  ArticleListLink
-} from "../components/ArticleList"
-import { Link, UnstyledLink } from "../components/Links"
+import React from 'react'
+import Intro from '../components/Intro'
 
-import Nav from "../components/Nav"
-import Layout from "../components/Layout"
-import theme from "../styles/theme"
-import { Box } from "../components/Radicals"
+import { Link } from '../components/Links'
 
-class Index extends React.Component {
-  render() {
-    const { edges: posts } = this.props.data.allMarkdownRemark
+import Nav from '../components/Nav'
+import Layout from '../components/Layout'
 
-    return (
-      <Layout>
-        <Nav />
-        <Intro />
-        <Box
-          is="section"
-          maxWidth={["100%", "60%", "50%"]}
-          mx="auto"
-          position="relative"
-        >
-          <SectionHeadingContainer>
-            <SectionHeadingTitle title="Articles">
-              Selected Articles
-            </SectionHeadingTitle>
+import { Box, Text } from '../components/Radicals'
+import * as ArticleList from '../components/ArticleList'
 
-            <SectionHeadingDetails>
-              The following are a few chosen articles. Have a look around the{" "}
-              <Link to="#">Archive</Link> to see more.
-            </SectionHeadingDetails>
-          </SectionHeadingContainer>
-          <ArticleList>
-            {posts
-              .filter(post => post.node.frontmatter.title.length > 0)
-              .map(({ node: post }) => (
-                <ArticleListItem key={post.id}>
-                  <ArticleListLink to={post.frontmatter.path}>
-                    <ArticleListDate>{post.frontmatter.date}</ArticleListDate>
-                    <h3>{post.frontmatter.title}</h3>
-                    <h4>{post.frontmatter.subtitle}</h4>
-                  </ArticleListLink>
-                </ArticleListItem>
-              ))}
-          </ArticleList>
+const Index = props => {
+  const { edges: posts } = props.data.allMarkdownRemark // eslint-disable-line
+
+  return (
+    <Layout>
+      <Nav />
+      <Intro />
+      <Box
+        is="section"
+        maxWidth={['100%', '60%', '50%']}
+        mx="auto"
+        position="relative"
+      >
+        <Box mb={3}>
+          <ArticleList.HeadingTitle
+            title="Articles"
+            is="h2"
+            fontWeight="extra"
+            fontSize={4}
+          >
+            Selected Articles
+          </ArticleList.HeadingTitle>
+
+          <Text fontSize={2}>
+            The following are a few chosen articles. Have a look around the{' '}
+            <Link to="#archive">Archive</Link> to see more.
+          </Text>
         </Box>
-      </Layout>
-    )
-  }
+        <ArticleList.List>
+          {posts
+            .filter(post => post.node.frontmatter.title.length > 0)
+            .map(({ node: post }) => (
+              <ArticleList.ListItem key={post.id}>
+                <ArticleList.Link to={post.frontmatter.path}>
+                  <ArticleList.ItemDate>
+                    {post.frontmatter.date}
+                  </ArticleList.ItemDate>
+                  <h3>{post.frontmatter.title}</h3>
+                  <h4>{post.frontmatter.subtitle}</h4>
+                </ArticleList.Link>
+              </ArticleList.ListItem>
+            ))}
+        </ArticleList.List>
+      </Box>
+    </Layout>
+  )
 }
-Index.propTypes = {
-  data: PropTypes.object.isRequired
-}
+
 export default Index
 
 export const pageQuery = graphql`

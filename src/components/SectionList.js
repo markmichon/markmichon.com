@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
 // REMOVE
 
@@ -28,5 +28,5 @@ const ArticleListItem = styled.li``
 
 export default {
   ArticleList,
-  ArticleListItem
+  ArticleListItem,
 }

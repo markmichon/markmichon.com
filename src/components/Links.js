@@ -1,7 +1,7 @@
-import { Link as GatsbyLink } from "gatsby"
-import React from "react"
-import styled from "styled-components"
-import theme from "../styles/theme"
+import { Link as GatsbyLink } from 'gatsby'
+import React from 'react'
+import styled from 'styled-components'
+import theme from '../styles/theme'
 
 const BaseLink = styled.a`
   color: inherit;
@@ -47,5 +47,3 @@ export const Link = ({ children, props, to, href }) => {
     </InternalLink>
   )
 }
-
-export default Link

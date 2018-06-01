@@ -1,6 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import theme from "../styles/theme"
+import React from 'react'
+import styled from 'styled-components'
+import theme from '../styles/theme'
+
 const StyledFooter = styled.footer`
   background-color: ${theme.brand};
   color: ${theme.white};
@@ -25,7 +26,7 @@ const Footer = (...props) => (
   <StyledFooter>
     <p>&copy;2012-2017 Mark Michon</p>
     <p>
-      <a href="https://github.com/markmichon">Github</a>{" "}
+      <a href="https://github.com/markmichon">Github</a>{' '}
       <a href="https://twitter.com/markmichon">Twitter</a>
     </p>
   </StyledFooter>

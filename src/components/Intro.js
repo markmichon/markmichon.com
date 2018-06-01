@@ -1,13 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import Link from "../components/Links"
-import Logo from "./Logo"
-import theme from "../styles/theme"
-import { paddingSetup } from "../styles/utils"
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from '../components/Links'
+import Logo from './Logo'
+import theme from '../styles/theme'
+import { paddingSetup } from '../styles/utils'
+import { Heading, Box, Text } from '../components/Radicals'
 
-const Landing = styled.div`
-  padding-top: 1rem;
-`
 const Name = styled.h1`
   font-weight: normal;
   font-family: ${theme.sansSerif};
@@ -84,7 +82,7 @@ const NavBlock = styled.nav`
   }
 
   &::before {
-    content: "";
+    content: '';
     height: 100%;
     width: 1rem;
     left: -1rem;
@@ -94,23 +92,25 @@ const NavBlock = styled.nav`
   }
 `
 
-const Intro = () => (
-  <Landing>
-    <OffsetBlock>
-      <Tagline>Let&#1370;s build a better web.</Tagline>
-      <SubTagline>Designer, Developer, Teacher</SubTagline>
-      <About>
-        <p>
-          Mark Michon is a software designer working in education. Code can be
-          found on <Link href="https://github.com/markmichon">GitHub</Link>, short
-          thoughts on <Link href="https://twitter.com/markmichon">Twitter</Link>,
-          and adventures on{" "}
-          <Link href="https://instagram.com/markmichon">Instagram</Link>. Have an
-          interesting opportunity you’d like to discuss? Say Hello!
-        </p>
-      </About>
-    </OffsetBlock>
-  </Landing>
+export default () => (
+  <Box mt={3} mb={4}>
+    <Box ml={[3, 3, 'auto']} mr={[3, 3, 'auto']} maxWidth={750}>
+      <Heading fontWeight="extra" fontSize={[4, 5, 6]}>
+        Hi, I&#1370;m Mark.
+      </Heading>
+      {/* <Tagline>Let&#1370;s build a better web.</Tagline> */}
+      <Heading is="h2" fontFamily="serif">
+        Designer, Developer, Teacher
+      </Heading>
+      <Text>
+        I am a software designer working in education. Code can be found on{' '}
+        <Link href="https://github.com/markmichon">GitHub</Link>, short thoughts
+        on <Link href="https://twitter.com/markmichon">Twitter</Link>, and
+        adventures on{' '}
+        <Link href="https://instagram.com/markmichon">Instagram</Link>. Have an
+        interesting opportunity you’d like to discuss? Let&#1370;s build a
+        better web!
+      </Text>
+    </Box>
+  </Box>
 )
-
-export default Intro

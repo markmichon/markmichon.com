@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import { NavLink } from "./Links"
-import Logo from "./Logo"
-import theme from "../styles/theme"
+import React from 'react'
+import styled from 'styled-components'
+import { NavLink } from './Links'
+import Logo from './Logo'
+import theme from '../styles/theme'
 
 const LogoTab = styled.div`
   background-color: ${theme.color.black};
@@ -15,7 +15,7 @@ const LogoTab = styled.div`
   }
 
   &::before {
-    content: "";
+    content: '';
     height: 100%;
     width: 1rem;
     left: -1rem;

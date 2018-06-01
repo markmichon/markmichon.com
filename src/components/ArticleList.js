@@ -1,9 +1,42 @@
-import React from "react"
-import styled from "styled-components"
-import theme from "../styles/theme"
-import { UnstyledLink } from "./Links"
+import React from 'react'
+import styled, { extend } from 'styled-components'
+import { themeGet } from 'styled-system'
+import theme from '../styles/theme'
+import { UnstyledLink } from './Links'
+import { Box, Text, Heading } from './Radicals'
 
-export const ArticleList = styled.ul`
+export const HeadingContainer = styled.div`
+  margin-bottom: 0.5rem;
+`
+export const HeadingTitle = Heading.extend`
+
+  @media (min-width:${themeGet('breakpoint.1', '800px')}) {
+    &::before {
+      content: '${props => props.title}';
+      position: absolute;
+      top: 1.5em;
+      font-size:2.5em;
+      font-family: ${themeGet('fonts.serif', 'serif')};
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1;
+      transform: rotate(-90deg);
+      left: -2.2em;
+      color: hsl(42, 36%, 95%);
+      @media (min-width:${theme.breakpoints.l}) {
+      font-size: 3em;
+      }
+    }
+  }
+`
+
+export const HeadingDetails = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.sizes.xs};
+`
+
+export const List = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -12,7 +45,7 @@ export const ArticleList = styled.ul`
   align-items: flex-start;
 `
 
-export const ArticleListItem = styled.li`
+export const ListItem = styled.li`
   margin-bottom: 1rem;
   width: auto;
   color: ${theme.black};
@@ -40,7 +73,7 @@ export const ArticleListItem = styled.li`
       font-size: ${theme.sizes.xl};
     }
     &::before {
-      content: "";
+      content: '';
       top: 0;
 
       position: absolute;
@@ -66,13 +99,13 @@ export const ArticleListItem = styled.li`
   }
 `
 
-export const ArticleListLink = UnstyledLink.extend`
+export const Link = UnstyledLink.extend`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `
 
-export const ArticleListDate = styled.span`
+export const ItemDate = styled.span`
   display: block;
   color: ${theme.color.medium};
   font-weight: bold;

@@ -1,17 +1,16 @@
-import React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import Link from "../components/Links"
-import { MarkdownAST } from "../components/Markdown"
+import React from 'react'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import Link from '../components/Links'
+import { MarkdownAST } from '../components/Markdown'
 
-import { Article, ArticleTitle } from "../components/Article"
-import Nav from "../components/Nav"
-import Footer from "../components/Footer"
-import Layout from "../components/Layout"
-import theme from "../styles/theme"
+import { Article, ArticleTitle } from '../components/Article'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
+import Layout from '../components/Layout'
+import theme from '../styles/theme'
 
-require("prismjs/themes/prism-okaidia.css")
+require('prismjs/themes/prism-okaidia.css')
 
 const ArticleBody = styled.div`
   max-width: ${theme.measure};
@@ -41,9 +40,6 @@ const Template = ({ data }) => {
   )
 }
 
-Template.propTypes = {
-  data: PropTypes.object.isRequired
-}
 export default Template
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
