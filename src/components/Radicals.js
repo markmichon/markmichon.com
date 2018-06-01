@@ -48,9 +48,30 @@ export const Heading = system(
   'color',
   'space',
   'width',
+  'maxWidth',
   'textAlign',
   'lineHeight',
   'fontWeight',
   'letterSpacing'
 )
 Heading.displayName = 'Heading'
+
+export const Grid = system(
+  {
+    is: 'div',
+    display: 'grid',
+    gridGap: [3],
+  },
+  'space',
+  'maxWidth',
+  'gridGap',
+  'gridRowGap',
+  'gridColumnGap',
+  'gridColumn',
+  'gridRow',
+  'gridAutoFlow',
+  'gridAutoRows',
+  'gridAutoColumns',
+  'gridTemplateRows',
+  'gridTemplateColumns'
+)
