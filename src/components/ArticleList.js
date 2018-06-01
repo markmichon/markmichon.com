@@ -30,12 +30,6 @@ export const HeadingTitle = Heading.extend`
   }
 `
 
-export const HeadingDetails = styled.p`
-  margin: 0;
-  padding: 0;
-  font-size: ${theme.sizes.xs};
-`
-
 export const List = styled.ul`
   list-style-type: none;
   margin: 0;
