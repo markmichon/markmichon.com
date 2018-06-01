@@ -1,8 +1,8 @@
 import React from 'react'
-import rehypeReact from 'rehype-react'
+import RehypeReact from 'rehype-react'
 
-export const MarkdownAST = ({ components, ast }) => {
-  const renderNodes = new rehypeReact({
+export default ({ components, ast }) => {
+  const renderNodes = new RehypeReact({
     createElement: React.createElement,
     components: components || {},
   }).Compiler

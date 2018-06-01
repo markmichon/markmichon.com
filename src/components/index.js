@@ -1,5 +1,5 @@
 import Alert from './Alert'
-import { Article, ArticleTitle } from './Article'
+
 import Content from './Content'
 import Footer from './Footer'
 import Icon from './Icon'
@@ -23,8 +23,6 @@ import {
 
 export {
   Alert,
-  Article,
-  ArticleTitle,
   Content,
   Footer,
   Icon,
