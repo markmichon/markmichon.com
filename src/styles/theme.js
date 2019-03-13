@@ -18,8 +18,8 @@ const breakpoints = {
 const typography = {
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-  serif: '"ff-meta-serif-web-pro", Georgia, "Times New Roman", serif',
-  fancy: '"ff-meta-serif-web-pro", Georgia, serif',
+  serif: '"SourceSerif", Georgia, "Times New Roman", serif',
+  fancy: '"SourceSerif", Georgia, serif',
   sizes: {
     xxxl: '3rem',
     xxl: '2.25rem',

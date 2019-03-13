@@ -1,9 +1,9 @@
-const path = require("path")
+const path = require('path')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const articleTemplate = path.resolve("src/templates/article.js")
+  const articleTemplate = path.resolve('src/templates/article.js')
 
   return graphql(`
     {
@@ -34,7 +34,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.path,
         component: articleTemplate,
-        context: {}
+        context: {},
       })
     })
   })

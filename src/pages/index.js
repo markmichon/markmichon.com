@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Intro from '../components/Intro'
 
 import { Link } from '../components/Links'
@@ -17,15 +18,16 @@ const Index = props => {
       <Nav />
       <Intro />
       <Box
-        is="section"
-        maxWidth={['100%', '60%', '50%']}
-        mx="auto"
+        as="section"
+        maxWidth={['36em']}
+        ml={[3, 3, '20%', '30%']}
+        mr={[3, 3, 'auto']}
         position="relative"
       >
         <Box mb={3}>
           <ArticleList.HeadingTitle
             title="Articles"
-            is="h2"
+            as="h2"
             fontWeight="extra"
             fontSize={4}
           >

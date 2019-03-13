@@ -1,77 +1,89 @@
-import system from 'system-components'
+import styled from 'styled-components'
+import {
+  space,
+  color,
+  position,
+  maxWidth,
+  alignItems,
+  alignContent,
+  justifyContent,
+  flexWrap,
+  flexDirection,
+  flex,
+  display,
+  fontFamily,
+  fontSize,
+  width,
+  textAlign,
+  letterSpacing,
+  lineHeight,
+  fontWeight,
+  gridGap,
+  gridRowGap,
+  gridColumnGap,
+  gridColumn,
+  gridRow,
+  gridAutoFlow,
+  gridAutoRows,
+  gridAutoColumns,
+  gridTemplateRows,
+} from 'styled-system'
 
-export const Box = system(
-  {
-    is: 'div',
-    display: 'block',
-  },
-  'space',
-  'color',
-  'position',
-  'maxWidth',
-  // flexbox
-  'alignItems',
-  'alignContent',
-  'justifyContent',
-  'flexWrap',
-  'flexDirection',
-  'flex'
-)
+export const Box = styled.div`
+  display: block;
+  ${space}
+  ${color}
+  ${position}
+  ${maxWidth}
+  ${alignItems}
+  ${alignContent}
+  ${justifyContent}
+  ${flexWrap}
+  ${flexDirection}
+  ${flex}
 
+`
 Box.displayName = 'Box'
 
-export const Text = system(
-  {
-    is: 'p',
-    mb: 2,
-    color: 'black',
-    fontSize: 2,
-  },
-  'display',
-  'space',
-  'fontFamily',
-  'width',
-  'textAlign',
-  'letterSpacing',
-  'lineHeight'
-)
+export const Text = styled.p`
+  ${display}
+  ${space}
+  ${fontFamily}
+  ${width}
+  ${textAlign}
+  ${letterSpacing}
+  ${lineHeight}
 
-export const Heading = system(
-  {
-    is: 'h1',
-    display: 'block',
-    fontWeight: '700',
-    fontSize: [3, 4, 5],
-    m: 0,
-  },
-  'fontFamily',
-  'color',
-  'space',
-  'width',
-  'maxWidth',
-  'textAlign',
-  'lineHeight',
-  'fontWeight',
-  'letterSpacing'
-)
+`
+
+export const Heading = styled.h1`
+  display: block;
+  font-weight: 700;
+  margin: 0;
+  ${fontFamily}
+  ${color}
+  ${space}
+  ${width}
+  ${maxWidth}
+  ${textAlign}
+  ${lineHeight}
+  ${fontWeight}
+  ${fontSize}
+  ${letterSpacing}
+
+`
 Heading.displayName = 'Heading'
 
-export const Grid = system(
-  {
-    is: 'div',
-    display: 'grid',
-    gridGap: [3],
-  },
-  'space',
-  'maxWidth',
-  'gridGap',
-  'gridRowGap',
-  'gridColumnGap',
-  'gridColumn',
-  'gridRow',
-  'gridAutoFlow',
-  'gridAutoRows',
-  'gridAutoColumns',
-  'gridTemplateRows',
-  'gridTemplateColumns'
-)
+export const Grid = styled.div`
+  display: grid;
+  ${gridGap}
+  ${gridRowGap}
+  ${gridColumnGap}
+  ${gridColumn}
+  ${gridRow}
+  ${gridAutoFlow}
+  ${gridAutoRows}
+  ${gridAutoColumns}
+  ${gridTemplateRows}
+
+`

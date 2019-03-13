@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Link } from '../components/Links'
 import MarkdownAST from '../components/Markdown'
@@ -10,7 +11,7 @@ import Layout from '../components/Layout'
 import theme from '../styles/theme'
 import { Box, Heading, Text } from '../components/Radicals'
 
-require('prismjs/themes/prism-okaidia.css')
+import 'prismjs/themes/prism-okaidia.css' // eslint-disable-line
 
 const ArticleBody = styled.div`
   max-width: ${theme.measure};

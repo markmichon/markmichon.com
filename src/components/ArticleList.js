@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { extend } from 'styled-components'
+import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 import theme from '../styles/theme'
 import { UnstyledLink } from './Links'
@@ -8,22 +8,22 @@ import { Box, Text, Heading } from './Radicals'
 export const HeadingContainer = styled.div`
   margin-bottom: 0.5rem;
 `
-export const HeadingTitle = Heading.extend`
+export const HeadingTitle = styled(Heading)`
 
-  @media (min-width:${themeGet('breakpoint.1', '800px')}) {
+  @media (min-width:800px) {
     &::before {
       content: '${props => props.title}';
       position: absolute;
       top: 1.5em;
       font-size:2.5em;
-      font-family: ${themeGet('fonts.serif', 'serif')};
+      font-family: var(--serif);
       font-weight: 400;
       font-style: italic;
       line-height: 1;
       transform: rotate(-90deg);
       left: -2.2em;
       color: hsl(42, 36%, 95%);
-      @media (min-width:${theme.breakpoints.l}) {
+      @media (min-width: 1000px) {
       font-size: 3em;
       }
     }
@@ -42,7 +42,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   margin-bottom: 1rem;
   width: auto;
-  color: ${theme.black};
+  color: var(--black);
 
   h3,
   h4 {
@@ -52,9 +52,9 @@ export const ListItem = styled.li`
   }
 
   h3 {
-    font-family: ${theme.serif};
+    font-family: var(--serif);
     font-weight: bold;
-    font-size: ${theme.sizes.l};
+    font-size: var(--l);
 
     position: relative;
     width: auto;
@@ -63,15 +63,15 @@ export const ListItem = styled.li`
     transition-duration: 0ms;
     overflow: hidden;
 
-    @media (min-width: ${theme.breakpoints.l}) {
-      font-size: ${theme.sizes.xl};
+    @media (min-width: 1000px) {
+      font-size: var(--xl);
     }
     &::before {
       content: '';
       top: 0;
 
       position: absolute;
-      background-color: ${theme.color.brand[1]};
+      background-color: var(--brand-color);
       height: 100%;
       width: 100%;
 
@@ -84,16 +84,16 @@ export const ListItem = styled.li`
     transform: translateX(100%);
   }
   h4 {
-    font-size: ${theme.sizes.s};
+    font-size: var(--s);
     font-weight: normal;
   }
 
   &:hover h3 {
-    color: ${theme.color.brand[1]};
+    color: var(--brand-color);
   }
 `
 
-export const Link = UnstyledLink.extend`
+export const Link = styled(UnstyledLink)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -101,9 +101,9 @@ export const Link = UnstyledLink.extend`
 
 export const ItemDate = styled.span`
   display: block;
-  color: ${theme.color.medium};
+  color: #ccc;
   font-weight: bold;
-  font-family: ${theme.sansSerif};
-  font-size: ${theme.sizes.xxs};
+  font-family: var(--sans-serif);
+  font-size: var(--xs);
   text-transform: uppercase;
 `

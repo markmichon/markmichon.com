@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from '../components/Links'
+import { Link } from './Links'
 import Logo from './Logo'
 import theme from '../styles/theme'
 import { paddingSetup } from '../styles/utils'
-import { Heading, Box, Text } from '../components/Radicals'
+import { Heading, Box, Text } from './Radicals'
 
 const Name = styled.h1`
   font-weight: normal;
@@ -93,24 +93,22 @@ const NavBlock = styled.nav`
 `
 
 export default () => (
-  <Box mt={3} mb={4}>
-    <Box ml={[3, 3, 'auto']} mr={[3, 3, 'auto']} maxWidth={750}>
-      <Heading fontWeight="extra" fontSize={[4, 5, 6]}>
-        Hi, I&#1370;m Mark.
-      </Heading>
-      {/* <Tagline>Let&#1370;s build a better web.</Tagline> */}
-      <Heading is="h2" fontFamily="serif">
-        Designer, Developer, Teacher
-      </Heading>
-      <Text>
-        I am a software designer working in education. Code can be found on{' '}
-        <Link href="https://github.com/markmichon">GitHub</Link>, short thoughts
-        on <Link href="https://twitter.com/markmichon">Twitter</Link>, and
-        adventures on{' '}
-        <Link href="https://instagram.com/markmichon">Instagram</Link>. Have an
-        interesting opportunity you’d like to discuss? Let&#1370;s build a
-        better web!
-      </Text>
-    </Box>
+  <Box mx={[3, 3, 6]} my={4} maxWidth={750}>
+    <Heading fontWeight="bold" fontSize={[2, 2, 3]}>
+      Mark Michon
+    </Heading>
+    {/* <Tagline>Let&#1370;s build a better web.</Tagline> */}
+    <Heading as="h2" fontFamily="serif" fontSize={[2, 2, 3]}>
+      Designer, Developer, Teacher
+    </Heading>
+    <Text>
+      I am a software designer working in education. Code can be found on{' '}
+      <Link href="https://github.com/markmichon">GitHub</Link>, short thoughts
+      on <Link href="https://twitter.com/markmichon">Twitter</Link>, and
+      adventures on{' '}
+      <Link href="https://instagram.com/markmichon">Instagram</Link>. Have an
+      interesting opportunity you’d like to discuss? Let&#1370;s build a better
+      web!
+    </Text>
   </Box>
 )

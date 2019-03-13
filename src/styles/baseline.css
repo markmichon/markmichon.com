@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'SourceSerif';
+  src: url('public/SourceSerifVariable-Roman.tiff') format('truetype');
+}
+
 :root {
   /* Units */
   --baseUnit: 1rem;
@@ -11,9 +16,9 @@
   --white: #fff;
 
   /* Typefaces */
-  --sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --serif: "ff-meta-serif-web-pro", "Georgia", "Times New Roman", serif;
+  --sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --serif: 'ff-meta-serif-web-pro', 'Georgia', 'Times New Roman', serif;
   --xxxl: 3rem;
   --xxl: 2.25rem;
   --xl: 1.5rem;
@@ -89,7 +94,7 @@ ol {
   list-style-type: decimal;
 }
 ul {
-  lis-style-type: disc;
+  list-style-type: disc;
 }
 li {
   margin-bottom: var(--halfUnit);
