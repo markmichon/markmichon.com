@@ -1,7 +1,8 @@
 ---
-date: "2013-05-09T00:00:00Z"
+date: '2013-05-09T00:00:00Z'
 keywords: css, html, tutorial
-meta_description: Learn how to create a scroll-aware header, similar to that found
+meta_description:
+  Learn how to create a scroll-aware header, similar to that found
   here at markmichon.com
 subtitle: How to create a scroll-dependant main nav, like that found on this site.
 title: Creating a Scroll Dependent Navigation
@@ -11,23 +12,25 @@ categories: ['development']
 
 Fixed headers are popular in web design these days. They offer an extra layer of visual depth, as well as providing a way for the user to easily explore a site without returning to the top of a page. Unfortunately, there are a few drawbacks to this technique. Here is a [live demo](http://codepen.io/markmichon/full/yicGB), and here is the full, [coded version on codepen](http://codepen.io/markmichon/pen/yicGB).
 
-##A bit of theory and UX
+## A bit of theory and UX
+
 Depending on the height of your header and the height of the users browser, valuable screen real estate may be sacrificed in order for your design to accommodate the fixed header. Additionally, depending on the type of content you have, a constant bar across the top of the viewport might draw focus away. This is especially noticeable with starker contrasts and text-heavy pages.
 
 When creating the scroll-dependent version, I set out to try and anticipate when the user might want to check the navigation. Generally, we find that when a user begins to scroll back up the page, they are attempting to either return back to a previous portion of the article or a different page of the site. With this in mind, I've decided that by monitoring the upward scroll of the page, we can create a fairly accurate _guess_ that the user wants to go somewhere else.
 
-##Time for Some Code
+## Time for Some Code
 
 Let's begin with the basic HTML and CSS:
+
 ```html
-  <header class="global-header">
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
-  </header>
-  ...
+<header class="global-header">
+  <ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+  </ul>
+</header>
+...
 ```
 
 Adapt this as you like, the key is that we target our header in some way. In this case I use a class called 'global-header'.
@@ -57,30 +60,28 @@ The second class, which we haven't seen yet, is going to be applied to the heade
 At this point we have a standard fixed header that follows the user as they scroll up and down the page. Now let us add the javascript. Note that I'm also using a bit of jQuery just to simplifiy the process, but this could also be done with any number of libraries, or even pure javascript if you see fit.
 
 ```js
-  //Requires JQuery or Zepto
-  $(document).ready(function(){
-
+//Requires JQuery or Zepto
+$(document).ready(function() {
   // Cache Header
-  var $header = $('.global-header');
+  var $header = $('.global-header')
 
   // Get height of global-header to use later as starting point
-  var $hHeight = $header.height();
+  var $hHeight = $header.height()
 
   // Set initial position to current position on page
-  var prevTop = $(window).scrollTop();
+  var prevTop = $(window).scrollTop()
 
   // Scroll event
   $(window).on('scroll', function(e) {
-    st = $(this).scrollTop(); // Set scroll location
+    st = $(this).scrollTop() // Set scroll location
     if (st > prevTop && st > $hHeight) {
-      $header.addClass('global-header-scrolling');
+      $header.addClass('global-header-scrolling')
     } else {
-      $header.removeClass('global-header-scrolling');
+      $header.removeClass('global-header-scrolling')
     }
-    prevTop = st;
-  });
-
-});
+    prevTop = st
+  })
+})
 ```
 
 The comments should be rather straightfoward, but here's what we're doing:

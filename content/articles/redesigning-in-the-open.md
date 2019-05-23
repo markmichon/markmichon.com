@@ -1,8 +1,8 @@
 ---
-path: "/redesigning-in-the-open"
-date: "2017-09-06"
-title: "Redesigning in the Open"
-subtitle: "This site is in flux! Learn more about the state of disarray"
+path: /redesigning-in-the-open
+date: '2017-09-06'
+title: 'Redesigning in the Open'
+subtitle: 'This site is in flux! Learn more about the state of disarray'
 ---
 
 If you're viewing this, there's a good chance most of the site looks broken. Like many before, I've decided to perform much of this site's redesign in the open!
