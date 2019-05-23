@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
+    "@markmichon/system-font-stacks": "^0.1.1",
     "@mdx-js/mdx": "^1.0.18",
     "@mdx-js/react": "^1.0.16",
     "@mdx-js/tag": "^0.20.3",

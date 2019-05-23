@@ -937,6 +937,11 @@
     signedsource "^1.0.0"
     yargs "^9.0.0"
 
+"@markmichon/system-font-stacks@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@markmichon/system-font-stacks/-/system-font-stacks-0.1.1.tgz#9e647184bb94a1c87c8f5370e1168dfe399324c5"
+  integrity sha512-NasC+pwR0HKQDADIm0FIXt0Qa9vtK0ASZ+5wUKaSRRWTA0vblvH8p26jCggu6QZ9d7MIzZV1Z4rMA/nfAFqlzQ==
+
 "@mdx-js/mdx@^1.0.18":
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.0.19.tgz#ee5323fb2f00f8910b64d58126f54c08d61b3e73"

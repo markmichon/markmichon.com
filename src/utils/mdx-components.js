@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from '../components/Links'
 import CodeBlock from '../components/CodeBlock'
 import CodeEmbed from '../components/CodeEmbed'
-import { Heading, Box, Text } from '../components/Radicals'
+import { Heading, Box, Text, HR } from '../components/Radicals'
 
 const P = props => (
   <Text
@@ -14,13 +14,30 @@ const P = props => (
   />
 )
 
+const Inline = props => (
+  <Text
+    as="code"
+    fontFamily="mono"
+    {...props}
+    bg="grey"
+    color="white"
+    py={1}
+    px={2}
+    display="inline-block"
+  />
+)
+
 const BlockQuote = props => <Box as="blockquote" {...props} />
 
 const components = {
   a: props => <Link {...props} />,
   p: P,
-  h2: props => <Heading as="h2" my={3} fontWeight="600" {...props} />,
-  h3: props => <Heading as="h3" {...props} />,
+  hr: HR,
+  inlineCode: Inline,
+  h2: props => (
+    <Heading as="h2" fontSize="1.5em" my={3} fontWeight="600" {...props} />
+  ),
+  h3: props => <Heading as="h3" fontSize="1.25em" my={3} {...props} />,
   wrapper: ({ children, ...props }) => {
     const updatedChildren = children.map(child => {
       if (child.props.className === 'footnotes') {

@@ -13,7 +13,6 @@ import components from '../utils/mdx-components'
 import { Box, Heading, Text } from '../components/Radicals'
 
 export default ({ children }) => {
-  console.log(children)
   return (
     <Layout>
       <Nav />

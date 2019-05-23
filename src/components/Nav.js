@@ -64,7 +64,14 @@ const Nav = ({ location }) => {
         <Flex alignItems="center">
           <Logo color="hsl(0,0%,100%)" size="48" />
           {showHeading && (
-            <Heading fontSize="1rem" color="white">
+            <Heading
+              fontSize="1.25rem"
+              lineHeight="1"
+              color="white"
+              ml={3}
+              fontWeight="100"
+              fontFamily="normal"
+            >
               Mark Michon
             </Heading>
           )}

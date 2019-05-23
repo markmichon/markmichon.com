@@ -1,16 +1,15 @@
 /* eslint-disable */
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+
 import Helmet from 'react-helmet'
 import config from '../../data/config'
 import { css, Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
-import { themeGet } from 'styled-system'
-import styled from '@emotion/styled'
+
 import theme from '../styles/theme'
 import { Box } from '../components/Radicals'
-
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import '../../static/SourceSerifVariable-Roman.ttf'
 
 const globals = css`
@@ -55,7 +54,7 @@ const globals = css`
   }
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <ThemeProvider theme={theme}>
     <Fragment>
       <Global styles={globals} />
@@ -67,7 +66,9 @@ const Layout = ({ children }) => (
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
+        <Nav location={location} />
         <>{children}</>
+        <Footer />
       </Box>
     </Fragment>
   </ThemeProvider>

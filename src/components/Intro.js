@@ -4,16 +4,18 @@ import { Link } from './Links'
 import { Heading, Box, Text } from './Radicals'
 
 export default () => (
-  <div
-    css={css`
-      margin: 3rem 0;
-    `}
-  >
-    <Heading as="h1" font="serif" weight="400" fontSize={4}>
+  <Box my={6}>
+    <Heading as="h1" fontFamily="normal" fontWeight="100" fontSize="2em">
       Mark Michon
     </Heading>
     {/* <Tagline>Let&#1370;s build a better web.</Tagline> */}
-    <Heading as="h2" fontFamily="serif" weight="800" fontSize={5}>
+    <Heading
+      as="h2"
+      // fontFamily="serif"
+      // fontWeight="800"
+      textStyle="serifHeading"
+      fontSize={['1.675em', '2em', '2.25em']}
+    >
       Building a Better Web.
     </Heading>
     <Text
@@ -41,5 +43,5 @@ export default () => (
       </Link>
       .
     </Text>
-  </div>
+  </Box>
 )

@@ -15,9 +15,7 @@ import { Box, Heading, Text } from '../components/Radicals'
 export default ({ data, location }) => {
   const post = data.mdx
   return (
-    <Layout>
-      <Nav location={location} />
-
+    <Layout location={location}>
       <Box
         ml="auto"
         mr="auto"
@@ -43,7 +41,6 @@ export default ({ data, location }) => {
             <MDXRenderer>{post.code.body}</MDXRenderer>
           </MDXProvider>
         </Box>
-        <Footer />
       </Box>
     </Layout>
   )

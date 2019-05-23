@@ -7,7 +7,7 @@ import { themeGet } from 'styled-system'
 import Intro from '../components/Intro'
 
 import { Link, UnstyledLink } from '../components/Links'
-import { Box, Heading, Text } from '../components/Radicals'
+import { Box, Heading, Text, HR } from '../components/Radicals'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
@@ -43,7 +43,7 @@ const Item = styled.li`
   h3 {
     font-family: ${theme.fonts.serif};
     font-weight: 600;
-    font-size: ${theme.fontSizes.large};
+    font-size: 1.25em;
 
     position: relative;
     width: auto;
@@ -82,11 +82,22 @@ const Item = styled.li`
 
 const Articles = styled.ul`
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 1rem 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  /* &::before {
+    content: '';
+    height: 100%;
+    width: 15vw;
+    left: -16vw;
+    top: 0;
+    position: absolute;
+    background-color: ${theme.colors.black};
+    z-index: 1;
+  } */
 `
 
 const ArticleDate = styled.span`
@@ -105,9 +116,33 @@ const ArticleLink = styled(UnstyledLink)`
 `
 
 const SectionTitle = styled(Heading)`
+  display: inline-block;
+  position: relative;
+  color: ${theme.colors.white};
+  padding: 0.25em 0.5em;
+  background-color: ${theme.colors.black};
+  line-height: 1;
+
+  @media (max-width: ${theme.breakpoints[1]}) {
+    margin-bottom: ${theme.space[3]}px;
+    padding-left: 0;
+    &::before {
+      content: '';
+      height: 100%;
+      width: 1em;
+      left: -1em;
+      top: 0;
+      position: absolute;
+      background-color: inherit;
+      z-index: 1;
+    }
+  }
+
   @media (min-width: ${theme.breakpoints[1]}) {
-    transform: translate(-1em, 8em) rotate(-90deg);
+    left: -1rem;
+    transform: rotate(-90deg) translateX(-100%);
     transform-origin: bottom left;
+    z-index: 2;
   }
 `
 
@@ -117,8 +152,6 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <Nav />
-
       <Box
         maxWidth={theme.measure}
         // mx="1rem"
@@ -128,25 +161,16 @@ const Index = ({ data }) => {
         css={css({ position: 'relative' })}
       >
         <Intro />
-        <div
-          css={css`
-            margin-bottom: 8px;
-            position: relative;
-          `}
+
+        <SectionTitle
+          as="h2"
+          fontSize="1.5em"
+          fontWeight="100"
+          fontFamily="serif"
         >
-          <SectionTitle as="h2" fontSize={4} fontWeight="100">
-            Selected Articles
-          </SectionTitle>
-          {/* 
-          <p
-          css={css`
-          font-size: 14px;
-          `}
-          >
-          The following are a few chosen articles. Have a look around the{' '}
-          <Link to="#archive">Archive</Link> to see more.
-        </p> */}
-        </div>
+          Selected Articles
+        </SectionTitle>
+
         <Articles>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
@@ -155,21 +179,30 @@ const Index = ({ data }) => {
                 <ArticleLink to={post.frontmatter.path}>
                   <h3>{post.frontmatter.title}</h3>
                   <ArticleDate>{post.frontmatter.date}</ArticleDate>
-                  {/* <h4>{post.frontmatter.subtitle}</h4> */}
+                  {/* <p>{post.excerpt}</p> */}
                 </ArticleLink>
               </Item>
             ))}
         </Articles>
+
+        <SectionTitle
+          as="h2"
+          fontSize="1.5em"
+          fontWeight="100"
+          fontFamily="serif"
+        >
+          Open Source Projects
+        </SectionTitle>
         <Articles>
           {projects
             .filter(project => project.node.title.length > 0)
             .map(({ node: project }, idx) => (
-              <li key={project.name}>
-                <p>
-                  {project.title} - {project.url}
-                </p>
-                <p>{project.description}</p>
-              </li>
+              <Item key={idx} id={idx}>
+                <ArticleLink to={project.url}>
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </ArticleLink>
+              </Item>
             ))}
         </Articles>
       </Box>
@@ -183,7 +216,7 @@ export default Index
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 5) {
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 6) {
       edges {
         node {
           excerpt(pruneLength: 250)

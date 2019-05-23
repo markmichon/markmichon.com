@@ -28,7 +28,9 @@ const Text = styled.p({}, TYPOGRAPHY, COMMON, textStyle)
 
 Text.defaultProps = {
   fontFamily: 'normal',
-  theme,
+  mb: 3,
+  lineHeight: 1.7,
+  fontSize: '1em',
 }
 
 const Heading = styled.h1({}, COMMON, TYPOGRAPHY, textStyle)
@@ -67,4 +69,14 @@ const FullBleed = styled(Box)`
   margin-left: 50%;
   transform: translateX(-50%);
 `
-export { Heading, Box, Text, Grid, FullBleed, Flex }
+
+const HR = styled.hr`
+  display: block;
+  height: 4px;
+  width: 5rem;
+  margin: 2rem auto;
+  background-color: red;
+  border: none;
+`
+
+export { Heading, Box, Text, Grid, FullBleed, Flex, HR }

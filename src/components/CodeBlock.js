@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import styled from '@emotion/styled'
 import { css, jsx } from '@emotion/core'
 import theme from 'prism-react-renderer/themes/nightOwl'
+import t from '../styles/theme'
 
 const CodeWrapper = styled.pre`
   width: 100%;
@@ -11,6 +12,7 @@ const CodeWrapper = styled.pre`
   transform: translateX(-50%);
   overflow-y: scroll;
   border-radius: 8px;
+  font-family: ${t.fonts.mono};
 `
 
 // Problematic double-`pre` implementation. Further research needed

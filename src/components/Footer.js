@@ -19,18 +19,21 @@ const links = [
 ]
 
 const Footer = (...props) => (
-  <Box as="footer" {...props}>
-    <Flex justifyContent="center" mt={4}>
+  <Box as="footer" {...props} p={4} mt={5}>
+    <Flex justifyContent="center">
       <UnstyledLink to="/">
         <Logo size="48" />
       </UnstyledLink>
     </Flex>
     <Flex justifyContent="center">
-      {links.map((link, idx) => (
+      {/* {links.map((link, idx) => (
         <UnstyledLink key={idx} to={link.path}>
           {link.name}
         </UnstyledLink>
-      ))}
+      ))} */}
+      <Text fontSize=".675em" color="grey" mb={0}>
+        All materials © Mark Michon 2019
+      </Text>
     </Flex>
   </Box>
 )
