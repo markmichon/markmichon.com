@@ -1,25 +1,25 @@
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import theme from '../styles/theme'
 
 const BaseLink = styled.a`
   color: inherit;
   text-decoration: none;
   transition: color 200ms ease-in-out, box-shadow 200ms ease-in-out;
-  box-shadow: inset 0 -0.125rem 0 ${theme.color.brand[0]};
+  box-shadow: inset 0 -0.125rem 0 ${theme.colors.brands.l};
   padding: 0.125em;
 
   &:hover {
-    color: ${theme.color.brand[1]};
-    box-shadow: inset 0 -0.125rem 0 ${theme.color.brand[1]};
+    color: ${theme.colors.brand};
+    box-shadow: inset 0 -0.125rem 0 ${theme.colors.brand};
   }
 `
 
 const InternalLink = BaseLink.withComponent(GatsbyLink)
 
 export const NavLink = styled(InternalLink)`
-  color: ${theme.color.medium};
+  color: hsl(0, 0%, 40%);
   text-decoration: none;
   font-weight: bold;
   box-shadow: none;

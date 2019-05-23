@@ -11,9 +11,19 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
-
+    'gatsby-plugin-emotion',
+    'gatsby-transformer-yaml',
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          articles: require.resolve('./src/templates/article.js'),
+          default: require.resolve('./src/templates/mdx.js'),
+        },
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -24,7 +34,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/articles`,
+        path: `${__dirname}/data`,
+        name: 'data',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/articles`,
         name: 'articles',
       },
     },
@@ -42,23 +59,6 @@ module.exports = {
     //     // },
     //   },
     // },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {},
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
-      },
-    },
     // {
     // resolve: `gatsby-plugin-feed-generator`,
     // },

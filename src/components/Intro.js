@@ -1,114 +1,45 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { Fragment as F } from 'react'
+import { css } from '@emotion/core'
 import { Link } from './Links'
-import Logo from './Logo'
-import theme from '../styles/theme'
-import { paddingSetup } from '../styles/utils'
 import { Heading, Box, Text } from './Radicals'
 
-const Name = styled.h1`
-  font-weight: normal;
-  font-family: ${theme.sansSerif};
-  font-size: ${theme.sizes.l};
-  line-height: 1;
-`
-
-const Tagline = styled.h2`
-  font-weight: 800;
-  font-family: ${theme.sansSerif};
-  font-size: ${theme.sizes.xl};
-  line-height: 1;
-  margin-top: ${theme.halfUnit};
-  color: ${theme.color.white};
-  background-color: ${theme.color.brand[1]};
-  padding: 1rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-
-  @media (min-width: ${theme.breakpoints.m}) {
-    font-size: ${theme.sizes.xxl};
-  }
-  @media (min-width: ${theme.breakpoints.l}) {
-    font-size: ${theme.sizes.xxxl};
-  }
-`
-const SubTagline = styled.h3`
-  font-weight: bold;
-  font-family: ${theme.fancy};
-  font-size: ${theme.sizes.m};
-  line-height: 1.5;
-  font-style: italic;
-  margin-top: ${theme.halfUnit};
-  @media (min-width: ${theme.breakpoints.m}) {
-    font-size: ${theme.sizes.l};
-  }
-`
-
-const About = styled.div`
-  font-weight: normal;
-  font-size: ${theme.sizes.s};
-  font-family: ${theme.sansSerif};
-  z-index: 1;
-  @media (min-width: ${theme.breakpoints.m}) {
-    padding: 0.25rem 0 0 0;
-  }
-`
-const OffsetBlock = styled.div`
-  color: ${theme.black};
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-  max-width: calc(100% - 2rem);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media (min-width: ${theme.breakpoints.m}) {
-    max-width: 70%;
-  }
-`
-
-const NavBlock = styled.nav`
-  background-color: ${theme.color.black};
-  position: relative;
-  display: flex;
-  width: 10%;
-  padding: 1rem 1rem 1rem 2rem;
-  margin-left: 0;
-  transition: width 200ms ease-in-out;
-
-  &:hover {
-    width: 15%;
-  }
-
-  &::before {
-    content: '';
-    height: 100%;
-    width: 1rem;
-    left: -1rem;
-    top: 0;
-    position: absolute;
-    background-color: inherit;
-  }
-`
-
 export default () => (
-  <Box mx={[3, 3, 6]} my={4} maxWidth={750}>
-    <Heading fontWeight="bold" fontSize={[2, 2, 3]}>
+  <div
+    css={css`
+      margin: 3rem 0;
+    `}
+  >
+    <Heading as="h1" font="serif" weight="400" fontSize={4}>
       Mark Michon
     </Heading>
     {/* <Tagline>Let&#1370;s build a better web.</Tagline> */}
-    <Heading as="h2" fontFamily="serif" fontSize={[2, 2, 3]}>
-      Designer, Developer, Teacher
+    <Heading as="h2" fontFamily="serif" weight="800" fontSize={5}>
+      Building a Better Web.
     </Heading>
-    <Text>
-      I am a software designer working in education. Code can be found on{' '}
-      <Link href="https://github.com/markmichon">GitHub</Link>, short thoughts
-      on <Link href="https://twitter.com/markmichon">Twitter</Link>, and
-      adventures on{' '}
-      <Link href="https://instagram.com/markmichon">Instagram</Link>. Have an
-      interesting opportunity you’d like to discuss? Let&#1370;s build a better
-      web!
+    <Text
+      css={css`
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      `}
+    >
+      I am a front-end software developer working in education where I teach
+      newcomers to build the web. I care deeply about approachable design,
+      accessible applications, and the power of the open web.
     </Text>
-  </Box>
+    <Text>
+      Some of my projects include{' '}
+      <Link href="https://github.com/markmichon/system-font-stack">
+        a font stack library
+      </Link>
+      ,{' '}
+      <Link href="https://github.com/markmichon/classroom-master-lockdown">
+        a tool to help educators manage student repos
+      </Link>
+      , and{' '}
+      <Link href="https://notawhippet.com">
+        an app that helps identify when a dog isn't a whippet
+      </Link>
+      .
+    </Text>
+  </div>
 )

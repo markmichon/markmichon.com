@@ -1,34 +1,37 @@
 import React from 'react'
-import styled from 'styled-components'
-import theme from '../styles/theme'
+import { Box, Text, Flex } from './Radicals'
+import Logo from './Logo'
+import { UnstyledLink } from './Links'
 
-const StyledFooter = styled.footer`
-  background-color: ${theme.brand};
-  color: ${theme.white};
-  line-height: 1.6;
-  text-align: center;
-  font-size: 0.75rem;
-  font-family: ${theme.sansSerif};
-  margin-top: ${theme.baseUnit};
-  padding-top: ${theme.halfUnit};
-  padding-bottom: ${theme.halfUnit};
-
-  a {
-    color: ${theme.color.brand[1]};
-  }
-  p {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-`
+const links = [
+  {
+    path: '/writing',
+    name: 'Writing',
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+  },
+]
 
 const Footer = (...props) => (
-  <StyledFooter>
-    <p>&copy;2012-2017 Mark Michon</p>
-    <p>
-      <a href="https://github.com/markmichon">Github</a>{' '}
-      <a href="https://twitter.com/markmichon">Twitter</a>
-    </p>
-  </StyledFooter>
+  <Box as="footer" {...props}>
+    <Flex justifyContent="center" mt={4}>
+      <UnstyledLink to="/">
+        <Logo size="48" />
+      </UnstyledLink>
+    </Flex>
+    <Flex justifyContent="center">
+      {links.map((link, idx) => (
+        <UnstyledLink key={idx} to={link.path}>
+          {link.name}
+        </UnstyledLink>
+      ))}
+    </Flex>
+  </Box>
 )
 export default Footer

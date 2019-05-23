@@ -1,58 +1,60 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import styled from '@emotion/styled'
 import { Link } from '../components/Links'
-import MarkdownAST from '../components/Markdown'
-
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 import theme from '../styles/theme'
+import components from '../utils/mdx-components'
 import { Box, Heading, Text } from '../components/Radicals'
 
-import 'prismjs/themes/prism-okaidia.css' // eslint-disable-line
-
-const ArticleBody = styled.div`
-  max-width: ${theme.measure};
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 0.5rem;
-  font-family: ${theme.serif};
-`
-export default ({ data }) => {
-  const { markdownRemark: post } = data
+export default ({ data, location }) => {
+  const post = data.mdx
   return (
     <Layout>
-      <Nav />
+      <Nav location={location} />
 
-      <Box ml="auto" mr="auto" pb={1} maxWidth="100%">
+      <Box
+        ml="auto"
+        mr="auto"
+        px={5}
+        py={[5, 5, 5, 10]}
+        maxWidth="100%"
+        fontSize={[2, 3]}
+      >
         <Helmet title={`Mark Michon - ${post.frontmatter.title}`} />
         <Heading
           fontFamily="serif"
           textAlign="center"
           maxWidth="36em"
-          mx={[3, 'auto']}
-          my={4}
-          fontSize={[5, 6, 7]}
+          mx={[3, 'auto', 'auto']}
+          my={2}
+          fontSize={[4, 4, 5, 6]}
+          fontWeight="600"
         >
           {post.frontmatter.title}
         </Heading>
-        <Box ml={[3, 'auto']} mr={[3, 'auto']} maxWidth="36em">
-          <MarkdownAST ast={post.htmlAst} components={{ a: Link }} />
+        <Box mx="auto" maxWidth={['36em']}>
+          <MDXProvider components={components}>
+            <MDXRenderer>{post.code.body}</MDXRenderer>
+          </MDXProvider>
         </Box>
+        <Footer />
       </Box>
-
-      <Footer />
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      htmlAst
+    mdx(frontmatter: { path: { eq: $path } }) {
+      code {
+        body
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

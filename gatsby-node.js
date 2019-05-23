@@ -1,25 +1,40 @@
 const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = ({ actions, graphql }) => {
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'Mdx') {
+    const value = node.frontmatter.path || createFilePath({ node, getNode })
+    createNodeField({
+      name: 'slug',
+      node,
+      value,
+    })
+  }
+}
+
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const articleTemplate = path.resolve('src/templates/article.js')
-
-  return graphql(`
+  const articles = await graphql(`
     {
-      allMarkdownRemark(
+      allMdx(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
+        filter: { fileAbsolutePath: { regex: "/(articles)/" } }
       ) {
         edges {
           node {
-            html
-            htmlAst
             id
             frontmatter {
               date
               path
               title
+            }
+            fields {
+              slug
             }
           }
         }
@@ -29,13 +44,20 @@ exports.createPages = ({ actions, graphql }) => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
+    return result
+  })
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: articleTemplate,
-        context: {},
-      })
+  const posts = articles.data.allMdx.edges
+
+  posts.forEach(post => {
+    createPage({
+      path: post.node.fields.slug,
+      component: articleTemplate,
+      context: {
+        // slug: post.node.fields.slug,
+      },
     })
   })
+
+  // Create normal pages
 }
