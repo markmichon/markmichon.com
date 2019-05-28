@@ -10,12 +10,12 @@ import theme from '../styles/theme'
 import { Box } from '../components/Radicals'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import '../../static/SourceSerifVariable-Roman.ttf'
+import sourceserif from '../styles/SourceSerifVariable-Roman.ttf.woff2'
 
 const globals = css`
   @font-face {
     font-family: 'source-serif-var';
-    src: url('./SourceSerifVariable-Roman.ttf.woff2') format('truetype');
+    src: url(${sourceserif}) format('truetype');
     font-weight: 100 800;
   }
 
