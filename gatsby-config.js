@@ -15,6 +15,18 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-transformer-yaml',
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Mark Michon',
+        short_name: 'Mark Michon',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: 'hsl(352, 68%, 50%)',
+        display: 'browser',
+        icon: 'img/favicon.svg',
+      },
+    },
+    {
       resolve: 'gatsby-mdx',
       options: {
         extensions: ['.mdx', '.md'],
