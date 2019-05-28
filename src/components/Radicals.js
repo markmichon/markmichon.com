@@ -73,10 +73,37 @@ const FullBleed = styled(Box)`
 const HR = styled.hr`
   display: block;
   height: 4px;
-  width: 5rem;
+  width: 8rem;
   margin: 2rem auto;
-  background-color: red;
   border: none;
+  ${COMMON}
 `
 
-export { Heading, Box, Text, Grid, FullBleed, Flex, HR }
+HR.defaultProps = {
+  backgroundColor: 'grey',
+}
+
+const BlockQuote = styled(Text)`
+  font-style: italic;
+  border-left: 4px solid ${theme.colors.brand};
+  ${LAYOUT}
+`
+BlockQuote.defaultProps = {
+  as: 'blockquote',
+  px: 3,
+  mb: 3,
+}
+
+const SRText = styled.span`
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+`
+
+export { Heading, Box, Text, Grid, FullBleed, Flex, HR, BlockQuote, SRText }

@@ -184,7 +184,7 @@ const Index = ({ data }) => {
               </Item>
             ))}
         </Articles>
-
+        <HR />
         <SectionTitle
           as="h2"
           fontSize="1.5em"
@@ -200,7 +200,9 @@ const Index = ({ data }) => {
               <Item key={idx} id={idx}>
                 <ArticleLink to={project.url}>
                   <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <Text fontSize="1em" fontWeight="400" mb={0}>
+                    {project.description}
+                  </Text>
                 </ArticleLink>
               </Item>
             ))}

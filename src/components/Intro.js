@@ -30,7 +30,7 @@ export default () => (
     </Text>
     <Text>
       Some of my projects include{' '}
-      <Link href="https://github.com/markmichon/system-font-stack">
+      <Link href="https://github.com/markmichon/system-font-stacks">
         a font stack library
       </Link>
       ,{' '}

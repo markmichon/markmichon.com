@@ -1,8 +1,14 @@
 import React from 'react'
 
-const IconBase = ({ children, color, size, width, height, ...props }) => (
+const IconBase = ({
+  children,
+  color = 'currentColor',
+  width,
+  height = width,
+  ...props
+}) => (
   <svg
-    fill="currentColor"
+    fill={color}
     preserveAspectRatio="xMidYMid meet"
     width={width}
     height={height}

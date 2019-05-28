@@ -30,7 +30,8 @@ export default ({ data, location }) => {
           textAlign="center"
           maxWidth="36em"
           mx={[3, 'auto', 'auto']}
-          my={2}
+          mt={2}
+          mb={6}
           fontSize={[4, 4, 5, 6]}
           fontWeight="600"
         >
