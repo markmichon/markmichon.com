@@ -10,6 +10,8 @@ path: /scroll-aware-header/
 categories: ['development']
 ---
 
+  >This article was first published in 2013 and the information may be out of date
+
 Fixed headers are popular in web design these days. They offer an extra layer of visual depth, as well as providing a way for the user to easily explore a site without returning to the top of a page. Unfortunately, there are a few drawbacks to this technique. Here is a [live demo](http://codepen.io/markmichon/full/yicGB), and here is the full, [coded version on codepen](http://codepen.io/markmichon/pen/yicGB).
 
 ## A bit of theory and UX

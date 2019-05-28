@@ -1,0 +1,64 @@
+---
+path: /variable-fonts-gatsby
+date: '2019-05-28'
+title: 'Adding Variable Fonts to a Gatsby Site'
+subtitle: 'The basics with CSS-in-JS'
+---
+
+// Intro to variable fonts
+
+In the examples below I'm using [emotion's](https://emotion.sh) global syntax, but you can define the `@fontface` declaration wherever best suits your project. On this site, all global styles are applied in the core layout wrapper component.
+
+<!-- TODO: Link to src on github -->
+
+## Importing font files into Gatsby
+
+Gatsby has two approaches to dealing with static files. You can store the file in the `static` folder which will end up copied to `public` after build, or you can use the [preferred import method](https://www.gatsbyjs.org/docs/importing-assets-into-files/).
+
+Let's look at both scenarios, as depending on your needs you may find one more approachable than the other.
+
+### Approach 1: Importing with Webpack
+
+To import with webpack, we can treat the font file as we would any other import. Here it is given a name, any will work, and then included in the fontface declaration.
+
+```js
+import sourceSerif from './SourceSerifVariable-Roman.ttf.woff2'
+
+const globals = css`
+  @font-face {
+    font-family: 'source-serif-var';
+    src: url(${sourceSerif}) format('truetype');
+    font-weight: 100 800;
+  }
+
+  html {
+    font-family: 'source-serif-var', serif;
+  }
+`
+```
+
+Notice that we use the named import as the url for the font-face source.
+
+### Approach 2: Using the static folder
+
+The [static folder](https://www.gatsbyjs.org/docs/static-folder) may be a useful option if you are performing some build-time optization on the typeface outside of Gatsby's standard build process(more on that in a later article). In this scenario, your variable font is placed in the `static` folder at the root. Gatsby copies it over to the public folder, which makes the final path relative to the root of your main index file.
+
+```js
+const globals = css`
+  @font-face {
+    font-family: 'source-serif-var';
+    src: url('./SourceSerifVariable-Roman.ttf.woff2') format('truetype');
+    font-weight: 100 800;
+  }
+
+  html {
+    font-family: 'source-serif-var', serif;
+  }
+`
+```
+
+The key different here is the src location. While the file may be in the `static` folder, we are referncing its final location in the `@font-face` src declaration.
+
+---
+
+While variable fonts still require a some extra work and occasionally extra overhead, if your site is making use of multiple weights or styles you may find that their inclusion saves resources.

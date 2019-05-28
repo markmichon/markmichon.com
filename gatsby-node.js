@@ -14,9 +14,51 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+const createDrafts = async ({ createPage, graphql }) => {
+  const articleTemplate = path.resolve('src/templates/article.js')
+  const drafts = await graphql(`
+    {
+      allMdx(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+        filter: { fileAbsolutePath: { regex: "/(drafts)/" } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              date
+              path
+              title
+            }
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
+    return result
+  })
 
+  const posts = drafts.data.allMdx.edges
+
+  posts.forEach(post => {
+    createPage({
+      path: post.node.fields.slug,
+      component: articleTemplate,
+      context: {
+        // slug: post.node.fields.slug,
+      },
+    })
+  })
+}
+
+const createArticles = async ({ createPage, graphql }) => {
   const articleTemplate = path.resolve('src/templates/article.js')
   const articles = await graphql(`
     {
@@ -58,6 +100,15 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     })
   })
+}
 
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  createArticles({ createPage, graphql })
+
+  if (process.env.NODE_ENV !== 'production') {
+    createDrafts({ createPage, graphql })
+  }
   // Create normal pages
 }
