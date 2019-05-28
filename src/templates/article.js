@@ -1,58 +1,58 @@
-import React from "react"
-import Helmet from "react-helmet"
-import styled from "styled-components"
-import PropTypes from "prop-types"
-import Link from "gatsby-link"
-import {
-  Article,
-  ArticleTitle,
-  Nav,
-  PageContainer,
-  Content,
-  Footer
-} from "../components"
-require("prismjs/themes/prism-okaidia.css")
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXProvider } from '@mdx-js/react'
+import styled from '@emotion/styled'
+import { Link } from '../components/Links'
+import Nav from '../components/Nav'
+import Footer from '../components/Footer'
+import Layout from '../components/Layout'
+import theme from '../styles/theme'
+import components from '../utils/mdx-components'
+import { Box, Heading, Text } from '../components/Radicals'
 
-const ArticleBody = styled.div`
-  max-width: ${p => p.theme.measure};
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Georgia;
-`
-
-const ArticleNav = styled.nav`
-  text-align: center;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-`
-
-const Template = ({ data }) => {
-  const { markdownRemark: post } = data
+export default ({ data, location }) => {
+  const post = data.mdx
   return (
-    <div>
-      <ArticleNav>
-        <Link to="/">M</Link>
-      </ArticleNav>
-      <main>
-        <Article>
-          <Helmet title={`Mark Michon - ${post.frontmatter.title}`} />
-          <ArticleTitle>{post.frontmatter.title}</ArticleTitle>
-          <ArticleBody dangerouslySetInnerHTML={{ __html: post.html }} />
-        </Article>
-      </main>
-      <Footer />
-    </div>
+    <Layout location={location}>
+      <Box
+        ml="auto"
+        mr="auto"
+        px={5}
+        py={[5, 5, 5, 10]}
+        maxWidth="100%"
+        fontSize={[2, 3]}
+      >
+        <Helmet title={`Mark Michon - ${post.frontmatter.title}`} />
+        <Heading
+          fontFamily="serif"
+          textAlign="center"
+          maxWidth="36em"
+          mx={[3, 'auto', 'auto']}
+          mt={2}
+          mb={6}
+          fontSize={[4, 4, 5, 6]}
+          fontWeight="600"
+        >
+          {post.frontmatter.title}
+        </Heading>
+        <Box mx="auto" maxWidth={['36em']}>
+          <MDXProvider components={components}>
+            <MDXRenderer>{post.code.body}</MDXRenderer>
+          </MDXProvider>
+        </Box>
+      </Box>
+    </Layout>
   )
 }
 
-Template.propTypes = {
-  data: PropTypes.object.isRequired
-}
-export default Template
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+    mdx(frontmatter: { path: { eq: $path } }) {
+      code {
+        body
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

@@ -1,31 +1,51 @@
-import React from "react"
-import styled from "styled-components"
-import Link from "gatsby-link"
-import Logo from "./Logo"
-import theme from "../styles/theme"
-const NavContainer = styled.nav`
-  width: 100%;
-  background-color: #333;
-  padding: ${theme.baseUnit};
-  display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  @media (min-width: 800px) {
-    display: block;
+import React from 'react'
+import styled from '@emotion/styled'
+import { NavLink, UnstyledLink } from './Links'
+import { Heading, Flex } from './Radicals'
+import Logo from './Logo'
+import theme from '../styles/theme'
+
+const LogoTab = styled(UnstyledLink)`
+  background-color: ${theme.colors.black};
+  position: relative;
+  padding: 1rem 1rem 1rem 1rem;
+  margin-left: 0;
+  transition: width 200ms ease-in-out;
+
+  &:hover {
   }
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 1rem;
+    left: -1rem;
+    top: 0;
+    position: absolute;
+    background-color: inherit;
+    z-index: 1;
+  }
+`
+
+const NavBlock = styled.nav`
+  display: flex;
+  padding-top: 1rem;
+  margin-left: 0;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const NavList = styled.ul`
   margin: 0;
-  padding: 0;
+  padding: 1rem 1rem 1rem 1rem;
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
   align-items: center;
+  font-size: ${theme.fontSizes.small};
+
+  list-style: none;
+  color: ${theme.colors.black};
 
   @media (min-width: 800px) {
-    display: block;
   }
   li {
     margin-bottom: 0;
@@ -35,20 +55,38 @@ const NavList = styled.ul`
   }
 `
 
-const Nav = () => (
-  <NavContainer>
-    <Link to="/">
-      <Logo color={theme.light} />Mark Michon
-    </Link>
-    <NavList>
+const Nav = ({ location }) => {
+  const path = (location && location.pathname) || '/'
+  const showHeading = path === '/' ? null : true
+  return (
+    <NavBlock>
+      <LogoTab to="/">
+        <Flex alignItems="center">
+          <Logo color="hsl(0,0%,100%)" size="48" />
+          {showHeading && (
+            <Heading
+              fontSize="1.25rem"
+              lineHeight="1"
+              color="white"
+              ml={3}
+              fontWeight="100"
+              fontFamily="normal"
+            >
+              Mark Michon
+            </Heading>
+          )}
+        </Flex>
+      </LogoTab>
+      {/* <NavList>
       <li>
-        <Link to="/">Articles</Link>
+        <NavLink to="/">Articles</NavLink>
       </li>
       <li>
-        <Link to="/">Projects</Link>
+        <NavLink to="/">Projects</NavLink>
       </li>
-    </NavList>
-  </NavContainer>
-)
+    </NavList> */}
+    </NavBlock>
+  )
+}
 
 export default Nav

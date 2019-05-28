@@ -1,102 +1,47 @@
-import React from "react"
-import styled from "styled-components"
-import Link from "gatsby-link"
-import Logo from "./Logo"
-import theme from "../styles/theme"
-const Name = styled.h1`
-  font-weight: normal;
-  font-family: ${p => p.theme.sansSerif};
-  font-size: ${p => p.theme.sizes.xl};
-  line-height: 1;
-`
+import React, { Fragment as F } from 'react'
+import { css } from '@emotion/core'
+import { Link } from './Links'
+import { Heading, Box, Text } from './Radicals'
 
-const Tagline = styled.h2`
-  font-weight: bold;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: ${p => p.theme.sizes.xxl};
-  line-height: 1;
-  margin-top: ${p => p.theme.halfUnit};
-  color: hsl(211, 13%, 35%);
-`
-
-const Bar = styled.div`
-  background-color: ${p => (p.backgroundColor ? p.backgroundColor : "inherit")};
-  color: ${p => (p.color ? p.color : "inherit")};
-  padding: 1rem;
-
-  grid-column-start: ${p => (p.start ? p.start : "")};
-  grid-column-end: ${p => (p.end ? p.end : "11")};
-`
-
-const SubTagline = styled.h3`
-  font-weight: bold;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: ${p => p.theme.sizes.l};
-  line-height: 1;
-  margin-top: ${p => p.theme.halfUnit};
-`
-
-const IntroAbout = Bar.extend`
-  font-weight: normal;
-  font-size: ${p => p.theme.sizes.s};
-  font-family: ${p => p.theme.sansSerif};
-  transform: translate(0, -2rem);
-
-  p {
-    max-width: 30em;
-  }
-`
-const OffsetBlock = Bar.extend`
-  padding: 0.5rem;
-  position: relative;
-
-  > * {
-    transform: translate(-1.5rem, -1.5rem);
-  }
-`
-const Landing = styled.div`
-  display: grid;
-  margin-top: 2rem;
-  grid-template-columns: minmax(1rem, 10vw) repeat(8, 1fr) minmax(1rem, 10vw);
-  grid-template-rows: auto;
-  grid-row-gap: 1rem;
-`
-
-// const NavBlock = styled.nav`
-//   padding: 1rem 2rem;
-//   margin-bottom: 1rem;
-//   background-color: ${theme.dark};
-//   width: 60%;
-// `
-
-const NavBlock = Bar.withComponent("nav")
-
-const Intro = () => (
-  <Landing>
-    <NavBlock backgroundColor={theme.dark} start="6">
-      <Logo color={theme.light} width="4rem" />
-    </NavBlock>
-    <OffsetBlock
-      backgroundColor="hsl(45, 25%, 95%)"
-      color="hsl(210, 11%, 50%)"
-      start="2"
+export default () => (
+  <Box my={6}>
+    <Heading as="h1" fontFamily="normal" fontWeight="100" fontSize="2em">
+      Mark Michon
+    </Heading>
+    {/* <Tagline>Let&#1370;s build a better web.</Tagline> */}
+    <Heading
+      as="h2"
+      // fontFamily="serif"
+      // fontWeight="800"
+      textStyle="serifHeading"
+      fontSize={['1.675em', '2em', '2.25em']}
     >
-      <Name>Mark Michon</Name>
-      <Tagline>Building a better web.</Tagline>
-      <SubTagline>Designer, Developer, Teacher</SubTagline>
-      {/* <Link to={"about"}>Learn more</Link> */}
-    </OffsetBlock>
-    <IntroAbout
-      backgroundColor="hsl(210, 11%, 50%)"
-      color={theme.light}
-      start="5"
+      Building a Better Web.
+    </Heading>
+    <Text
+      css={css`
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      `}
     >
-      <p>
-        Designer and Developer with a penchant for teaching. I focus on building
-        intuitive, accessible, and performant user experiences.
-      </p>
-    </IntroAbout>
-  </Landing>
+      I am a front-end software developer working in education where I teach
+      newcomers to build the web. I care deeply about approachable design,
+      accessible applications, and the power of the open web.
+    </Text>
+    <Text>
+      Some of my projects include{' '}
+      <Link href="https://github.com/markmichon/system-font-stacks">
+        a font stack library
+      </Link>
+      ,{' '}
+      <Link href="https://github.com/markmichon/classroom-master-lockdown">
+        a tool to help educators manage student repos
+      </Link>
+      , and{' '}
+      <Link href="https://notawhippet.com">
+        an app that helps identify when a dog isn't a whippet
+      </Link>
+      .
+    </Text>
+  </Box>
 )
-
-export default Intro

@@ -160,17 +160,6 @@ const Index = ({ data }) => {
         fontSize={[2, 3]}
         css={css({ position: 'relative' })}
       >
-        <Intro />
-
-        <SectionTitle
-          as="h2"
-          fontSize="1.5em"
-          fontWeight="100"
-          fontFamily="serif"
-        >
-          Selected Articles
-        </SectionTitle>
-
         <Articles>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
@@ -184,29 +173,6 @@ const Index = ({ data }) => {
               </Item>
             ))}
         </Articles>
-        <HR />
-        <SectionTitle
-          as="h2"
-          fontSize="1.5em"
-          fontWeight="100"
-          fontFamily="serif"
-        >
-          Open Source Projects
-        </SectionTitle>
-        <Articles>
-          {projects
-            .filter(project => project.node.title.length > 0)
-            .map(({ node: project }, idx) => (
-              <Item key={idx} id={idx}>
-                <ArticleLink to={project.url}>
-                  <h3>{project.title}</h3>
-                  <Text fontSize="1em" fontWeight="400" mb={0}>
-                    {project.description}
-                  </Text>
-                </ArticleLink>
-              </Item>
-            ))}
-        </Articles>
       </Box>
 
       {/* <Footer mt={5} /> */}
@@ -216,9 +182,9 @@ const Index = ({ data }) => {
 
 export default Index
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMdx(sort: { order: DESC, fields: [frontmatter___date] }, limit: 6) {
+export const articlesQuery = graphql`
+  query Articles {
+    allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)

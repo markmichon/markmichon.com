@@ -1,5 +1,9 @@
+@font-face {
+  font-family: 'SourceSerif';
+  src: url('public/SourceSerifVariable-Roman.tiff') format('truetype');
+}
+
 :root {
-  /* Currently not working until gatsby v2 */
   /* Units */
   --baseUnit: 1rem;
   --halfUnit: 0.5rem;
@@ -12,9 +16,9 @@
   --white: #fff;
 
   /* Typefaces */
-  --sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  --serif: "ff-meta-serif-web-pro", "Georgia", "Times New Roman", serif;
+  --sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --serif: 'ff-meta-serif-web-pro', 'Georgia', 'Times New Roman', serif;
   --xxxl: 3rem;
   --xxl: 2.25rem;
   --xl: 1.5rem;
@@ -32,21 +36,16 @@
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: calc(14px + (18 - 14) * ( (100vw - 320px) / (1000 - 320)));
+  font-family: var(--sans-serif);
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1000 - 320)));
   line-height: 1.6;
-  /* background-color: ${theme.background}; */
-  /* color: ${theme.text}; */
+  background-color: hsl(40, 36%, 95%);
 }
 
 a {
-  /* color: ${theme.brand}; */
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
-  text-decoration-skip: ink;
 }
 
 img {
@@ -95,7 +94,7 @@ ol {
   list-style-type: decimal;
 }
 ul {
-  lis-style-type: disc;
+  list-style-type: disc;
 }
 li {
   margin-bottom: var(--halfUnit);

@@ -1,37 +1,56 @@
-const color = {
-  brand: "hsla(163, 71%, 35%, 1.00)",
-  background: "#fff",
-  text: "#333",
-  // dark: "hsl(211, 15%, 28%)",
-  dark: "hsl(0,0%,10%)",
-  light: "hsla(210, 20%, 95%, 1.00)",
-  link: "hsla(163, 71%, 35%, 1.00)"
-}
+import { getSans, getMono, getSerif } from '@markmichon/system-font-stacks'
 
-const typography = {
-  sansSerif:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-  serif: '"ff-meta-serif-web-pro", "Georgia", "Times New Roman", serif',
-  sizes: {
-    xxxl: "3em",
-    xxl: "2.25em",
-    xl: "1.5em",
-    l: "1.25em",
-    m: "1em",
-    s: ".875em",
-    xs: ".75em"
+const colors = {
+  text: 'hsl(0,0%, 40%)',
+  white: '#fff',
+  heading: '#333',
+  black: 'hsl(212, 12%, 25%)',
+  body: 'hsl(0,0, 40%)',
+  brand: 'hsl(352, 68%, 50%)',
+  brands: {
+    d: 'hsl(352, 68%, 40%)',
+    l: 'hsl(352, 68%, 60%)',
   },
-  measure: "36em"
+  grey: 'hsl(212, 10%, 40%)',
+  greys: {
+    d: 'hsl(212, 10%, 22%)',
+    l: 'hsl(212, 10%, 70%)',
+  },
 }
 
-const spacing = {
-  baseUnit: "1rem",
-  halfUnit: ".5rem",
-  doubleUnit: "2rem"
+const fonts = {
+  normal: getSans(),
+  mono: getMono(),
+  serif: getSerif('source-serif-var'),
 }
 
-const scale = {}
+const textStyles = {
+  serifHeading: {
+    fontFamily: fonts.serif,
+    letterSpacing: '1px',
+    fontWeight: 800,
+  },
+}
 
-const theme = { ...color, ...typography, ...spacing }
+const theme = {
+  colors,
+  breakpoints: ['30rem', '50rem', '62.5rem'],
+  fonts,
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 80],
+  space: [0, 4, 8, 16, 24, 32, 40, 48, 64, 80, 96, 112, 128],
+  measure: '36em',
+  fontWeights: {
+    light: 100,
+    normal: 400,
+    bold: 800,
+  },
+  textStyles,
+}
+
+// Aliases
+theme.fontSizes.tiny = '.875em'
+theme.fontSizes.small = '1em'
+theme.fontSizes.body = '1.25em'
+theme.fontSizes.large = '1.5em'
 
 export default theme
