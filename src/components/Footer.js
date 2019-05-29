@@ -41,8 +41,8 @@ const links = [
 const Footer = (...props) => (
   <Box as="footer" {...props} p={4} mt={5}>
     <Flex justifyContent="center">
-      <UnstyledLink to="/">
-        <Logo size="48" />
+      <UnstyledLink to="/" aria-label="Home Page">
+        <Logo size="48" aria-hidden="true" />
       </UnstyledLink>
     </Flex>
     <Flex justifyContent="center">
@@ -52,9 +52,14 @@ const Footer = (...props) => (
     </Flex>
     <Flex justifyContent="center">
       {links.map((link, idx) => (
-        <UnstyledLink key={idx} to={link.path} arial-label={link.name}>
+        <UnstyledLink
+          key={`${idx}-social-link`}
+          to={link.path}
+          arial-label={link.name}
+        >
           <IconBase
             width="24"
+            aria-hidden="true"
             css={{
               margin: '0 8px',
               '&:hover': {
@@ -64,7 +69,7 @@ const Footer = (...props) => (
           >
             {link.icon}
           </IconBase>
-          {/* <SRText>{link.name}</SRText> */}
+          <SRText>{link.name}</SRText>
         </UnstyledLink>
       ))}
     </Flex>

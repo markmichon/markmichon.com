@@ -8,6 +8,7 @@ import Intro from '../components/Intro'
 
 import { Link, UnstyledLink } from '../components/Links'
 import { Box, Heading, Text, HR } from '../components/Radicals'
+import SEO from '../components/SEO'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
@@ -152,6 +153,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Articles | Mark Michon" />
       <Box
         maxWidth={theme.measure}
         // mx="1rem"

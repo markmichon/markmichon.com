@@ -5,11 +5,10 @@ import Helmet from 'react-helmet'
 import config from '../../data/config'
 import { css, Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
-
 import theme from '../styles/theme'
 import { Box } from '../components/Radicals'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
+import Nav from './Nav'
+import Footer from './Footer'
 import sourceserif from '../styles/SourceSerifVariable-Roman.ttf.woff2'
 
 const globals = css`
@@ -59,13 +58,6 @@ const Layout = ({ children, location }) => (
     <Fragment>
       <Global styles={globals} />
       <Box m={[1, 2]} bg="white">
-        <Helmet
-          title={config.siteTitle}
-          meta={[
-            { name: 'description', content: config.siteDescription },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
         <Nav location={location} />
         <>{children}</>
         <Footer />

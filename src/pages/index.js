@@ -10,6 +10,7 @@ import { Link, UnstyledLink } from '../components/Links'
 import { Box, Heading, Text, HR } from '../components/Radicals'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import theme from '../styles/theme'
 
@@ -56,7 +57,7 @@ const Item = styled.li`
       top: 0;
 
       position: absolute;
-      background-color: ${p => scaleColor(p.id)};
+      background-color: ${p => scaleColor(p.modifier)};
       height: 100%;
       width: 100%;
 
@@ -146,12 +147,13 @@ const SectionTitle = styled(Heading)`
   }
 `
 
-const Index = ({ data }) => {
+const Index = ({ data, location }) => {
   const { edges: posts } = data.allMdx // eslint-disable-line
   const { edges: projects } = data.allProjectsYaml
 
   return (
-    <Layout>
+    <Layout location={location}>
+      <SEO title="Mark Michon" />
       <Box
         maxWidth={theme.measure}
         // mx="1rem"
@@ -175,7 +177,7 @@ const Index = ({ data }) => {
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({ node: post }, idx) => (
-              <Item key={post.id} id={idx}>
+              <Item key={post.id} modifier={idx}>
                 <ArticleLink to={post.frontmatter.path}>
                   <h3>{post.frontmatter.title}</h3>
                   <ArticleDate>{post.frontmatter.date}</ArticleDate>
@@ -197,7 +199,7 @@ const Index = ({ data }) => {
           {projects
             .filter(project => project.node.title.length > 0)
             .map(({ node: project }, idx) => (
-              <Item key={idx} id={idx}>
+              <Item key={idx} modifier={idx}>
                 <ArticleLink to={project.url}>
                   <h3>{project.title}</h3>
                   <Text fontSize="1em" fontWeight="400" mb={0}>
