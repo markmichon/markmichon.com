@@ -6,6 +6,7 @@ import { MDXProvider } from '@mdx-js/react'
 import styled from '@emotion/styled'
 import { Link } from '../components/Links'
 import Nav from '../components/Nav'
+import SEO from '../components/SEO'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
 import theme from '../styles/theme'
@@ -24,7 +25,7 @@ export default ({ data, location }) => {
         maxWidth="100%"
         fontSize={[2, 3]}
       >
-        <Helmet title={`Mark Michon - ${post.frontmatter.title}`} />
+        <SEO title={`${post.frontmatter.title} | Mark Michon`} />
         <Heading
           fontFamily="serif"
           textAlign="center"
