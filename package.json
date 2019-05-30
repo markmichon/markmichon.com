@@ -32,7 +32,7 @@
     "react-helmet": "^5.2.1",
     "shell-escape": "^0.2.0",
     "styled-system": "^4.2.2",
-    "subfont": "^3.6.2"
+    "subfont": "^3.6.3"
   },
   "scripts": {
     "build": "gatsby build",
