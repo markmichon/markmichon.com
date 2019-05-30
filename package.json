@@ -23,6 +23,7 @@
     "gatsby-plugin-subfont": "^1.0.6",
     "gatsby-remark-images": "3.0.11",
     "gatsby-source-filesystem": "2.0.33",
+    "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-yaml": "^2.1.12",
     "prism-react-renderer": "^0.1.6",
     "prismjs": "^1.16.0",
@@ -34,7 +35,7 @@
     "subfont": "^3.6.2"
   },
   "scripts": {
-    "build": "NODE_OPTIONS=--max-old-space-size=8192 gatsby build",
+    "build": "gatsby build",
     "lint": "eslint src/** --fix",
     "dev": "gatsby develop",
     "start": "gatsby develop",
