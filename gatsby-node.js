@@ -133,9 +133,9 @@ exports.onPostBuild = ({ store }) => {
     '--inline-css',
     '--root',
     `file://${root}`,
-    path.join(root, `/`, 'index.html'),
+    // path.join(root, `/`, 'index.html'),
+    ...paths,
   ]
-  console.log(baseArgs)
   const command = shellescape(baseArgs)
   execSync(command)
 }
