@@ -1,4 +1,6 @@
 const path = require('path')
+const { execSync } = require('child_process')
+const shellescape = require('shell-escape')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -111,4 +113,29 @@ exports.createPages = async ({ actions, graphql }) => {
     createDrafts({ createPage, graphql })
   }
   // Create normal pages
+}
+
+exports.onPostBuild = ({ store }) => {
+  const { pages } = store.getState()
+  const root = path.join(store.getState().program.directory, 'public')
+
+  const paths = []
+
+  pages.forEach(page => {
+    paths.push(path.join(root, page.path, 'index.html'))
+  })
+
+  // console.log(paths)
+
+  const baseArgs = [
+    'node_modules/.bin/subfont',
+    '-i',
+    '--inline-css',
+    '--root',
+    `file://${root}`,
+    path.join(root, `/`, 'index.html'),
+  ]
+  console.log(baseArgs)
+  const command = shellescape(baseArgs)
+  execSync(command)
 }

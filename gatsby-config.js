@@ -14,6 +14,7 @@ const config = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
     'gatsby-transformer-yaml',
+    // 'gatsby-plugin-subfont',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
