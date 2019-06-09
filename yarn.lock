@@ -5211,6 +5211,13 @@ fd-slicer@~1.1.0:
   dependencies:
     pend "~1.2.0"
 
+feed@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/feed/-/feed-3.0.0.tgz#be9cada49c692197e7e14083711597562d14a486"
+  integrity sha512-2/6RGigcsZkz04LMs8oncuoN08hCOndz7eseLtbSitvIkjDZPkNZY6Y9C2xgTzy1L8u4+TZvCJ/v5zxlmGy2kA==
+  dependencies:
+    xml-js "^1.6.11"
+
 figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
@@ -5714,13 +5721,13 @@ gatsby-plugin-emotion@^4.0.6:
     "@babel/runtime" "^7.0.0"
     "@emotion/babel-preset-css-prop" "^10.0.5"
 
-gatsby-plugin-feed-generator@latest:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed-generator/-/gatsby-plugin-feed-generator-1.0.8.tgz#9212abd6b630861150e1f24d5fa2acd8aa3e3e73"
-  integrity sha512-lvCvoXAMqO+ax/4n2el1eYQL+rNG1utscCPZNWWzMRH+sPW9WT6Qkd+/LCa3AUPkjkHcv7I+D0kOrEfLa+PF/w==
+gatsby-plugin-feed-generator@^2.0.0-0:
+  version "2.0.0-0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-feed-generator/-/gatsby-plugin-feed-generator-2.0.0-0.tgz#4e7371a42d7e25ce8a515da4870ddecfa1af9e3d"
+  integrity sha512-B0QLZmG4wafc59qItFAia69/nfr9v1UV1rckbexaebxj65L5dT7VvU6m59y5tqfPr0GLpRM4lpl1f0wNN5HWQw==
   dependencies:
+    feed "^3.0.0"
     pify "^3.0.0"
-    rss "^1.2.2"
 
 gatsby-plugin-manifest@^2.1.1:
   version "2.1.1"
@@ -8663,18 +8670,6 @@ mime-db@1.40.0, "mime-db@>= 1.40.0 < 2", mime-db@^1.28.0:
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.40.0.tgz#a65057e998db090f732a68f6c276d387d4126c32"
   integrity sha512-jYdeOMPy9vnxEqFRRo6ZvTZ8d9oPb+k18PKoYNYUe2stVEBPPwsln/qWzdbmaIvnhZ9v2P+CuecK+fpUfsV2mA==
 
-mime-db@~1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.25.0.tgz#c18dbd7c73a5dbf6f44a024dc0d165a1e7b1c392"
-  integrity sha1-wY29fHOl2/b0SgJNwNFloeexw5I=
-
-mime-types@2.1.13:
-  version "2.1.13"
-  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.13.tgz#e07aaa9c6c6b9a7ca3012c69003ad25a39e92a88"
-  integrity sha1-4HqqnGxrmnyjASxpADrSWjnpKog=
-  dependencies:
-    mime-db "~1.25.0"
-
 mime-types@^2.1.12, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24:
   version "2.1.24"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.24.tgz#b6f8d0b3e951efb77dedeca194cff6d16f676f81"
@@ -11488,14 +11483,6 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rss@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/rss/-/rss-1.2.2.tgz#50a1698876138133a74f9a05d2bdc8db8d27a921"
-  integrity sha1-UKFpiHYTgTOnT5oF0r3I240nqSE=
-  dependencies:
-    mime-types "2.1.13"
-    xml "1.0.1"
-
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -13964,6 +13951,13 @@ xhr@^2.0.1:
     parse-headers "^2.0.0"
     xtend "^4.0.0"
 
+xml-js@^1.6.11:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
+  integrity sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==
+  dependencies:
+    sax "^1.2.4"
+
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
@@ -13981,11 +13975,6 @@ xml2js@^0.4.5:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
-
-xml@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
-  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xmlbuilder@~9.0.1:
   version "9.0.7"
