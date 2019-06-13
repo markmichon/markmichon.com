@@ -13,6 +13,7 @@ const CodeWrapper = styled.pre`
   overflow-y: scroll;
   border-radius: 8px;
   font-family: ${t.fonts.mono};
+  font-size: 0.75em;
 `
 
 // Problematic double-`pre` implementation. Further research needed
