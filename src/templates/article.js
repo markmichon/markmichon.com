@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 import styled from '@emotion/styled'
 import { Link } from '../components/Links'
@@ -14,7 +14,7 @@ import components from '../utils/mdx-components'
 import { Box, Heading, Text } from '../components/Radicals'
 
 export default ({ data, location }) => {
-  const post = data.mdx
+  const post = data.mdx || {}
   return (
     <Layout location={location}>
       <Box
@@ -40,7 +40,7 @@ export default ({ data, location }) => {
         </Heading>
         <Box mx="auto" maxWidth={['36em']}>
           <MDXProvider components={components}>
-            <MDXRenderer>{post.code.body}</MDXRenderer>
+            <MDXRenderer>{post.body}</MDXRenderer>
           </MDXProvider>
         </Box>
       </Box>
@@ -51,9 +51,7 @@ export default ({ data, location }) => {
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     mdx(frontmatter: { path: { eq: $path } }) {
-      code {
-        body
-      }
+      body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

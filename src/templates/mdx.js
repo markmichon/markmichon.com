@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+
 import { MDXProvider } from '@mdx-js/react'
 import styled from '@emotion/styled'
 import { Link } from '../components/Links'
@@ -33,18 +33,3 @@ export default ({ children }) => {
     </Layout>
   )
 }
-
-// export const pageQuery = graphql`
-//   query BlogPostByPath($path: String!) {
-//     mdx(frontmatter: { path: { eq: $path } }) {
-//       code {
-//         body
-//       }
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         path
-//         title
-//       }
-//     }
-//   }
-// `

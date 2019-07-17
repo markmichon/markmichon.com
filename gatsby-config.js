@@ -86,11 +86,12 @@ const config = {
       },
     },
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
           articles: require.resolve('./src/templates/article.js'),
+          drafts: require.resolve('./src/templates/article.js'),
           default: require.resolve('./src/templates/mdx.js'),
         },
       },
