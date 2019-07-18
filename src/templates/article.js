@@ -14,7 +14,6 @@ import components from '../utils/mdx-components'
 import { Box, Heading, Text } from '../components/Radicals'
 
 export default ({ data, location }) => {
-  const post = data.mdx || {}
   return (
     <Layout location={location}>
       <Box
@@ -25,7 +24,7 @@ export default ({ data, location }) => {
         maxWidth="100%"
         fontSize={[2, 3]}
       >
-        <SEO title={`${post.frontmatter.title} | Mark Michon`} />
+        <SEO title={`${data.mdx.frontmatter.title} | Mark Michon`} />
         <Heading
           fontFamily="serif"
           textAlign="center"
@@ -36,11 +35,11 @@ export default ({ data, location }) => {
           fontSize={[4, 4, 5, 6]}
           fontWeight="600"
         >
-          {post.frontmatter.title}
+          {data.mdx.frontmatter.title}
         </Heading>
         <Box mx="auto" maxWidth={['36em']}>
           <MDXProvider components={components}>
-            <MDXRenderer>{post.body}</MDXRenderer>
+            <MDXRenderer>{data.mdx.body}</MDXRenderer>
           </MDXProvider>
         </Box>
       </Box>
@@ -49,8 +48,8 @@ export default ({ data, location }) => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    mdx(frontmatter: { path: { eq: $path } }) {
+  query PageById($id: String!) {
+    mdx(id: { eq: $id }) {
       body
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

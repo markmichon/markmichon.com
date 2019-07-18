@@ -55,6 +55,7 @@ const createDrafts = async ({ createPage, graphql }) => {
       component: articleTemplate,
       context: {
         // slug: post.node.fields.slug,
+        id: post.node.id,
       },
     })
   })
@@ -96,10 +97,10 @@ const createArticles = async ({ createPage, graphql }) => {
   posts.forEach(post => {
     createPage({
       path: post.node.fields.slug,
-      id: post.node.id,
       component: articleTemplate,
       context: {
         // slug: post.node.fields.slug,
+        id: post.node.id,
       },
     })
   })
