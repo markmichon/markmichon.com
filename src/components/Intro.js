@@ -1,36 +1,44 @@
-import React, { Fragment as F } from 'react'
-import { css } from '@emotion/core'
+/** @jsx jsx */
+import React from 'react'
+import { jsx } from 'theme-ui'
 import { Link } from './Links'
-import { Heading, Box, Text } from './Radicals'
+
+const P = props => (
+  <p
+    {...props}
+    sx={{ fontFamily: 'body', mb: 3, lineHeight: 'extra', fontSize: 'body' }}
+  />
+)
 
 export default () => (
-  <Box my={6} css={css({ zIndex: '2' })}>
-    <Heading as="h1" fontFamily="normal" fontWeight="100" fontSize="2em">
+  <div sx={{ my: 6, zIndex: '2', maxWidth: 1 }}>
+    <h1 sx={{ fontFamily: 'body', fontWeight: 'light', fontSize: 5 }}>
       Mark Michon
-    </Heading>
-    <Heading
-      as="h2"
-      textStyle="serifHeading"
-      fontSize={['1.675em', '2em', '2.25em']}
+    </h1>
+    <h2
+      sx={{
+        fontFamily: 'heading',
+        letterSpacing: 'tight',
+        fontWeight: 'heading',
+      }}
     >
       Building a Better Web.
-    </Heading>
-    <Text
-      css={css`
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-      `}
+    </h2>
+    <P
+      sx={{
+        my: '1rem',
+      }}
     >
       I am a front-end software developer working in education where I teach
       newcomers to build the web. I care deeply about approachable design,
       accessible applications, and the power of the open web.
-    </Text>
-    <Text>
+    </P>
+    <P>
       I'm currently looking for opportunities working with modern front-end
       libraries and design systems.{' '}
       <Link href="mailto:hello@markmichon.com">Get in touch.</Link>
-    </Text>
-    <Text>
+    </P>
+    <P>
       Some of my projects include{' '}
       <Link href="https://github.com/markmichon/system-font-stacks">
         a font stack library
@@ -44,6 +52,6 @@ export default () => (
         an app that helps identify when a dog isn't a whippet
       </Link>
       .
-    </Text>
-  </Box>
+    </P>
+  </div>
 )

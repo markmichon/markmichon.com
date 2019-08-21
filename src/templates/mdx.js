@@ -14,22 +14,22 @@ import { Box, Heading, Text } from '../components/Radicals'
 
 export default ({ children }) => {
   return (
-    <Layout>
-      <Nav />
+    // <Layout>
+    //   <Nav />
 
-      <Box
-        ml="auto"
-        mr="auto"
-        px={5}
-        py={[5, 5, 5, 10]}
-        maxWidth="100%"
-        fontSize={[2, 3]}
-      >
-        <Box mx="auto" maxWidth={['36em']}>
-          <MDXProvider components={components}>{children}</MDXProvider>
-        </Box>
-        <Footer />
-      </Box>
-    </Layout>
+    //   <Box
+    //     ml="auto"
+    //     mr="auto"
+    //     px={5}
+    //     py={[5, 5, 5, 10]}
+    //     maxWidth="100%"
+    //     fontSize={[2, 3]}
+    //   >
+    //     <Box mx="auto" maxWidth={['36em']}>
+    //       <MDXProvider components={components}>{children}</MDXProvider>
+    //     </Box>
+    //     <Footer />
+    //   </Box>
+    // </Layout>
   )
 }

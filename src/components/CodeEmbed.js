@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React from 'react'
-import { FullBleed } from './Radicals'
+import { jsx } from 'theme-ui'
 
 function Block(props) {
   const { service, name, file = 'index.js' } = props
@@ -34,9 +35,17 @@ function Block(props) {
 
 function CodeEmbed(props) {
   return (
-    <FullBleed my={4}>
+    <div
+      sx={{
+        mb: 4,
+        width: '100%',
+        minWidth: '60vw',
+        ml: '50%',
+        transform: 'translateX(-50%)',
+      }}
+    >
       <Block {...props} />
-    </FullBleed>
+    </div>
   )
 }
 

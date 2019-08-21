@@ -154,13 +154,14 @@ const createBlob = ({
   },
 })
 
-function setUp(canvas, { modifier = 40, points = 4, blobs = 3, frames = 5 }) {
+function setUp(canvas, { modifier = 0.08, points = 4, blobs = 3, frames = 5 }) {
   // const canvas = document.querySelector("canvas");
   const ctx = canvas.getContext('2d')
 
   const size = canvas.getBoundingClientRect().width
   const dpr = window.devicePixelRatio
   const radius = size * 0.25
+  modifier = modifier * size
 
   // let center = size / 2;
   let center = {
@@ -264,18 +265,7 @@ class BlobViz extends Component {
 
   render() {
     let style = this.props.style
-    return (
-      <canvas
-        ref="canvas"
-        style={{
-          position: 'absolute',
-          right: 0,
-          width: '30vw',
-          zIndex: '1',
-          ...style,
-        }}
-      ></canvas>
-    )
+    return <canvas ref="canvas" style={style}></canvas>
   }
 }
 

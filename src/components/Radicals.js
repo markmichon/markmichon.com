@@ -70,34 +70,6 @@ const FullBleed = styled(Box)`
   transform: translateX(-50%);
 `
 
-const HR = styled.hr`
-  display: block;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  margin: 2rem auto;
-  border: none;
-
-  &:before,
-  &:after {
-    content: '';
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    background-color: inherit;
-    border-radius: 50%;
-    z-index: 2;
-  }
-  &:before {
-    transform: translateX(-200%);
-  }
-  &:after {
-    transform: translateX(200%);
-  }
-
-  ${COMMON}
-`
-
 HR.defaultProps = {
   backgroundColor: 'grey',
 }

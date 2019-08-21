@@ -1,9 +1,10 @@
+/** @jsx jsx */
 import React from 'react'
-import { css, jsx } from '@emotion/core'
-import { Box, Text, Flex, SRText } from './Radicals'
+import { jsx } from 'theme-ui'
+import SRText from './SR'
 import Logo from './Logo'
 import { UnstyledLink } from './Links'
-import theme from '../styles/theme'
+
 import IconBase from './Icon'
 
 const links = [
@@ -38,19 +39,19 @@ const links = [
   },
 ]
 
-const Footer = (...props) => (
-  <Box as="footer" {...props} p={4} mt={5}>
-    <Flex justifyContent="center">
+const Footer = props => (
+  <footer sx={{ p: 4, mt: 5 }}>
+    <div sx={{ display: 'flex', justifyContent: 'center' }}>
       <UnstyledLink to="/" aria-label="Home Page">
         <Logo size="48" aria-hidden="true" />
       </UnstyledLink>
-    </Flex>
-    <Flex justifyContent="center">
-      <Text fontSize=".675em" color="grey" mb={2}>
+    </div>
+    <div sx={{ display: 'flex', justifyContent: 'center' }}>
+      <p sx={{ fontSize: 1, color: 'muted', mb: 2 }}>
         All materials © Mark Michon 2019
-      </Text>
-    </Flex>
-    <Flex justifyContent="center">
+      </p>
+    </div>
+    <div sx={{ display: 'flex', justifyContent: 'center' }}>
       {links.map((link, idx) => (
         <UnstyledLink
           key={`${idx}-social-link`}
@@ -60,11 +61,10 @@ const Footer = (...props) => (
           <IconBase
             width="24"
             aria-hidden="true"
-            css={{
-              margin: '0 8px',
-              '&:hover': {
-                fill: theme.colors.brand,
-              },
+            sx={{
+              my: 0,
+              mx: 2,
+              '&:hover': { fill: theme => `${theme.colors.primary}` },
             }}
           >
             {link.icon}
@@ -72,7 +72,7 @@ const Footer = (...props) => (
           <SRText>{link.name}</SRText>
         </UnstyledLink>
       ))}
-    </Flex>
-  </Box>
+    </div>
+  </footer>
 )
 export default Footer
