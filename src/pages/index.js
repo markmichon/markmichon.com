@@ -14,6 +14,8 @@ import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import theme from '../styles/theme'
 
+import BlobViz from '../components/BlobViz'
+
 const Container = styled.section`
   max-width: 36em;
   margin-left: 1rem;
@@ -160,8 +162,13 @@ const Index = ({ data, location }) => {
         ml={['1rem', '1rem', '15%']}
         mr="1rem"
         fontSize={[2, 3]}
-        css={css({ position: 'relative' })}
+        // css={css({ position: 'relative' })}
       >
+        <BlobViz config={{ points: 3 }} />
+        <BlobViz
+          config={{ points: 3 }}
+          style={{ width: '50px', left: 0, right: 'auto' }}
+        />
         <Intro />
 
         <SectionTitle

@@ -4,7 +4,7 @@ import { Link } from './Links'
 import { Heading, Box, Text } from './Radicals'
 
 export default () => (
-  <Box my={6}>
+  <Box my={6} css={css({ zIndex: '2' })}>
     <Heading as="h1" fontFamily="normal" fontWeight="100" fontSize="2em">
       Mark Michon
     </Heading>
