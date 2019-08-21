@@ -1,0 +1,34 @@
+---
+path: /state-dependant-state
+date: '2019-06-13'
+title: 'Interdependent state slices'
+subtitle: 'When state slices depend on content from one another, what do you do?'
+categories: ['react', 'redux']
+---
+
+What happens in an application when one slice of your local state becomes dependent on another slice? [Redux]() offers some guidance, but the solution often requires a bit more work. Let's look at an example:
+
+[image of spreadsheet]
+
+Take a two dimensional grid, similar to a spreadsheet. The number of column headers affects each of the rows. If we add a new column, the rows need to update to accommodate the new column count, and again if we remove a column. If the information was only displayed we could write a selector to represent the columns in each row, but the problem arises when the cells are editable and need contain their own unique content.
+
+```js
+{
+columns: [ {id: 1, title: 'A'}, ...],
+rows: [{
+	id: 2,
+	content: '...',
+	columns: [{ id: 1, content: '...'}, ...]
+}]
+}
+```
+
+Now every time changes are made to an individual column, each row needs to assess the state of its columns array and respond. **This, is state dependent state**. A change to column 1 needs to filter down to all reference to that column, without overriding any unique data, like we might find in a spreadsheet cell.
+
+In redux, or a similar reducer/action based system is to fire off the change action, followed by a reconciliation action that caries with it both state slices.
+
+In the case of a recent project, the shape ended up being three slices instead of two: the columns, the rows, and the column instances.
+
+// image of action affecting columns + action affecting column instances.
+
+Selectors bring everything together, and a `RECONCILE_COLUMNS` type in the column instances reducer does the work of keeping the nested columns in sync with the higher level column metadata.
