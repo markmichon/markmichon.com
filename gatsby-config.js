@@ -12,9 +12,15 @@ const config = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-theme-ui',
     'gatsby-transformer-yaml',
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-theme-style-guide',
+      options: {
+        basePath: '/design-system',
+      },
+    },
     {
       resolve: 'gatsby-plugin-feed-generator',
       options: {
@@ -92,7 +98,7 @@ const config = {
         defaultLayouts: {
           articles: require.resolve('./src/templates/article.js'),
           drafts: require.resolve('./src/templates/article.js'),
-          default: require.resolve('./src/templates/mdx.js'),
+          // default: require.resolve('./src/templates/mdx.js'),
         },
       },
     },
