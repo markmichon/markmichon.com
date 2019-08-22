@@ -11,7 +11,7 @@ import SEO from '../components/SEO'
 import Layout from '../components/Layout'
 import { breakpointStrings } from '../styles/theme'
 
-import BlobViz from '../components/BlobViz'
+import Wa from '../components/Wa'
 
 const Container = props => (
   <section
@@ -47,6 +47,8 @@ const Items = ({ data, filter, children, ...props }) => (
     {children}
   </ul>
 )
+
+// TODO: Refactor to cause less rule duplication
 const Item = props => {
   const { modifier } = props
   let color = scaleColor(modifier)
@@ -57,13 +59,15 @@ const Item = props => {
         mb: 3,
         width: 'auto',
         color: 'accent',
+        position: 'relative',
         'h3, h4': {
           margin: 0,
           width: 'auto',
         },
         h3: {
           fontFamily: 'heading',
-          fontWeight: 'body',
+          fontWeight: '500',
+          color: 'text',
           fontSize: [3, 4],
           position: 'relative',
           transition: 'color 0ms linear 300ms',
@@ -124,26 +128,19 @@ const SectionTitle = props => {
     <h2
       {...props}
       sx={{
-        fontSize: 4,
+        fontSize: [4, 5],
         fontWeight: 'light',
         fontFamily: 'heading',
         display: 'inline-block',
         position: 'relative',
         color: 'white',
-        py: 1,
-        px: 3,
+        py: 2,
+        pr: 3,
         mb: 3,
-        marginLeft: '-1rem',
-        bg: 'accent',
+        paddingLeft: 'calc(1rem + 15vw)',
+        marginLeft: `calc((1rem + 15vw) * -1)`,
+        bg: 'primary',
         lineHeight: '1',
-        [breakpointStrings[1]]: {
-          fontSize: 5,
-          ml: 0,
-          left: '-1rem',
-          transform: 'rotate(-90deg) translateX(-100%)',
-          transformOrigin: 'bottom left',
-          zIndex: 2,
-        },
       }}
     />
   )
@@ -156,6 +153,15 @@ const Index = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Mark Michon" />
+      {/* <BlobViz
+        config={{ points: 3 }}
+        style={{ position: 'absolute', right: 0, width: '30vw', zIndex: '1' }}
+      /> */}
+      {/* <BlobViz
+          config={{ points: 3 }}
+          style={{ width: '50px', left: 0, right: 'auto' }}
+        /> */}
+      <Intro />
       <div
         sx={{
           maxWidth: 1,
@@ -163,16 +169,6 @@ const Index = ({ data, location }) => {
           fontSize: [2, 3],
         }}
       >
-        <BlobViz
-          config={{ points: 3 }}
-          style={{ position: 'absolute', right: 0, width: '30vw', zIndex: '1' }}
-        />
-        {/* <BlobViz
-          config={{ points: 3 }}
-          style={{ width: '50px', left: 0, right: 'auto' }}
-        /> */}
-        <Intro />
-
         <SectionTitle>Selected Articles</SectionTitle>
 
         <Items>
@@ -182,13 +178,17 @@ const Index = ({ data, location }) => {
               <Item key={post.id} modifier={idx}>
                 <ItemLink to={post.frontmatter.path}>
                   <h3>{post.frontmatter.title}</h3>
-                  <ItemDate>{post.frontmatter.date}</ItemDate>
-                  {/* <p>{post.excerpt}</p> */}
+                  {/* <ItemDate>{post.frontmatter.date}</ItemDate> */}
+                  {idx === 0 ? (
+                    <p sx={{ lineHeight: 'body', fontSize: 2 }}>
+                      {post.excerpt}
+                    </p>
+                  ) : null}
                 </ItemLink>
               </Item>
             ))}
         </Items>
-        <HR fancy />
+        {/* <HR fancy /> */}
         <SectionTitle>Open Source Projects</SectionTitle>
         <Items>
           {projects

@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import React from 'react'
 import { jsx } from 'theme-ui'
-import BlobViz from './BlobViz'
+import Wa from './Wa'
 export default props => {
   if (props.fancy)
     return (
-      <BlobViz
+      <Wa
         config={{ points: 3 }}
         style={{
           width: '100px',

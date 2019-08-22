@@ -1,4 +1,6 @@
-import React, { useEffect, Component } from 'react'
+/** @jsx jsx */
+import React, { useEffect, useRef } from 'react'
+import { jsx } from 'theme-ui'
 // Helpers
 // Cubic ease-in-out
 function ease(k) {
@@ -159,8 +161,9 @@ function setUp(canvas, { modifier = 0.08, points = 4, blobs = 3, frames = 5 }) {
   const ctx = canvas.getContext('2d')
 
   const size = canvas.getBoundingClientRect().width
+
   const dpr = window.devicePixelRatio
-  const radius = size * 0.25
+  const radius = size * 0.33
   modifier = modifier * size
 
   // let center = size / 2;
@@ -252,21 +255,20 @@ function draw(circles, canvas) {
 }
 
 //  setUp();
-
-class BlobViz extends Component {
-  constructor(props) {
-    super(props)
-  }
-  componentDidMount() {
-    const canvas = this.refs.canvas
-    let config = this.props.config || {}
+function BlobViz(props) {
+  const ref = useRef()
+  const { style } = props
+  useEffect(() => {
+    const canvas = ref.current
+    const config = props.config || {}
     setUp(canvas, config)
-  }
 
-  render() {
-    let style = this.props.style
-    return <canvas ref="canvas" style={style}></canvas>
-  }
+    // return () => {
+    //   cleanup
+    // };
+  })
+
+  return <canvas {...props} ref={ref} sx={style}></canvas>
 }
 
 export default BlobViz
