@@ -66,7 +66,7 @@ const Nav = ({ location }) => {
     >
       <LogoTab to="/">
         <div sx={{ dispay: 'flex', alignItems: 'center' }}>
-          <Logo color="hsl(0,0%,100%)" size="48" />
+          <Logo color="hsl(0,0%,100%)" size="48px" />
           {showHeading && (
             <h1
               sx={{
