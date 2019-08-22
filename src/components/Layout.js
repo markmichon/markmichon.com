@@ -7,6 +7,7 @@ import { Global } from '@emotion/core'
 import Nav from './Nav'
 import Footer from './Footer'
 import sourceserif from '../styles/SourceSerifVariable-Roman.ttf.woff2'
+import inter from '../styles/Inter.var.woff2'
 
 // import theme from '../gatsby-plugin-theme-ui/index'
 import theme from '../styles/theme'
@@ -18,7 +19,7 @@ const Layout = ({ children, location }) => (
         styles={theme => ({
           '@font-face': {
             fontFamily: 'source-serif-var',
-            src: `local('Source Serif Variable'), url(${sourceserif}) format('truetype)`,
+            src: `local('Source Serif Variable'), url(${sourceserif}) format('truetype')`,
             fontWeight: '100 800',
           },
           '*': {
@@ -34,6 +35,15 @@ const Layout = ({ children, location }) => (
             backgroundColor: theme.colors.backgroundFar,
           },
         })}
+      />
+      <Global
+        styles={{
+          '@font-face': {
+            fontFamily: 'Inter',
+            src: `url(${inter}) format('woff2')`,
+            fontWeight: '100 900',
+          },
+        }}
       />
       <div sx={{ m: [1, 2], backgroundColor: 'background' }}>
         <Nav location={location} />

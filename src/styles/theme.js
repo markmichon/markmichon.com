@@ -3,7 +3,7 @@ import { getSans, getMono, getSerif } from '@markmichon/system-font-stacks'
 //
 
 const families = {
-  sans: getSans(),
+  sans: getSans('Inter'),
   mono: getMono(),
   serif: getSerif('source-serif-var'),
 }
@@ -71,12 +71,12 @@ const colors = {
   textLight: 'hsl(212,81%,20%)',
   text: 'hsl(0, 0%, 20%)',
   background: '#fff',
-  primary: 'hsl(352, 68%, 50%)',
+  primary: 'hsl(352, 67%, 53%)',
   primaryDark: 'hsl(352, 68%, 40%)',
   primaryLight: 'hsl(352, 68%, 60%)',
   secondary: 'hsl(352, 68%, 60%)',
   accent: 'hsl(212, 10%, 25%)',
-  muted: 'hsl(212,30%,90%)',
+  muted: 'hsl(212, 10%, 50%)',
   warning: 'hsl(49, 84%, 63%)',
   danger: 'hsl(10, 80%, 60%)',
   backgroundFar: 'hsl(40, 36%, 95%)',
@@ -86,7 +86,7 @@ const fontSizes = [12, 14, 16, 20, 24, 32, 48]
 fontSizes.body = fontSizes[2]
 
 const sizes = ['100%', '36rem', '70rem']
-const breakpoints = ['40em', '56em', '64em']
+const breakpoints = ['40em', '56em', '64em', '70em']
 const space = [0, 4, 8, 16, 32, 64]
 
 const scale = ['.675em', '1em', '1.25em', '1.5em', '2em']
