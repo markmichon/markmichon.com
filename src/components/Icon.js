@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React from 'react'
+import { jsx } from 'theme-ui'
 
 const IconBase = ({
   children,
@@ -13,7 +15,7 @@ const IconBase = ({
     width={width}
     height={height}
     {...props}
-    style={{
+    sx={{
       verticalAlign: 'middle',
       width: width || 'auto',
     }}

@@ -55,6 +55,7 @@ const createDrafts = async ({ createPage, graphql }) => {
       component: articleTemplate,
       context: {
         // slug: post.node.fields.slug,
+        id: post.node.id,
       },
     })
   })
@@ -99,6 +100,7 @@ const createArticles = async ({ createPage, graphql }) => {
       component: articleTemplate,
       context: {
         // slug: post.node.fields.slug,
+        id: post.node.id,
       },
     })
   })
@@ -107,12 +109,12 @@ const createArticles = async ({ createPage, graphql }) => {
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
-  createArticles({ createPage, graphql })
-
   if (process.env.NODE_ENV !== 'production') {
     createDrafts({ createPage, graphql })
   }
+
   // Create normal pages
+  createArticles({ createPage, graphql })
 }
 
 exports.onPostBuild = ({ store }) => {

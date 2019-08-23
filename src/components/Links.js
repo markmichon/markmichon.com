@@ -1,52 +1,67 @@
-import { Link as GatsbyLink } from 'gatsby'
+/** @jsx jsx */
 import React from 'react'
-import styled from '@emotion/styled'
-import theme from '../styles/theme'
+import { Link as GatsbyLink } from 'gatsby'
+import { jsx } from 'theme-ui'
 
-const BaseLink = styled.a`
-  color: inherit;
-  padding: 0.125em;
-  font-weight: 600;
-  transition: color 200ms ease-in-out, box-shadow 200ms ease-in-out;
-  /* box-shadow: inset 0 -0.125rem 0 ${theme.colors.brands.l}; */
-  text-decoration: underline ${theme.colors.brand};
-  text-decoration-color:${theme.colors.brand};
-  text-decoration-skip-ink: auto;
-  &:hover {
-    color: ${theme.colors.brand};
-    /* box-shadow: inset 0 -0.125rem 0 ${theme.colors.brand}; */
+export const unstyledLinkStyles = {
+  color: 'inherit',
+  textDecoration: 'none',
+  '&:hover': {
+    color: 'inherit',
+    textDecoration: 'none',
+  },
+}
+export const UnstyledLink = ({ children, to, ...rest }) => {
+  const internal = /^\/(?!\/)/.test(to)
+  if (internal) {
+    return (
+      <GatsbyLink sx={unstyledLinkStyles} to={to} {...rest}>
+        {children}
+      </GatsbyLink>
+    )
   }
-`
-const InternalLink = BaseLink.withComponent(GatsbyLink)
+  return (
+    <a sx={unstyledLinkStyles} href={to} {...rest}>
+      {children}
+    </a>
+  )
+}
+
+const baseLinkStyles = {
+  color: 'primary',
+  // padding: 1,
+  fontWeight: 'heading',
+  transition: 'color 200ms ease-in-out, box-shadow 200ms ease-in-out',
+  textDecoration: theme => `underline ${theme.colors.primary}`,
+  textDecorationSkipInk: 'auto',
+  '&:hover': {
+    color: 'text',
+  },
+}
 
 export const Link = ({ children, to, ...rest }) => {
   const internal = /^\/(?!\/)/.test(to)
   if (internal) {
     return (
-      <InternalLink to={to} {...rest}>
+      <GatsbyLink sx={baseLinkStyles} to={to} {...rest}>
         {children}
-      </InternalLink>
+      </GatsbyLink>
     )
   }
   return (
-    <BaseLink href={to} {...rest}>
+    <a sx={baseLinkStyles} href={to} {...rest}>
       {children}
-    </BaseLink>
+    </a>
   )
 }
 
-export const NavLink = styled(InternalLink)`
-  color: hsl(0, 0%, 40%);
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: none;
-`
-
-export const UnstyledLink = styled(Link)`
-  color: inherit;
-  text-decoration: none;
-  &:hover {
-    color: inherit;
-    text-decoration: none;
-  }
-`
+export const NavLink = props => (
+  <GatsbyLink
+    {...props}
+    sx={{
+      ...unstyledLinkStyles,
+      color: 'accent',
+      fontWeight: 'heading',
+    }}
+  />
+)

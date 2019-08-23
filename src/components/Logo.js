@@ -1,6 +1,5 @@
 import React from 'react'
 /* eslint-disable */
-import styled from '@emotion/styled'
 import IconBase from './Icon'
 import theme from '../styles/theme'
 

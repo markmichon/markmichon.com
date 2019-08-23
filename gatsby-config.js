@@ -12,9 +12,15 @@ const config = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-theme-ui',
     'gatsby-transformer-yaml',
     'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-theme-style-guide',
+      options: {
+        basePath: '/design-system',
+      },
+    },
     {
       resolve: 'gatsby-plugin-feed-generator',
       options: {
@@ -86,13 +92,24 @@ const config = {
       },
     },
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
           articles: require.resolve('./src/templates/article.js'),
-          default: require.resolve('./src/templates/mdx.js'),
+          drafts: require.resolve('./src/templates/article.js'),
+          // default: require.resolve('./src/templates/mdx.js'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+        plugins: ['gatsby-remark-images'],
       },
     },
     {
@@ -114,6 +131,28 @@ const config = {
       options: {
         path: `${__dirname}/content/articles`,
         name: 'articles',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-accessibilityjs`,
+      options: {
+        injectStyles: `
+          .accessibility-error {
+            box-shadow: 0 0 3px 1px #f00;
+            background-color: rgba(255, 0, 0, 0.25);
+            position: relative;
+          }
+          .accessibility-error:before {
+            content: "A11Y";
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            font-size: 10px;
+            background-color: rgba(255, 0, 0, 0.5);
+            transform: translateY(-100%);
+          }
+        `,
       },
     },
   ],

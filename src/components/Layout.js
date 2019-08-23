@@ -1,69 +1,70 @@
-/* eslint-disable */
-import React, { Fragment } from 'react'
-
-import Helmet from 'react-helmet'
-import config from '../../data/config'
-import { css, Global } from '@emotion/core'
-import { ThemeProvider } from 'emotion-theming'
-import theme from '../styles/theme'
-import { Box } from '../components/Radicals'
+/** @jsx jsx */
+import React, { Fragment, useEffect } from 'react'
+import { jsx, useThemeUI } from 'theme-ui'
+// import Helmet from 'react-helmet'
+// import config from '../../data/config'
+import { Global } from '@emotion/core'
 import Nav from './Nav'
 import Footer from './Footer'
+import { useTransition } from '../components/PageTransition'
+
 import sourceserif from '../styles/SourceSerifVariable-Roman.ttf.woff2'
+import inter from '../styles/Inter.var.woff2'
 
-const globals = css`
-  @font-face {
-    font-family: 'source-serif-var';
-    src: url(${sourceserif}) format('truetype');
-    font-weight: 100 800;
-  }
+const Layout = ({ children, location }) => {
+  // const { toggle } = useTransition()
+  const { theme } = useThemeUI()
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    font-family: ${theme.fonts.normal};
-    /* font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1000 - 320))); */
-    font-size: 16px;
-    line-height: 1.6;
-    color: ${theme.colors.text};
-    background-color: hsl(40, 36%, 95%);
-  }
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: ${theme.colors.heading};
-  }
-  p {
-    line-height: 1.7;
-  }
-  a {
-    text-decoration: none;
-  }
-  a:hover {
-  }
-
-  img {
-    max-width: 100%;
-  }
-`
-
-const Layout = ({ children, location }) => (
-  <ThemeProvider theme={theme}>
+  // useEffect(() => {}, [location])
+  return (
     <Fragment>
-      <Global styles={globals} />
-      <Box m={[1, 2]} bg="white">
+      <Global
+        styles={theme => ({
+          '@font-face': {
+            fontFamily: 'source-serif-var',
+            src: `local('Source Serif Variable'), url(${sourceserif}) format('truetype')`,
+            fontWeight: '100 800',
+          },
+          html: {
+            boxSizing: 'border-box',
+            fontFamily: theme.fonts.body,
+            fontSize: theme.fontSizes[2],
+            lineHeight: theme.lineHeights.body,
+            color: theme.colors.text,
+            backgroundColor: theme.colors.backgroundFar,
+          },
+          '*, *:before, *:after': {
+            margin: 0,
+            padding: 0,
+            boxSizing: 'inherit',
+          },
+        })}
+      />
+      <Global
+        styles={{
+          '@font-face': {
+            fontFamily: 'Inter',
+            src: `url(${inter}) format('woff2')`,
+            fontWeight: '100 900',
+          },
+        }}
+      />
+      <div
+        sx={{
+          m: [2, 3],
+          pt: [3, 4],
+          clear: 'both',
+          backgroundColor: 'background',
+          borderRadius: 3,
+          boxShadow: `0 0 4px hsl(40, 36%, 90%)`,
+        }}
+      >
         <Nav location={location} />
         <>{children}</>
         <Footer />
-      </Box>
+      </div>
     </Fragment>
-  </ThemeProvider>
-)
+  )
+}
 
 export default Layout
