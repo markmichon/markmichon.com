@@ -334,8 +334,8 @@ function draw(circles, canvas) {
 function Wa({ style, primary = false, ...props }) {
   const ref = useRef()
   const { setCoords } = useTransition()
-  if (window) {
-    useEffect(() => {
+  useEffect(() => {
+    if (window) {
       function updateTransition(canvas) {
         const { top, left, width, height } = canvas.getBoundingClientRect()
         console.log(top, left, width, height, window.pageYOffset)
@@ -358,8 +358,8 @@ function Wa({ style, primary = false, ...props }) {
       // return () => {
       //   cleanup
       // };
-    }, [primary])
-  }
+    }
+  }, [primary])
 
   return <canvas {...props} ref={ref} sx={style} aria-hidden="true"></canvas>
 }

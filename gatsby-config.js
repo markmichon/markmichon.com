@@ -100,6 +100,16 @@ const config = {
           drafts: require.resolve('./src/templates/article.js'),
           // default: require.resolve('./src/templates/mdx.js'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+        plugins: ['gatsby-remark-images'],
       },
     },
     {
