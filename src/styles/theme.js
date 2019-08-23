@@ -1,5 +1,5 @@
 import { getSans, getMono, getSerif } from '@markmichon/system-font-stacks'
-
+import nightOwl from '@theme-ui/prism/presets/night-owl'
 //
 
 const families = {
@@ -68,7 +68,7 @@ const heading = {
 const colors = {
   black: 'hsl(0, 0%, 20%)',
   white: '#fff',
-  textLight: 'hsl(212,81%,20%)',
+  textLight: 'hsl(0, 0%, 40%)',
   text: 'hsl(0, 0%, 20%)',
   background: '#fff',
   primary: 'hsl(352, 67%, 53%)',
@@ -85,8 +85,8 @@ const colors = {
 const fontSizes = [12, 14, 16, 20, 24, 32, 48]
 fontSizes.body = fontSizes[2]
 
-const sizes = ['100%', '36rem', '70rem']
-const breakpoints = ['40em', '56em', '64em', '70em']
+const sizes = ['100%', '36rem', '42rem', '70rem']
+const breakpoints = ['40em', '50em', '64em', '70em']
 const space = [0, 4, 8, 16, 32, 64]
 
 const scale = ['.675em', '1em', '1.25em', '1.5em', '2em']
@@ -180,6 +180,14 @@ export default {
   radii,
   buttons,
   sizes,
+  links: {
+    inverted: {
+      color: 'text',
+      '&:hover': {
+        color: 'primary',
+      },
+    },
+  },
   styles: {
     root: {
       fontFamily: 'body',
@@ -204,17 +212,13 @@ export default {
     },
     p: {
       lineHeight: 'body',
-      fontSize: 2,
+      fontSize: [2, 3],
       mb: 3,
       fontFamily: 'heading',
     },
-    pre: {
-      fontFamily: 'monospace',
-      overflowX: 'auto',
-      code: {
-        color: 'inherit',
-      },
-    },
+    // pre: {
+    //   ...nightOwl,
+    // },
     code: {
       fontFamily: 'monospace',
       fontSize: 'inherit',

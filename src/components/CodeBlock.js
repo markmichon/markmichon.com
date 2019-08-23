@@ -1,50 +1,58 @@
+/** @jsx jsx */
 import React from 'react'
+import { jsx, Styled } from 'theme-ui'
 import Highlight, { defaultProps } from 'prism-react-renderer'
-import styled from '@emotion/styled'
-import { css, jsx } from '@emotion/core'
-import theme from 'prism-react-renderer/themes/nightOwl'
-import t from '../styles/theme'
 
-const CodeWrapper = styled.pre`
-  width: 100%;
-  min-width: 60vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  overflow-y: scroll;
-  border-radius: 8px;
-  font-family: ${t.fonts.mono};
-  font-size: 0.75em;
-`
+import theme from 'prism-react-renderer/themes/nightOwl'
+
+const CodeWrapper = props => (
+  <pre
+    {...props}
+    sx={{
+      width: '100%',
+      minWidth: '60vw',
+      marginLeft: '50%',
+      transform: 'translateX(-50%)',
+      borderRadius: 2,
+      fontFamily: 'monospace',
+      fontSize: 1,
+      overflowY: 'scroll',
+      padding: 4,
+      marginBottom: 4,
+      marginTop: 4,
+    }}
+  />
+)
 
 // Problematic double-`pre` implementation. Further research needed
 // https://github.com/whatwg/html/issues/3764
-
-export default ({ children, className }) => {
-  const language = className.replace(/language-/, '')
+const aliases = {
+  js: 'javascript',
+  sh: 'bash',
+}
+export default ({ children, className: outerClassName, title, ...props }) => {
+  const [language] = outerClassName.replace(/language-/, '').split(' ')
+  const lang = aliases[language] || language
   // if block
+
   return (
     <Highlight
       {...defaultProps}
-      code={children}
-      language={language}
+      {...props}
+      code={children.trim()}
+      language={lang}
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <CodeWrapper
-          className={className}
-          css={css(
-            {
-              padding: '20px',
-              marginBottom: '20px',
-              marginTop: '20px',
-            },
-            { ...style }
-          )}
-        >
+        <CodeWrapper className={`${outerClassName} ${className}`} style={style}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
+                <span
+                  key={key}
+                  {...getTokenProps({ token, key })}
+                  sx={{ display: 'inline-block' }}
+                />
               ))}
             </div>
           ))}

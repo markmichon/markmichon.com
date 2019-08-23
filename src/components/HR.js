@@ -2,16 +2,17 @@
 import React from 'react'
 import { jsx } from 'theme-ui'
 import Wa from './Wa'
-export default props => {
+export default ({ config = {}, ...props }) => {
   if (props.fancy)
     return (
       <Wa
-        config={{ points: 3 }}
+        config={{ points: 4, blobs: 2, ...config }}
         style={{
-          width: '100px',
+          width: '50px',
           display: 'block',
           marginLeft: 'auto',
           marginRight: 'auto',
+          my: 4,
         }}
       />
     )

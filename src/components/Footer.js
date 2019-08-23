@@ -4,7 +4,8 @@ import { jsx } from 'theme-ui'
 import SRText from './SR'
 import Logo from './Logo'
 import { UnstyledLink } from './Links'
-
+import Wa from './Wa'
+import HR from './HR'
 import IconBase from './Icon'
 
 const links = [
@@ -40,7 +41,8 @@ const links = [
 ]
 
 const Footer = props => (
-  <footer sx={{ p: 4, mt: 5 }}>
+  <footer sx={{ px: 4, pb: 4, mt: 0 }}>
+    <HR config={{ blobs: 2 }} fancy />
     <div sx={{ display: 'flex', justifyContent: 'center' }}>
       <UnstyledLink to="/" aria-label="Home Page">
         <Logo size="48" aria-hidden="true" />

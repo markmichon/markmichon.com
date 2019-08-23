@@ -28,14 +28,14 @@ export const UnstyledLink = ({ children, to, ...rest }) => {
 }
 
 const baseLinkStyles = {
-  color: 'inherit',
-  padding: 1,
+  color: 'primary',
+  // padding: 1,
   fontWeight: 'heading',
   transition: 'color 200ms ease-in-out, box-shadow 200ms ease-in-out',
   textDecoration: theme => `underline ${theme.colors.primary}`,
   textDecorationSkipInk: 'auto',
   '&:hover': {
-    color: 'primary',
+    color: 'text',
   },
 }
 

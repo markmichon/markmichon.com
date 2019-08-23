@@ -1,16 +1,90 @@
 /** @jsx jsx */
 import React, { useEffect, useRef } from 'react'
 import { jsx } from 'theme-ui'
+import { useTransition } from './PageTransition'
 // Helpers
 // Cubic ease-in-out
-function ease(k) {
-  if ((k *= 2) < 1) return 0.5 * k * k * k * k
-  return -0.5 * ((k -= 2) * k * k * k - 2)
-}
+// function ease(k) {
+//   if ((k *= 2) < 1) return 0.5 * k * k * k * k
+//   return -0.5 * ((k -= 2) * k * k * k - 2)
+// }
 
+// Quadratic in-out
+// function ease(k) {
+//   if ((k *= 2) < 1) return 0.5 * k * k
+//   return -0.5 * (--k * (k - 2) - 1)
+// }
 // to use together, wrap t in easing function
 // lerp(min,max, ease(t))
 //
+
+function getEaseFunction(type) {
+  switch (type) {
+    case 'cubic':
+      return k => {
+        if ((k *= 2) < 1) return 0.5 * k * k * k * k
+        return -0.5 * ((k -= 2) * k * k * k - 2)
+      }
+    case 'quartic':
+      return k => {
+        if ((k *= 2) < 1) return 0.5 * k * k * k * k
+        return -0.5 * ((k -= 2) * k * k * k - 2)
+      }
+    case 'quintic':
+      return k => {
+        if ((k *= 2) < 1) return 0.5 * k * k * k * k * k
+        return 0.5 * ((k -= 2) * k * k * k * k + 2)
+      }
+    case 'sinusoidal':
+      return k => {
+        return 0.5 * (1 - Math.cos(Math.PI * k))
+      }
+    case 'exponential':
+      return k => {
+        if (k === 0) return 0
+        if (k === 1) return 1
+        if ((k *= 2) < 1) return 0.5 * Math.pow(1024, k - 1)
+        return 0.5 * (-Math.pow(2, -10 * (k - 1)) + 2)
+      }
+    case 'circular':
+      return k => {
+        if ((k *= 2) < 1) return -0.5 * (Math.sqrt(1 - k * k) - 1)
+        return 0.5 * (Math.sqrt(1 - (k -= 2) * k) + 1)
+      }
+    case 'elastic':
+      return k => {
+        var s,
+          a = 0.1,
+          p = 0.4
+        if (k === 0) return 0
+        if (k === 1) return 1
+        if (!a || a < 1) {
+          a = 1
+          s = p / 4
+        } else s = (p * Math.asin(1 / a)) / (2 * Math.PI)
+        if ((k *= 2) < 1)
+          return (
+            -0.5 *
+            (a *
+              Math.pow(2, 10 * (k -= 1)) *
+              Math.sin(((k - s) * (2 * Math.PI)) / p))
+          )
+        return (
+          a *
+            Math.pow(2, -10 * (k -= 1)) *
+            Math.sin(((k - s) * (2 * Math.PI)) / p) *
+            0.5 +
+          1
+        )
+      }
+    case 'quadratic':
+    default:
+      return k => {
+        if ((k *= 2) < 1) return 0.5 * k * k
+        return -0.5 * (--k * (k - 2) - 1)
+      }
+  }
+}
 
 function lerp(min, max, t) {
   return min * (1 - t) + max * t
@@ -156,12 +230,14 @@ const createBlob = ({
   },
 })
 
-function setUp(canvas, { modifier = 0.08, points = 4, blobs = 3, frames = 5 }) {
-  // const canvas = document.querySelector("canvas");
+function setUp(
+  canvas,
+  { modifier = 0.08, points = 4, blobs = 3, frames = 5, easing = 'quadratic' }
+) {
+  const ease = getEaseFunction(easing)
   const ctx = canvas.getContext('2d')
 
   const size = canvas.getBoundingClientRect().width
-
   const dpr = window.devicePixelRatio
   const radius = size * 0.33
   modifier = modifier * size
@@ -255,20 +331,37 @@ function draw(circles, canvas) {
 }
 
 //  setUp();
-function BlobViz(props) {
+function Wa({ style, primary = false, ...props }) {
   const ref = useRef()
-  const { style } = props
-  useEffect(() => {
-    const canvas = ref.current
-    const config = props.config || {}
-    setUp(canvas, config)
+  const { setCoords } = useTransition()
+  if (window) {
+    useEffect(() => {
+      function updateTransition(canvas) {
+        const { top, left, width, height } = canvas.getBoundingClientRect()
+        console.log(top, left, width, height, window.pageYOffset)
+        let x = left - window.pageXOffset + width / 2
+        let y = top - window.pageYOffset + height / 2
+        let coords = {
+          y: `${top - window.pageYOffset + height / 2}px`,
+          x: `${left - window.pageXOffset + width / 2}px`,
+        }
+        setCoords(coords)
+      }
 
-    // return () => {
-    //   cleanup
-    // };
-  })
+      const canvas = ref.current
+      const config = props.config || {}
+      setUp(canvas, config)
 
-  return <canvas {...props} ref={ref} sx={style}></canvas>
+      if (primary) {
+        // updateTransition(canvas)
+      }
+      // return () => {
+      //   cleanup
+      // };
+    }, [primary])
+  }
+
+  return <canvas {...props} ref={ref} sx={style} aria-hidden="true"></canvas>
 }
 
-export default BlobViz
+export default Wa

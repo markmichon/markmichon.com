@@ -3,6 +3,7 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 import { NavLink, UnstyledLink } from './Links'
 import Logo from './Logo'
+import SR from './SR'
 // import theme from '../styles/theme'
 
 const LogoTab = props => (
@@ -11,7 +12,7 @@ const LogoTab = props => (
     sx={{
       backgroundColor: 'black',
       position: 'relative',
-      p: 3,
+      p: 2,
       ml: 0,
       transition: 'width 200ms ease-in-out',
       '&:hover': {},
@@ -58,7 +59,7 @@ const Nav = ({ location }) => {
     <nav
       sx={{
         display: 'flex',
-        pt: 2,
+        mt: 2,
         ml: 0,
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -66,19 +67,10 @@ const Nav = ({ location }) => {
     >
       <LogoTab to="/">
         <div sx={{ dispay: 'flex', alignItems: 'center' }}>
-          <Logo color="hsl(0,0%,100%)" size="48px" />
+          <Logo color="hsl(0,0%,100%)" size="32px" />
           {showHeading && (
-            <h1
-              sx={{
-                fontSize: 3,
-                lineHeight: 'heading',
-                color: 'white',
-                ml: 3,
-                fontWeight: 'thin',
-                fontFamily: 'body',
-              }}
-            >
-              Mark Michon
+            <h1>
+              <SR>Mark Michon</SR>
             </h1>
           )}
         </div>

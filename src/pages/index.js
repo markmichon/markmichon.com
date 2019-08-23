@@ -9,21 +9,10 @@ import { Link, UnstyledLink } from '../components/Links'
 import HR from '../components/HR'
 import SEO from '../components/SEO'
 import Layout from '../components/Layout'
+import Container from '../components/Container'
 import { breakpointStrings } from '../styles/theme'
 
 import Wa from '../components/Wa'
-
-const Container = props => (
-  <section
-    {...props}
-    sx={{
-      maxWidth: 1,
-      ml: [3, 3, '15%'],
-      mr: 3,
-      position: 'relative',
-    }}
-  />
-)
 
 function scaleColor(modifier) {
   const lightness = 50 + 5 * modifier
@@ -128,7 +117,7 @@ const SectionTitle = props => {
     <h2
       {...props}
       sx={{
-        fontSize: [4, 5],
+        fontSize: [3, 4],
         fontWeight: 'light',
         fontFamily: 'heading',
         display: 'inline-block',
@@ -153,22 +142,8 @@ const Index = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Mark Michon" />
-      {/* <BlobViz
-        config={{ points: 3 }}
-        style={{ position: 'absolute', right: 0, width: '30vw', zIndex: '1' }}
-      /> */}
-      {/* <BlobViz
-          config={{ points: 3 }}
-          style={{ width: '50px', left: 0, right: 'auto' }}
-        /> */}
       <Intro />
-      <div
-        sx={{
-          maxWidth: 1,
-          ml: [3, 3, '15%'],
-          fontSize: [2, 3],
-        }}
-      >
+      <Container>
         <SectionTitle>Selected Articles</SectionTitle>
 
         <Items>
@@ -204,7 +179,7 @@ const Index = ({ data, location }) => {
               </Item>
             ))}
         </Items>
-      </div>
+      </Container>
 
       {/* <Footer/> */}
     </Layout>

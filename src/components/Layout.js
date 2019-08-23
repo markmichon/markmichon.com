@@ -1,20 +1,23 @@
 /** @jsx jsx */
-import React, { Fragment } from 'react'
-import { jsx, ThemeProvider } from 'theme-ui'
+import React, { Fragment, useEffect } from 'react'
+import { jsx, useThemeUI } from 'theme-ui'
 // import Helmet from 'react-helmet'
 // import config from '../../data/config'
 import { Global } from '@emotion/core'
 import Nav from './Nav'
 import Footer from './Footer'
+import { useTransition } from '../components/PageTransition'
+
 import sourceserif from '../styles/SourceSerifVariable-Roman.ttf.woff2'
 import inter from '../styles/Inter.var.woff2'
 
-// import theme from '../gatsby-plugin-theme-ui/index'
-import theme from '../styles/theme'
+const Layout = ({ children, location }) => {
+  // const { toggle } = useTransition()
+  const { theme } = useThemeUI()
 
-const Layout = ({ children, location }) => (
-  <Fragment>
-    <ThemeProvider theme={theme}>
+  // useEffect(() => {}, [location])
+  return (
+    <Fragment>
       <Global
         styles={theme => ({
           '@font-face': {
@@ -22,17 +25,18 @@ const Layout = ({ children, location }) => (
             src: `local('Source Serif Variable'), url(${sourceserif}) format('truetype')`,
             fontWeight: '100 800',
           },
-          '*': {
-            margin: 0,
-            padding: 0,
-            boxSizing: 'border-box',
-          },
           html: {
+            boxSizing: 'border-box',
             fontFamily: theme.fonts.body,
             fontSize: theme.fontSizes[2],
             lineHeight: theme.lineHeights.body,
             color: theme.colors.text,
             backgroundColor: theme.colors.backgroundFar,
+          },
+          '*, *:before, *:after': {
+            margin: 0,
+            padding: 0,
+            boxSizing: 'inherit',
           },
         })}
       />
@@ -45,13 +49,22 @@ const Layout = ({ children, location }) => (
           },
         }}
       />
-      <div sx={{ m: [1, 2], backgroundColor: 'background' }}>
+      <div
+        sx={{
+          m: [2, 3],
+          pt: [3, 4],
+          clear: 'both',
+          backgroundColor: 'background',
+          borderRadius: 3,
+          boxShadow: `0 0 4px hsl(40, 36%, 90%)`,
+        }}
+      >
         <Nav location={location} />
         <>{children}</>
         <Footer />
       </div>
-    </ThemeProvider>
-  </Fragment>
-)
+    </Fragment>
+  )
+}
 
 export default Layout
