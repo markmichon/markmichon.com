@@ -197,6 +197,7 @@ export default {
     h1: {
       ...heading,
       fontSize: 5,
+      textAlign: 'center',
     },
     h2: {
       ...heading,
