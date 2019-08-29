@@ -21,63 +21,7 @@ const config = {
         basePath: '/design-system',
       },
     },
-    {
-      resolve: 'gatsby-plugin-feed-generator',
-      options: {
-        generator: `GatsbyJS`,
-        rss: true, // Set to false to stop rss generation
-        json: true, // Set to false to stop json feed generation
-        siteQuery: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                author
-              }
-            }
-          }
-        `,
-        // The plugin requires frontmatter of date, path(or slug/url), and title at minimum
-        feeds: [
-          {
-            name: 'feed',
-            query: `
-            {
-              allMdx(
-                sort: {order: DESC, fields: [frontmatter___date]},
-                limit: 100,
-                filter: { fileAbsolutePath: { regex: "/(articles)/" } }
-                ) {
-                edges {
-                  node {
-                    excerpt(pruneLength: 250)
-                    html
-                    frontmatter {
-                      date
-                      path
-                      title
-                    }
-                  }
-                }
-              }
-            }
-            `,
-            normalize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
-                return {
-                  title: edge.node.frontmatter.title,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  html: edge.node.html,
-                }
-              })
-            },
-          },
-        ],
-      },
-    },
+
     // 'gatsby-plugin-subfont',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -98,7 +42,7 @@ const config = {
         defaultLayouts: {
           articles: require.resolve('./src/templates/article.js'),
           drafts: require.resolve('./src/templates/article.js'),
-          // default: require.resolve('./src/templates/mdx.js'),
+          default: require.resolve('./src/templates/mdx.js'),
         },
         gatsbyRemarkPlugins: [
           {
@@ -157,6 +101,66 @@ const config = {
     },
   ],
 }
+
+// feeds
+
+config.plugins.push({
+  resolve: 'gatsby-plugin-feed-generator',
+  options: {
+    generator: `GatsbyJS`,
+    rss: true, // Set to false to stop rss generation
+    json: true, // Set to false to stop json feed generation
+    siteQuery: `
+      {
+        site {
+          siteMetadata {
+            title
+            description
+            siteUrl
+            author
+          }
+        }
+      }
+    `,
+    // The plugin requires frontmatter of date, path(or slug/url), and title at minimum
+    feeds: [
+      {
+        name: 'feed',
+        query: `
+        {
+          allMdx(
+            sort: {order: DESC, fields: [frontmatter___date]},
+            limit: 100,
+            filter: { fileAbsolutePath: { regex: "/(articles)/" } }
+            ) {
+            edges {
+              node {
+                excerpt(pruneLength: 250)
+                html
+                frontmatter {
+                  date
+                  path
+                  title
+                }
+              }
+            }
+          }
+        }
+        `,
+        normalize: ({ query: { site, allMdx } }) => {
+          return allMdx.edges.map(edge => {
+            return {
+              title: edge.node.frontmatter.title,
+              date: edge.node.frontmatter.date,
+              url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+              html: edge.node.html,
+            }
+          })
+        },
+      },
+    ],
+  },
+})
 
 // handle drafts
 if (process.env.NODE_ENV === 'development') {
