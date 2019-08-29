@@ -43,8 +43,7 @@ const heading = {
   fontFamily: 'heading',
   fontWeight: 'heading',
   lineHeight: 'heading',
-  mt: 0,
-  mb: 2,
+  my: 3,
 }
 
 // Legacy
@@ -240,6 +239,9 @@ export default {
     },
     img: {
       maxWidth: '100%',
+    },
+    ul: {
+      ml: 3,
     },
   },
 }
