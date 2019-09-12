@@ -42,7 +42,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf public/*.html"
+    "clean": "rm -rf public/*.html",
+    "plop": "plop"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
@@ -59,6 +60,7 @@
     "eslint-plugin-react": "^7.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "plop": "^2.4.0",
     "prettier": "^1.18.2",
     "prettier-eslint": "^9.0.0",
     "prop-types": "^15.7.2",
