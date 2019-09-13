@@ -2,6 +2,7 @@ const path = require('path')
 const { execSync } = require('child_process')
 const shellescape = require('shell-escape')
 const { createFilePath } = require('gatsby-source-filesystem')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -140,4 +141,23 @@ exports.onPostBuild = ({ store }) => {
   ]
   const command = shellescape(baseArgs)
   execSync(command)
+}
+
+exports.onCreateWebpackConfig = (
+  { stage, actions },
+  { disable = false, devMode = false, ...options }
+) => {
+  if (disable) return
+
+  if ((stage === 'develop' && devMode) || stage === 'build-javascript') {
+    const defaultOptions = {
+      analyzerMode: 'server',
+      analyzerPort: 3001,
+      ...options,
+    }
+
+    actions.setWebpackConfig({
+      plugins: [new BundleAnalyzerPlugin(defaultOptions)],
+    })
+  }
 }

@@ -6,6 +6,7 @@ export default ({ config = {}, ...props }) => {
   if (props.fancy)
     return (
       <Wa
+        {...props}
         config={{ points: 4, blobs: 2, ...config }}
         style={{
           width: '50px',
@@ -13,6 +14,7 @@ export default ({ config = {}, ...props }) => {
           marginLeft: 'auto',
           marginRight: 'auto',
           my: 4,
+          ...props.style,
         }}
       />
     )
