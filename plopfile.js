@@ -38,7 +38,7 @@ module.exports = function(plop) {
         templateFile: 'plop-templates/article.mdx.hbs',
         data: {
           date: function() {
-            return new Date()
+            return new Date().toISOString()
           },
         },
       },
