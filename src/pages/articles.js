@@ -3,18 +3,19 @@ import React from 'react'
 import { jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import { Link, UnstyledLink } from '../components/Links'
-
+import HR from '../components/HR'
 import SEO from '../components/SEO'
-
+import Wa from '../components/Wa'
 import Layout from '../components/Layout'
-
+import { Items, Item, ItemDate, ItemLink } from '../components/ItemList'
 const Container = props => (
   <section
     {...props}
     sx={{
-      maxWidth: 1,
-      ml: [3, '15%'],
-      mr: 3,
+      mx: 'auto',
+      px: 3,
+      py: [5],
+      maxWidth: [1, 2],
       position: 'relative',
     }}
   />
@@ -27,25 +28,50 @@ function scaleColor(modifier) {
 
 const Index = ({ data }) => {
   const { edges: posts } = data.allMdx // eslint-disable-line
-  const { edges: projects } = data.allProjectsYaml
 
   return (
     <Layout>
       <SEO title="Articles | Mark Michon" />
       <Container>
-        <ul>
+        <SEO title={`Articles Archive | Mark Michon`} />
+        <h1
+          sx={{
+            fontFamily: 'heading',
+            textAlign: 'center',
+            mt: 2,
+            mb: 5,
+            fontSize: [5, 6],
+            fontWeight: '600',
+          }}
+        >
+          Articles
+        </h1>
+        {/* <HR config={{ blobs: 2 }} fancy /> */}
+        <Wa
+          config={{ points: 3, easing: 'sinusoidal' }}
+          style={{
+            width: ['5rem', '10rem', '15vw'],
+            zIndex: '1',
+            position: 'absolute',
+            // left: ['initial', 'initial', 'calc(36rem + 15%)'],
+            right: [3, 3, '-10vw'],
+            top: 3,
+          }}
+          primary
+        />
+        <Items>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({ node: post }, idx) => (
-              <li key={post.id} id={idx}>
-                <Link to={post.frontmatter.path}>
-                  <h3>{post.frontmatter.title}</h3>
-                  <span>{post.frontmatter.date}</span>
-                  {/* <p>{post.excerpt}</p> */}
-                </Link>
-              </li>
+              <Item key={post.id} modifier={0} h="h2">
+                <ItemLink to={post.frontmatter.path}>
+                  <h2>{post.frontmatter.title}</h2>
+                  <ItemDate>{post.frontmatter.date}</ItemDate>
+                  <p sx={{ lineHeight: 'body', fontSize: 2 }}>{post.excerpt}</p>
+                </ItemLink>
+              </Item>
             ))}
-        </ul>
+        </Items>
       </Container>
 
       {/* <Footer/> */}
@@ -68,15 +94,6 @@ export const query = graphql`
             subtitle
             path
           }
-        }
-      }
-    }
-    allProjectsYaml {
-      edges {
-        node {
-          title
-          url
-          description
         }
       }
     }

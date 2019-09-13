@@ -13,105 +13,7 @@ import Container from '../components/Container'
 import { breakpointStrings } from '../styles/theme'
 
 import Wa from '../components/Wa'
-
-function scaleColor(modifier) {
-  const lightness = 50 + 5 * modifier
-  return `hsl(352, 68%, ${lightness}%)`
-}
-
-const Items = ({ data, filter, children, ...props }) => (
-  <ul
-    {...props}
-    sx={{
-      listStyle: 'none',
-      mx: 0,
-      mt: 0,
-      mb: 3,
-      p: 0,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-    }}
-  >
-    {children}
-  </ul>
-)
-
-// TODO: Refactor to cause less rule duplication
-const Item = props => {
-  const { modifier } = props
-  let color = scaleColor(modifier)
-  return (
-    <li
-      {...props}
-      sx={{
-        mb: 3,
-        width: 'auto',
-        color: 'accent',
-        position: 'relative',
-        'h3, h4': {
-          margin: 0,
-          width: 'auto',
-        },
-        h3: {
-          fontFamily: 'heading',
-          fontWeight: '500',
-          color: 'text',
-          fontSize: [3, 4],
-          position: 'relative',
-          transition: 'color 0ms linear 300ms',
-          overflow: 'hidden',
-          '&::before': {
-            content: "''",
-            top: 0,
-            left: 0,
-            position: 'absolute',
-            backgroundColor: color,
-            height: '100%',
-            width: '100%',
-            transition: 'transform 600ms cubic-bezier(1,0,0.34,1)',
-            transform: `translateX(-101%)`,
-          },
-        },
-        '&:hover h3,  a:focus h3': {
-          color: color,
-        },
-        '&:hover h3::before, a:focus h3::before': {
-          transform: 'translateX(101%)',
-        },
-        h4: {
-          fontSize: 2,
-          fontWeight: 'body',
-        },
-      }}
-    />
-  )
-}
-const ItemDate = props => (
-  <span
-    {...props}
-    sx={{
-      display: 'block',
-      color: 'muted',
-      fontWeight: 'light',
-      fontFamily: 'body',
-      fontSize: '1',
-      textTransform: 'uppercase',
-    }}
-  />
-)
-
-const ItemLink = props => (
-  <UnstyledLink
-    {...props}
-    sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'flex-start',
-    }}
-  />
-)
-
+import { Items, Item, ItemDate, ItemLink } from '../components/ItemList'
 const SectionTitle = props => {
   return (
     <h2
@@ -150,7 +52,7 @@ const Index = ({ data, location }) => {
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({ node: post }, idx) => (
-              <Item key={post.id} modifier={idx}>
+              <Item key={post.id} modifier={idx} h="h3">
                 <ItemLink to={post.frontmatter.path}>
                   <h3>{post.frontmatter.title}</h3>
                   {/* <ItemDate>{post.frontmatter.date}</ItemDate> */}
@@ -169,7 +71,7 @@ const Index = ({ data, location }) => {
           {projects
             .filter(project => project.node.title.length > 0)
             .map(({ node: project }, idx) => (
-              <Item key={idx} modifier={idx}>
+              <Item key={idx} modifier={idx} h="h3">
                 <ItemLink to={project.url}>
                   <h3>{project.title}</h3>
                   <p sx={{ fontSize: 2, fontWeight: 'body', mb: 0 }}>
