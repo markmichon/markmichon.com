@@ -1,3 +1,6 @@
+- title: Rubric Builder
+  url: https://github.com/markmichon/rubric-builder
+  description: An app that makes creating rubrics and grading easier for teachers.
 - title: classroom-master-lockdown
   url: https://github.com/markmichon/classroom-master-lockdown
   description: A tool for automatically protecting the master branch on newly generated repos.
