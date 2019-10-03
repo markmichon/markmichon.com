@@ -3,7 +3,7 @@
   description: A tool for automatically protecting the master branch on newly generated repos.
 - title: Not a Whippet
   url: https://notawhippet.com
-  description: An app usinig custom vision to detect dog breeds.
+  description: An app using custom vision to detect dog breeds.
 - title: gatsby-plugin-feed-generator
   url: https://github.com/markmichon/gatsby-plugin-feed-generator
   description: JSON Feed and RSS Feed Generator for Gatsby
