@@ -61,7 +61,7 @@ const Nav = ({ location }) => {
         display: 'flex',
         mt: 2,
         ml: 0,
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         alignItems: 'center',
       }}
     >
@@ -75,14 +75,14 @@ const Nav = ({ location }) => {
           )}
         </div>
       </LogoTab>
-      {/* <NavList>
-      <li>
-        <NavLink to="/">Articles</NavLink>
-      </li>
-      <li>
-        <NavLink to="/">Projects</NavLink>
-      </li>
-    </NavList> */}
+      <NavList>
+        <li>
+          <NavLink to="/articles">Articles</NavLink>
+        </li>
+        <li>
+          <NavLink to="/">Projects</NavLink>
+        </li>
+      </NavList>
     </nav>
   )
 }

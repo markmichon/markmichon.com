@@ -31,6 +31,7 @@ export default ({ data, location }) => {
             mb: 5,
             fontSize: [5, 6],
             fontWeight: '600',
+            color: 'black',
           }}
         >
           {data.mdx.frontmatter.title}

@@ -50,7 +50,7 @@ const Footer = props => (
     </div>
     <div sx={{ display: 'flex', justifyContent: 'center' }}>
       <p sx={{ fontSize: 1, color: 'muted', mb: 2 }}>
-        All materials © Mark Michon 2019
+        All materials © 2013&ndash;2019 Mark Michon
       </p>
     </div>
     <div sx={{ display: 'flex', justifyContent: 'center' }}>

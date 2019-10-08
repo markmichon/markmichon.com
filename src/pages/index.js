@@ -48,7 +48,7 @@ const Index = ({ data, location }) => {
       <Container>
         <SectionTitle>Selected Articles</SectionTitle>
 
-        <Items>
+        <Items sx={{ mb: 1 }}>
           {posts
             .filter(post => post.node.frontmatter.title.length > 0)
             .map(({ node: post }, idx) => (
@@ -65,6 +65,17 @@ const Index = ({ data, location }) => {
               </Item>
             ))}
         </Items>
+        <Link
+          sx={{
+            variant: 'links.inverted',
+            display: 'block',
+            mb: 3,
+            textDecoration: 'none',
+          }}
+          to="/articles"
+        >
+          View the full article archive
+        </Link>
         {/* <HR fancy /> */}
         <SectionTitle>Open Source Projects</SectionTitle>
         <Items>
