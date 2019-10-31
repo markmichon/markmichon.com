@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { useContext } from 'react'
-import { jsx } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import { Link } from './Links'
 import Container from './Container'
 import Wa from './Wa'
@@ -31,6 +31,7 @@ export default () => {
             letterSpacing: 'tight',
             fontWeight: 'heading',
             fontSize: [5, 5, 6],
+            color: 'black',
           }}
         >
           Let&rsquo;s build a better web.
@@ -40,9 +41,10 @@ export default () => {
             my: '1rem',
           }}
         >
-          I am a front-end software developer working in education where I teach
-          newcomers to build the web. I care deeply about approachable design,
-          accessible applications, and the power of the open web.
+          Hi, I'm Mark, an educator and developer based in{' '}
+          <Styled.delete>Orlando, Florida</Styled.delete> Portland, Oregon. I
+          care deeply about approachable design, accessible applications, and
+          the power of the open web.
         </P>
         <P>
           Some of my projects include{' '}

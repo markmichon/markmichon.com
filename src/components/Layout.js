@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React, { Fragment, useEffect } from 'react'
-import { jsx, useThemeUI } from 'theme-ui'
+import { jsx, useThemeUI, Styled } from 'theme-ui'
 // import Helmet from 'react-helmet'
 // import config from '../../data/config'
 import { Global } from '@emotion/core'
@@ -17,7 +17,7 @@ const Layout = ({ children, location }) => {
 
   // useEffect(() => {}, [location])
   return (
-    <Fragment>
+    <Styled.root>
       <Global
         styles={theme => ({
           '@font-face': {
@@ -25,14 +25,7 @@ const Layout = ({ children, location }) => {
             src: `local('Source Serif Variable'), url(${sourceserif}) format('truetype')`,
             fontWeight: '100 800',
           },
-          html: {
-            boxSizing: 'border-box',
-            fontFamily: theme.fonts.body,
-            fontSize: theme.fontSizes[2],
-            lineHeight: theme.lineHeights.body,
-            color: theme.colors.text,
-            backgroundColor: theme.colors.backgroundFar,
-          },
+
           '*, *:before, *:after': {
             margin: 0,
             padding: 0,
@@ -51,7 +44,7 @@ const Layout = ({ children, location }) => {
       />
       <div
         sx={{
-          m: [2, 3],
+          // m: [2, 3],
           pt: [3, 4],
           clear: 'both',
           backgroundColor: 'background',
@@ -63,7 +56,7 @@ const Layout = ({ children, location }) => {
         <>{children}</>
         <Footer />
       </div>
-    </Fragment>
+    </Styled.root>
   )
 }
 

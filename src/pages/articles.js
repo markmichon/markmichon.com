@@ -66,8 +66,8 @@ const Index = ({ data }) => {
               <Item key={post.id} modifier={0} h="h2">
                 <ItemLink to={post.frontmatter.path}>
                   <h2>{post.frontmatter.title}</h2>
-                  <ItemDate>{post.frontmatter.date}</ItemDate>
-                  <p sx={{ lineHeight: 'body', fontSize: 2 }}>{post.excerpt}</p>
+                  <ItemDate>Published {post.frontmatter.date}</ItemDate>
+                  {/* <p sx={{ lineHeight: 'body', fontSize: 2 }}>{post.excerpt}</p> */}
                 </ItemLink>
               </Item>
             ))}

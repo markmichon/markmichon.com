@@ -44,6 +44,7 @@ const heading = {
   fontWeight: 'heading',
   lineHeight: 'heading',
   my: 3,
+  color: 'black',
 }
 
 // Legacy
@@ -65,10 +66,10 @@ const heading = {
 //   },
 // }
 const colors = {
-  black: 'hsl(0, 0%, 20%)',
+  black: 'HSL(0, 0%, 20%)',
   white: '#fff',
   textLight: 'hsl(0, 0%, 40%)',
-  text: 'hsl(0, 0%, 20%)',
+  text: 'HSL(0, 0%, 40%)',
   background: '#fff',
   primary: 'hsl(352, 67%, 53%)',
   primaryDark: 'hsl(352, 68%, 40%)',
@@ -192,6 +193,10 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
+      boxSizing: 'border-box',
+      color: 'text',
+      backgroundColor: 'backgroundFar',
+      p: [2, 3],
     },
     h1: {
       ...heading,
@@ -216,14 +221,15 @@ export default {
       mb: 3,
       fontFamily: 'heading',
     },
-    // pre: {
-    //   ...nightOwl,
-    // },
+    delete: {
+      color: 'muted',
+      textDecoration: 'line-through',
+    },
     code: {
       fontFamily: 'monospace',
       fontSize: 'inherit',
     },
-    inline: {
+    inlineCode: {
       fontFamily: 'monospace',
       backgroundColor: 'muted',
       color: 'white',
