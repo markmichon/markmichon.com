@@ -31,6 +31,7 @@ export default () => {
             letterSpacing: 'tight',
             fontWeight: 'heading',
             fontSize: [5, 5, 6],
+            color: 'black',
           }}
         >
           Let&rsquo;s build a better web.

@@ -2,7 +2,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import { jsx } from 'theme-ui'
+import { jsx, Styled } from 'theme-ui'
 import Intro from '../components/Intro'
 
 import { Link, UnstyledLink } from '../components/Links'
@@ -19,19 +19,20 @@ const SectionTitle = props => {
     <h2
       {...props}
       sx={{
-        fontSize: [3, 4],
-        fontWeight: 'light',
+        fontSize: [5],
+        fontWeight: 'bold',
         fontFamily: 'heading',
         display: 'inline-block',
         position: 'relative',
-        color: 'white',
+        color: 'text',
         py: 2,
         pr: 3,
         mb: 3,
-        paddingLeft: 'calc(1rem + 15vw)',
-        marginLeft: `calc((1rem + 15vw) * -1)`,
-        bg: 'primary',
+        // paddingLeft: 'calc(1rem + 15vw)',
+        // marginLeft: `calc((1rem + 15vw) * -1)`,
+        // bg: 'primary',
         lineHeight: '1',
+        letterSpacing: 'tight',
       }}
     />
   )
@@ -78,20 +79,73 @@ const Index = ({ data, location }) => {
         </Link>
         {/* <HR fancy /> */}
         <SectionTitle>Open Source Projects</SectionTitle>
-        <Items>
+        <div sx={{}}>
           {projects
             .filter(project => project.node.title.length > 0)
             .map(({ node: project }, idx) => (
-              <Item key={idx} modifier={idx} h="h3">
-                <ItemLink to={project.url}>
-                  <h3>{project.title}</h3>
-                  <p sx={{ fontSize: 2, fontWeight: 'body', mb: 0 }}>
-                    {project.description}
-                  </p>
-                </ItemLink>
-              </Item>
+              // <Item key={idx} modifier={idx} h="h3">
+              //   <ItemLink to={project.url}>
+              //     <h3>{project.title}</h3>
+              //     <p sx={{ fontSize: 2, fontWeight: 'body', mb: 0 }}>
+              //       {project.description}
+              //     </p>
+              //   </ItemLink>
+              // </Item>
+              <Styled.div
+                sx={{
+                  mb: 3,
+                }}
+              >
+                <h3
+                  sx={{
+                    fontSize: 4,
+                    fontWeight: '400',
+                    fontFamily: 'heading',
+                    bg: 'accent',
+                    display: 'inline-block',
+                    pl: 'calc(1rem + 15vw)',
+                    pr: 3,
+                    ml: 'calc((1rem + 15vw)*-1)',
+                    mb: 3,
+                    color: 'white',
+                    transition: 'all 300ms ease-in-out',
+                    position: 'relative',
+                    '&:before': {
+                      content: '""',
+                      // color: 'white',
+                      position: 'absolute',
+                      bg: 'primary',
+                      width: '100%',
+                      height: '100%',
+                      left: 0,
+                      transition: 'transform 300ms ease-in-out',
+                      transform: 'translateX(-101%)',
+                    },
+                    '&:hover:before': {
+                      transform: 'translateX(0)',
+                    },
+                    '&:hover': {
+                      color: 'white',
+                    },
+                  }}
+                >
+                  {project.title}
+                </h3>
+                <Styled.p sx={{ fontFamily: 'body', fontSize: 2 }}>
+                  {project.description}
+                </Styled.p>
+                <div
+                  sx={{
+                    display: 'flex',
+                  }}
+                >
+                  {project.tags.map(tag => (
+                    <span sx={{ p: 1, mx: 1, bg: 'backgroundFar' }}>{tag}</span>
+                  ))}
+                </div>
+              </Styled.div>
             ))}
-        </Items>
+        </div>
       </Container>
 
       {/* <Footer/> */}
@@ -123,6 +177,7 @@ export const query = graphql`
           title
           url
           description
+          tags
         }
       }
     }
