@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/favicon.svg">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/night-owl.css">
+    {% if page.url == "/"%}
+      <title>{{title}}</title>
+    {% else %}
+      <title>{{title}} — MM</title>
+    {% endif %}
+    <meta name="description" content="{{description}}">
+  </head>
+  {% from 'logo.njk' import m %}
+  <body>
+    <div class="outer-wrapper">
+      <div class="nav">
+        <a href="/" class="logo-container">
+          {{ m() }}
+        </a>
+        <ul>
+          <li>
+            <a href="/articles">Articles</a>
+          </li>
+          <li>
+            <a href="/hire" class="active">Hire me</a>
+          </li>
+        </ul>
+      </div>
+      <main>
+        {{ content | safe }}
+        {% include 'footer.njk' %}
+      </main>
+    </div>
+    <script src="/assets/js/wa.js"></script>
+  </body>
+</html>

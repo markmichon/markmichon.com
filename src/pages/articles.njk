@@ -1,0 +1,20 @@
+---
+title: Articles
+permalink: /articles
+layout: article.njk
+---
+
+<ul class="archive">
+  {% for entry in collections.article | reverse %}
+    <li>
+      <time datetime="{{entry.date}}">{{entry.date | cleanDate }}</time>
+      <div>
+
+        <a href="{{entry.url}}">
+          <h3>{{entry.data.title}}</h3>
+        </a>
+        <p>{{entry.data.description}}</p>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

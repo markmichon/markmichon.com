@@ -1,0 +1,18 @@
+{% from 'logo.njk' import m,
+createIcon %}
+<footer>
+  <canvas class="wa" aria-hidden="true"></canvas>
+  <a href="/">
+    {{ m("hsl(0, 0%, 20%)") }}
+  </a>
+  <p>All materials &copy; Mark Michon 2023</p>
+  <ul>
+    {% for item in config.socials %}
+      <li>
+        <a rel="me" href="{{item.path}}">
+          {{ createIcon(path=item.icon) }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</footer>
