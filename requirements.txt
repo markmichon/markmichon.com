@@ -1,3 +1,0 @@
-Brotli==1.0.7
-fonttools==3.42.0
-zopfli==0.1.6

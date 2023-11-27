@@ -1,7 +1,7 @@
 ---
 title: Technical writer for hire
 description: Technical editor, writer, and documentation engineer for hire.
-permalink: /hire
+permalink: /hire/
 layout: article.njk
 ---
 
