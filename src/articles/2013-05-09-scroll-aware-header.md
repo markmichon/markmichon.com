@@ -9,7 +9,7 @@ categories: ['development']
 
   >This article was first published in 2013 and the information may be out of date
 
-Fixed headers are popular in web design these days. They offer an extra layer of visual depth, as well as providing a way for the user to easily explore a site without returning to the top of a page. Unfortunately, there are a few drawbacks to this technique. Here is a [live demo](http://codepen.io/markmichon/full/yicGB), and here is the full, [coded version on codepen](http://codepen.io/markmichon/pen/yicGB).
+Fixed headers are popular in web design these days. They offer an extra layer of visual depth, as well as providing a way for the user to easily explore a site without returning to the top of a page. Unfortunately, there are a few drawbacks to this technique. Here is a [live demo](http://codepen.io/markmichon/full/yicGB), and here is the full, [coded version on CodePen](http://codepen.io/markmichon/pen/yicGB).
 
 ## A bit of theory and UX
 
@@ -52,11 +52,11 @@ Adapt this as you like, the key is that we target our header in some way. In thi
   ...
 ```
 
-A few things to note here. Our global header starts visible. This is to make sure that it exists regardless of any javascript support that may or may not exist, but also to ensure that there isn't a strange flash during page load. I'm using top positioning rather than a height, because I prefer that it slides down rather than grows into view.
+A few things to note here. Our global header starts visible. This is to make sure that it exists regardless of any JavaScript support that may or may not exist, but also to ensure that there isn't a strange flash during page load. I'm using top positioning rather than a height, because I prefer that it slides down rather than grows into view.
 
-The second class, which we haven't seen yet, is going to be applied to the header with javascript on our scroll event. Here I simply move the top position of the header up 4em. The amount will differ, but the navigation contained in my header currently has a height of 4em. Your mileage may vary, and you could even decide to dynamically determine the height with a bit of JS if you choose to do so.
+The second class, which we haven't seen yet, is going to be applied to the header with JavaScript on our scroll event. Here I simply move the top position of the header up 4em. The amount will differ, but the navigation contained in my header currently has a height of 4em. Your mileage may vary, and you could even decide to dynamically determine the height with a bit of JS if you choose to do so.
 
-At this point we have a standard fixed header that follows the user as they scroll up and down the page. Now let us add the javascript. Note that I'm also using a bit of jQuery just to simplifiy the process, but this could also be done with any number of libraries, or even pure javascript if you see fit.
+At this point we have a standard fixed header that follows the user as they scroll up and down the page. Now let us add the JavaScript. Note that I'm also using a bit of jQuery just to simplify the process, but this could also be done with any number of libraries, or even pure JavaScript if you see fit.
 
 ```js
 //Requires JQuery or Zepto
@@ -83,11 +83,11 @@ $(document).ready(function() {
 })
 ```
 
-The comments should be rather straightfoward, but here's what we're doing:
+The comments should be rather straightforward, but here's what we're doing:
 
 1. capturing our `.global-header` class and its height in variables.
 2. Setting an initial scroll value. This will normally be `0`, however if you are landing on the page somewhere that is not the top, this will capture it.
-3. Here's the important bits: We have no scroll-direction event in javascript, so we monitor scrolling in any direction. We then capture the scroll position with `scrollTop()` and then compare it against are previously set `prevTop` variable. If the number is greater, we add our `.global-header-scrolling` class to it. If not, we remove it. Finally we set our `prevTop` variable to the new top value.
+3. Here's the important bits: We have no scroll-direction event in JavaScript, so we monitor scrolling in any direction. We then capture the scroll position with `scrollTop()` and then compare it against are previously set `prevTop` variable. If the number is greater, we add our `.global-header-scrolling` class to it. If not, we remove it. Finally we set our `prevTop` variable to the new top value.
 4. We also use the height value we determined earlier to make sure this doesn't occur at the very top of the page. You can adjust this as you see fit if perhaps you want the effect to only happen after a certain portion of the page.
 
-Our main event is cycling over and over as the page is scrolled, checking to see which direction the user is going. For a complete version of this technique, see [this codepen example](http://codepen.io/markmichon/pen/yicGB).
+Our main event is cycling over and over as the page is scrolled, checking to see which direction the user is going. For a complete version of this technique, see [this CodePen example](http://codepen.io/markmichon/pen/yicGB).
