@@ -15,7 +15,7 @@ That said, the platform's goals won't always align perfectly with the workflow o
 
 ## Automating with Probot
 
-Probot is essentially a framework that wraps the GitHub API, app setup, and webhooks to allow you to run scripts when repo or org related events fire.
+Probot is essentially a framework that wraps the GitHub API, app setup, and webhooks to allow you to run scripts when repository or org related events fire.
 
 Let's take a look at their default example:
 
@@ -34,9 +34,9 @@ With only a few lines of code, we now have a framework to respond to new issues.
 
 ## Locking down student repos
 
-For my courses, I require students to submit via a pull request. This allows for code-review style feedback on the PR and allows me to request changes or approve the PR. To stop any accidental pushes to master, the default branch permissions on each repo need to be set.
+For my courses, I require students to submit via a pull request. This allows for code-review style feedback on the PR and allows me to request changes or approve the PR. To stop any accidental pushes to master, the default branch permissions on each repository need to be set.
 
-To handle this we can write a small Probot app to listen for repository imports[^1] and set the desired branch protection rules for the new repo. I suggest going through their [Getting Started documentation](https://github.com/probot/probot) if you haven't already.
+To handle this we can write a small Probot app to listen for repository imports[^1] and set the desired branch protection rules for the new repository. I suggest going through their [Getting Started documentation](https://github.com/probot/probot) if you haven't already.
 
 ```js
 module.exports = app => {
@@ -69,8 +69,6 @@ module.exports = app => {
 }
 ```
 
+This example hard-codes in our configuration, but it is also common to include configuration files inside the repository or organization itself to allow more user-level configuration.
 
-
-This example hard-codes in our configuration, but it is also common to include config files inside the repo or organization itself to allow more user-level reconfigurability.
-
-[^1]: GitHub Classroom fires off a handful of hooks on repo creation, but `repository_import` is the final stage of the process.
+[^1]: GitHub Classroom fires off a handful of hooks on repository creation, but `repository_import` is the final stage of the process.

@@ -41,7 +41,7 @@ const globals = css`
 `
 ```
 
-Notice that we use the named import as the url for the font-face source. The `font-family` name you define in the `@font-face` rule will be the name you use to reference the family throughout your css.
+Notice that we use the named import as the URL for the font-face source. The `font-family` name you define in the `@font-face` rule will be the name you use to reference the family throughout your CSS.
 
 ## Approach 2: Using the static folder
 
@@ -61,7 +61,7 @@ const globals = css`
 `
 ```
 
-The key different here is the src location. While the file may be in the `static` folder, we are referencing its final location in the `@font-face` src declaration.
+The key different here is the `src` location. While the file may be in the `static` folder, we are referencing its final location in the `@font-face` `src` declaration.
 
 ## Multiple @font-face declarations and object styles
 
@@ -95,7 +95,8 @@ If you're using object styles, perhaps with something like [Theme UI](https://th
 This method prevents any rule conflicts, and still gives you access to both families.
 
 While variable fonts still require a some extra work and occasionally extra overhead, if your site is making use of multiple weights or styles you may find that including them saves resources. To explore variable fonts further, have a look at the following resources:
-
+<!-- vale mm.spelling = NO -->
 - [Getting started with variable fonts - Richard Rutter](https://medium.com/@clagnut/get-started-with-variable-fonts-c055fd73ecd7)
+<!-- vale mm.spelling = YES -->
 - [v-fonts](https://v-fonts.com/)
 - [Variable Fonts: The Future of (Web) Type](https://typographica.org/on-typography/variable-fonts/)

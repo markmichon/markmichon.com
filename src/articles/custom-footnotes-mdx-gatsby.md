@@ -7,7 +7,7 @@ description: 'Using the MDX wrapper key to customize your MDX output'
 
   >This article was first published in 2019 and this site no longer runs on Gatsby.
 
-MDX offers a pretty straightforward way to handle replacing the default html elements via the `MDXProvider` component in `@mdx-js/react`, but what happens when you need to replace an element that isn't in the default component list or one that is unique in some way?
+MDX offers a pretty straightforward way to handle replacing the default HTML elements via the `MDXProvider` component in `@mdx-js/react`, but what happens when you need to replace an element that isn't in the default component list or one that is unique in some way?
 
 This scenario may come up when using a remark plugin or supported features, such as footnotes[^1]. See the final example implementation [on codesandbox](https://codesandbox.io/s/custommdxfootnotes-83mqi), or follow along below.
 
@@ -49,13 +49,7 @@ export const wrapPageElement = ({ element }) => {
 }
 ```
 
-Here's our final, working example on [codesandbox](https://codesandbox.io/s/custommdxfootnotes-83mqi):
-
-<CodeEmbed
-  service="codesandbox"
-  name="custommdxfootnotes-83mqi"
-  file="gatsby-browser.js"
-/>
+Here's our final, working example on [codesandbox](https://codesandbox.io/s/custommdxfootnotes-83mqi).
 
 ## Additional Reading
 

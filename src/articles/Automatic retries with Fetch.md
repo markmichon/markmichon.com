@@ -47,7 +47,7 @@ So what changed? We are passing in a new `retries` argument. This is our configu
 
 The key change is the addition of a recursive return of the original `fetchPlus`. The same arguments are passed in, but now with one fewer retry. This combined with the conditional block around the call prevents an infinite loop.
 
-Now if we call `fetchPlus` with at least 1 retry, it will recall itself when a failure occurs. By returning fetchPlus within itself, we keep all the benefits of the original returned promise and can use it just as we would fetch. For example:
+Now if we call `fetchPlus` with at least 1 retry, it will recall itself when a failure occurs. By returning `fetchPlus` within itself, we keep all the benefits of the original returned promise and can use it just as we would fetch. For example:
 
 ```javascript
 fetchPlus('https://randomuser.me/api', {}, 1).then(res => {

@@ -34,6 +34,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./src/_assets/*.js": "assets/js",
   });
+  eleventyConfig.addPassthroughCopy({ "./src/_assets/*.txt": "/" });
   eleventyConfig.addWatchTarget("./src/_assets/main.css");
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.setLibrary("md", mdSetup);

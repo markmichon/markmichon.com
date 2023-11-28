@@ -1,0 +1,17 @@
+---
+extends: substitution
+message: Use '%s' instead of '%s'
+level: warning
+ignorecase: false
+action:
+  name: replace
+swap:
+  (?i:Github): GitHub
+  (?i:Graphql): GraphQL
+  (?i:javascript): JavaScript
+  (?i:jquery): jQuery
+  (?i:codepen): CodePen
+  url: URL
+  css: CSS
+  html: HTML
+  repo: repository
