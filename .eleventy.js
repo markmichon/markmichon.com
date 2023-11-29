@@ -7,6 +7,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 const hljs = require("highlight.js/lib/core");
 // const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
 // const eleventyImagePlugin = require("@11ty/eleventy-img");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const CONTENT_GLOBS = {
   articles: "src/articles/**/**.md",
@@ -42,6 +43,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/_assets/*.txt": "/" });
   eleventyConfig.addWatchTarget("./src/_assets/main.css");
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.setLibrary("md", mdSetup);
 
   eleventyConfig.addFilter("cleanDate", (contents) => {

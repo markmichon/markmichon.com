@@ -1,8 +1,13 @@
 module.exports = {
   articleDir: "articles",
   siteTitle: "Mark Michon",
+  language: "en",
   siteLogo: "",
-  siteUrl: "https://markmichon.com",
+  url: "https://markmichon.com",
+  author: {
+    name: "Mark Michon",
+    email: "hello@markmichon.com"
+  },
   pathPrefix: "/",
   siteDescription: "The personal site of educator and developer, Mark Michon",
   socials: [
@@ -22,7 +27,7 @@ module.exports = {
       icon: "M22.987.963L19.7 20.676a.812.812 0 0 1-1.12.614l-5.809-2.373-3.106 3.788a.795.795 0 0 1-.898.244.812.812 0 0 1-.541-.772V17.7L19.319 4.108 5.585 15.978.515 13.9a.812.812 0 0 1-.417-1.142.83.83 0 0 1 .309-.322L21.781.116A.811.811 0 0 1 22.192 0c.16 0 .316.047.45.135a.831.831 0 0 1 .345.828z",
     },
     {
-      path: "https://markmichon.com/rss.xml",
+      path: "https://markmichon.com/feed/feed.xml",
       name: "RSS",
       icon: "M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z",
     },
