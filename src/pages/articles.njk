@@ -7,7 +7,7 @@ layout: article.njk
 <ul class="archive">
   {% for entry in collections.article | reverse %}
     <li>
-      <time datetime="{{entry.date}}">{{entry.date | cleanDate }}</time>
+      <time datetime="{{entry.date}}">{{entry.date.toUTCString() | cleanDate }}</time>
       <div>
 
         <a href="{{entry.url}}">

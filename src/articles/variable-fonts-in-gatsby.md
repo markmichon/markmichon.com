@@ -2,7 +2,7 @@
 permalink: /variable-fonts-gatsby/
 date: '2019-08-29'
 title: 'Adding Variable Fonts to a Gatsby Site'
-description: 'Using CSS-in-JS to manage variable fonts in a Gatsby site.'
+description: 'Using CSS-in-JS to manage variable fonts in a Gatsby site'
 templateEngineOverride: 'md'
 ---
   >This article was first published in 2019 and this site no longer runs on Gatsby.
