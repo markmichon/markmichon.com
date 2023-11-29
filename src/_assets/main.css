@@ -1,5 +1,6 @@
 :root {
   --color-dark: hsl(0, 0%, 20%);
+  --color-mid: hsl(0,0%,40%);
   --color-light: hsl(180, 100%, 100%);
   --color-primary: hsl(352, 67%, 53%);
   --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
@@ -14,7 +15,9 @@
   --font-serif: "Source Serif VF", Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segou UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe U Symbol";
-  --font-mono: ;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --font-w-bold: 800;
   --max-width: 36rem;
 
@@ -219,7 +222,7 @@ code {
   padding: 0.25rem;
 }
 pre code {
-  font-size: var(--step-0);
+  font-size: var(--step--2);
   border-radius: 1rem;
 }
 
@@ -315,7 +318,7 @@ pre code {
   margin-top: 0;
 }
 .intro p {
-  font-size: var(--step--1);
+  font-size: var(--step-0);
 }
 
 .intro a {
@@ -391,7 +394,7 @@ footer {
   text-align: center;
   & p {
     font-size: var(--step--1);
-    color: hsl(0, 0%, 40%);
+    color: var(--color-mid);
   }
   & ul {
     list-style: none;
@@ -454,6 +457,7 @@ article {
     margin-bottom: 1rem;
     @media (min-width: 600px) {
       display: grid;
+      gap: 1rem;
       grid-template-columns: 1fr 5fr;
     }
   }
@@ -461,6 +465,9 @@ article {
   & time {
     font-family: var(--font-mono);
     font-size: var(--step--1);
+    padding-top: .25rem;
+    text-align: right;
+    color: var(--color-mid);
   }
 }
 

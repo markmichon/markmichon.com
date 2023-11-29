@@ -1,7 +1,7 @@
 ---
 date: '2013-05-09T00:00:00Z'
 keywords: css, html, tutorial
-description: One technique for designing a scroll-dependent hidden navigation bar.
+description: One technique for designing a scroll-dependent hidden navigation bar
 title: Creating a Scroll Dependent Navigation
 permalink: /scroll-aware-header/
 categories: ['development']
