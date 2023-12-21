@@ -2,7 +2,10 @@
   "name": "markmichon.com",
   "version": "4.0.0",
   "description": "The personal site of Mark Michon",
-  "main": "app.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx @11ty/eleventy --serve",
@@ -20,7 +23,7 @@
   },
   "homepage": "https://github.com/markmichon/markmichon.com#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "3.0.0-alpha.3",
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
