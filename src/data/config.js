@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   articleDir: "articles",
   siteTitle: "Mark Michon",
   language: "en",

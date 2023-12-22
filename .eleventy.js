@@ -1,14 +1,12 @@
-const yaml = require("js-yaml");
-const markdownIt = require("markdown-it");
-const markdownItEmoji = require("markdown-it-emoji");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItHighlightJS = require("markdown-it-highlightjs");
-const markdownItFootnote = require("markdown-it-footnote");
-const hljs = require("highlight.js/lib/core");
-// const eleventyWebcPlugin = require("@11ty/eleventy-plugin-webc");
-// const eleventyImagePlugin = require("@11ty/eleventy-img");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { EleventyRenderPlugin } = require("@11ty/eleventy");
+import yaml from "js-yaml"
+import markdownIt from "markdown-it"
+import markdownItEmoji from "markdown-it-emoji"
+import markdownItAnchor from "markdown-it-anchor"
+import markdownItHighlightJS from "markdown-it-highlightjs"
+import markdownItFootnote from "markdown-it-footnote"
+import hljs from "highlight.js"
+import pluginRss from "@11ty/eleventy-plugin-rss"
+import { EleventyRenderPlugin } from "@11ty/eleventy"
 const CONTENT_GLOBS = {
   articles: "src/articles/**/**.md",
 };
@@ -27,7 +25,7 @@ mdSetup.renderer.rules.hr = (tokens, idx, options, env, self) => {
   `;
 };
 
-module.exports = function (eleventyConfig) {
+export default async function(eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addPassthroughCopy({ "./src/_assets/*.css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "./src/_assets/*.svg": "assets/img" });
@@ -54,30 +52,6 @@ module.exports = function (eleventyConfig) {
     let year = date.getFullYear();
     return `${month.toUpperCase()} ${day} ${year}`;
   });
-
-  // Images
-  // WebC
-  // eleventyConfig.addPlugin(eleventyWebcPlugin, {
-  //   components: [
-  //     // Add as a global WebC component
-  //     "npm:@11ty/eleventy-img/*.webc",
-  //   ],
-  // });
-
-  // Image plugin
-  // eleventyConfig.addPlugin(eleventyImagePlugin, {
-  //   // Set global default options
-  //   formats: ["webp", "jpeg"],
-  //   urlPath: "/assets/img/",
-  //   outputDir: "/assets/img/",
-  //   // Notably `outputDir` is resolved automatically
-  //   // to the project output directory
-
-  //   defaultAttributes: {
-  //     loading: "lazy",
-  //     decoding: "async",
-  //   },
-  // });
 
   return {
     markdownTemplateEngine: "njk",
