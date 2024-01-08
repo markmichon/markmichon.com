@@ -13,6 +13,11 @@
     <title>{{title}} — MM</title>
     {% endif %}
     <meta name="description" content="{{description}}">
+    {% if canonical %}
+    <link rel="canonical" href="{{canonical}}">
+    {% else %}
+    <link rel="canonical" href="{{config.url}}{{page.url}}">
+    {% endif %}
   </head>
   {% from 'logo.njk' import m %}
   <body>
