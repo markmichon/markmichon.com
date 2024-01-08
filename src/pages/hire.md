@@ -22,6 +22,10 @@ I can assist in:
 - Helping to select a docs-as-code platform, or build one to suit a team's specific goals.
 - Develop a style guide that hits the right balance so your developers aren't blocked by overly noisy warnings.
 
+The following describes my approach to documentation projects:
+
+- [Bearer CLI case case study and retrospective](/bearer-cli-case-study/)
+
 ## Technical writing and editing
 
 Technical explainers, tutorials, and guides are a great way to add content to your site, blog, or docs. Keyword-rich SEO may bring traffic, but educational content that solves real customer needs converts visitors into customers.
