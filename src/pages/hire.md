@@ -24,7 +24,7 @@ I can assist in:
 
 The following describes my approach to documentation projects:
 
-- [Bearer CLI case case study and retrospective](/bearer-cli-case-study/)
+- [Bearer CLI case study and retrospective](/bearer-cli-case-study/)
 
 ## Technical writing and editing
 
