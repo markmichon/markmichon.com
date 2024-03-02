@@ -4,6 +4,7 @@ export default {
   language: "en",
   siteLogo: "",
   url: "https://markmichon.com",
+  analyticsUrl: "http://localhost:3000/hit.gif",
   author: {
     name: "Mark Michon",
     email: "hello@markmichon.com"

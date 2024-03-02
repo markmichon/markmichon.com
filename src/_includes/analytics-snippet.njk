@@ -1,0 +1,12 @@
+<script>
+
+const us = new URL(document.URL).hostname
+const them = new URL(document.referrer).hostname
+let gif = ""
+if (us === them) {
+  gif = `{{config.analyticsUrl}}?page={{page.url | urlencode}}`
+} else {
+  gif = `{{config.analyticsUrl}}?ref=${encodeURIComponent(document.referrer)}&page={{page.url | urlencode}}`
+}
+document.querySelector('body').insertAdjacentHTML('beforeend', `<img src="${gif}" />`)
+</script>
