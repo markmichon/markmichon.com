@@ -24,27 +24,27 @@ mdSetup.renderer.rules.hr = (tokens, idx, options, env, self) => {
   <canvas class="wa hr" aria-hidden="true"></canvas>
   `;
 };
-
-export default async function(eleventyConfig) {
-  eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
-  eleventyConfig.addPassthroughCopy({ "./src/_assets/*.css": "assets/css" });
-  eleventyConfig.addPassthroughCopy({ "./src/_assets/*.svg": "assets/img" });
-  eleventyConfig.addPassthroughCopy({
+/** @param {import("@11ty/eleventy").UserConfig} config */
+export default async function(config) {
+  config.addDataExtension("yaml", (contents) => yaml.load(contents));
+  config.addPassthroughCopy({ "./src/_assets/*.css": "assets/css" });
+  config.addPassthroughCopy({ "./src/_assets/*.svg": "assets/img" });
+  config.addPassthroughCopy({
     "./src/_assets/fonts/*": "assets/fonts",
   });
-  eleventyConfig.addPassthroughCopy({
+  config.addPassthroughCopy({
     "./src/_assets/*.js": "assets/js",
   });
-  eleventyConfig.addPassthroughCopy({
+  config.addPassthroughCopy({
     "./src/articles/images/*": "assets/img",
   });
-  eleventyConfig.addPassthroughCopy({ "./src/_assets/*.txt": "/" });
-  eleventyConfig.addWatchTarget("./src/_assets/main.css");
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.setLibrary("md", mdSetup);
+  config.addPassthroughCopy({ "./src/_assets/*.txt": "/" });
+  config.addWatchTarget("./src/_assets/main.css");
+  config.addPlugin(EleventyRenderPlugin);
+  config.addPlugin(pluginRss);
+  config.setLibrary("md", mdSetup);
 
-  eleventyConfig.addFilter("cleanDate", (contents) => {
+  config.addFilter("cleanDate", (contents) => {
     let date = new Date(contents);
     let month = date.toLocaleString("default", { month: "short" });
     let day = date.toLocaleString("default", { day: "2-digit" });

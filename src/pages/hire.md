@@ -32,6 +32,7 @@ Technical explainers, tutorials, and guides are a great way to add content to yo
 
 Some examples of the kinds of developer content I can write can be found on the [articles page](/articles) of this site, or in the links below:
 
+- [How Bearer CLI works](https://docs.bearer.com/explanations/workflow/)
 - [Building a circuit breaker in Node.js](https://dev.to/bearer/building-a-circuit-breaker-in-node-js-part-1-2e98)
 - [What is an API gateway?](https://dev.to/bearer/what-is-an-api-gateway-42i6)
 
