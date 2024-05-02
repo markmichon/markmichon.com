@@ -1,0 +1,5 @@
+<script>
+const url = document.URL
+let gif = `{{config.analyticsUrl}}?ref=${encodeURIComponent(document.referrer)}&url=${encodeURIComponent(url)}`
+document.querySelector('body').insertAdjacentHTML('beforeend', `<img alt="" src="${gif}" onerror="this.style.display='none'" />`)
+</script>
