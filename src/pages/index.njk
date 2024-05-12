@@ -20,9 +20,9 @@ permalink: /
 {# <div class="blog"></div> #}
 
 <section class="home-section">
-  <h2>Selected Articles</h2>
+  <h2>Recent Articles</h2>
   <ul>
-    {% for entry in collections.article | reverse %}
+    {% for entry in collections.article | reverse | limit(5) %}
       <li>
         <a href="{{entry.url}}">
           <h3>{{entry.data.title}}</h3>
