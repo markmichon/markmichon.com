@@ -53,6 +53,10 @@ export default async function(config) {
     return `${month.toUpperCase()} ${day} ${year}`;
   });
 
+  config.addFilter("limit", (arr, limit) => {
+    return arr.slice(0, limit)
+  });
+
   return {
     markdownTemplateEngine: "njk",
     dir: {
