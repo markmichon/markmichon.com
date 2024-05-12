@@ -98,6 +98,28 @@ Additionally, the Docker Desktop app—which is likely running in your menu bar�
 docker compose down
 ```
 
+## Keeping the database between sessions
+
+You may notice that after a round of `up` and `down`, the database resets to its default state. Docker's "volumes" mechanic solves this. For this starter setup, update the `db` service configuration to include the `volumes` key and value:
+
+```yaml
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo
+      POSTGRES_DB: demo
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+```
+
+Volumes takes a list of pairs. The first value in the pair—the part to the left of the colon—is the location on your machine. In this case, a directory named `data` in our current project directory. The second value is the location inside the Docker container. The `/var/lib/postgresql/data` location [is defined by](https://hub.docker.com/_/postgres/) the `postgres` image. You can change this by setting a `PGDATA` environment variable, or leave it as the default.
+
+The next time you `docker compose up`, you should see the new `data` directory appear locally. Now data will persist between sessions. If at any point you need to completely remove the database, you can remove the directory. Docker will regenerate a clean version if it can't find data in the volume location.
+
 ## Further explorations
 
 I hope this brief intro gives you the confidence to use Docker more. Compose files are an excellent jumping off point. In the time between Docker's rise in popularity and now, the official docs and resources have really stepped up their clarity and they're worth checking out.
