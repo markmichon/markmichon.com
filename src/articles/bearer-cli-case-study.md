@@ -3,6 +3,7 @@ title: 'Designing CLI documentation from the ground up'
 tags: ['article', 'case study']
 permalink: /bearer-cli-case-study/
 description: 'A case study on launching the Bearer CLI docs'
+og: "bearer-cli-case-study.jpg"
 ---
 
 At [Bearer](https://bearer.com), one of my final projects as a technical content manager with the company involved the documentation for their open source project, Bearer CLI. I acted as the primary technical writer, technical editor, and documentation architect.

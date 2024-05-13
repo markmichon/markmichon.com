@@ -4,6 +4,7 @@ date: '2019-08-29'
 title: 'Adding Variable Fonts to a Gatsby Site'
 description: 'Using CSS-in-JS to manage variable fonts in a Gatsby site'
 templateEngineOverride: 'md'
+og: "variable-fonts-in-gatsby.jpg"
 ---
   >This article was first published in 2019 and this site no longer runs on Gatsby.
 

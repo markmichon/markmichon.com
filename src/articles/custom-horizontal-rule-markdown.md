@@ -3,6 +3,7 @@ title: 'Custom horizontal rules with markdown-it and Eleventy'
 description: "By overriding markdown-it's default rendering, we can replace the horizontal rule with any element"
 permalink: /custom-hr-markdown/
 tags: ['11ty']
+og: "custom-horizontal-rule-markdown.jpg"
 ---
 
 When I migrated this site over from Gatsby, MDX, and React to [Eleventy](https://11ty.dev) and markdown I needed solutions for my [custom MDX components](/advanced-custom-mdx-components/). One that I wasn't expecting to pose a problem was my `.fancy` horizontal rule.

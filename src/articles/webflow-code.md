@@ -4,6 +4,7 @@ permalink: /code-webflow/
 description: 'The tedius process of adding code to blog posts in Webflow'
 canonical: "https://www.bearer.com/blog/webflow-blog-code-blocks"
 date: '2022-04-26'
+og: "webflow-code.jpg"
 ---
 
 *This article originally appeared on the [Bearer Blog](https://www.bearer.com/blog/webflow-blog-code-blocks) in April of 2022. Details may be out of date.*
