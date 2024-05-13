@@ -55,11 +55,13 @@ Additionally, it's common to see optional demographic information requests, incl
 
 The fields above are not _always_ required. Some applications limit themselves to only require the necessary fields. They are the outliers. Bad defaults? Overzealous job posters? Regardless, it's invasive.
 
+![A portion of a job application's demographics section. The race and transgender status questions are required, but offer a "I don't wish to answer" option.](/assets/img/optional-required.png)
+
+My skepticism sensors go up when I see images like this. Explicitly declining to answer is an answer that in some instances provides even more information than the other answers.
+
 ## The applicant privacy policy
 
-In some cases, there is an applicant and candidate privacy policy. These policies are unhelpful to the average applicant. Some include data retention timelines, which is reassuring, while others include their legally required lawful basis, list of third parties, and contact details.
-
-In some cases, applicants must acknowledge the policy, but it's usually implied or acknowledged by submitting an application.
+In some cases, there is an applicant and candidate privacy policy. These policies are unhelpful to the average applicant. Some include data retention timelines, which is reassuring, while others include their legally required lawful basis, list of third parties, and contact details. On rare occasion you'll find a required acknowledgement checkbox. For all others, it's implied.
 
 ## Why does this matter?
 
