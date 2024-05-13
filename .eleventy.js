@@ -7,6 +7,7 @@ import markdownItFootnote from "markdown-it-footnote"
 import hljs from "highlight.js"
 import pluginRss from "@11ty/eleventy-plugin-rss"
 import { EleventyRenderPlugin } from "@11ty/eleventy"
+
 const CONTENT_GLOBS = {
   articles: "src/articles/**/**.md",
 };
@@ -24,7 +25,7 @@ mdSetup.renderer.rules.hr = (tokens, idx, options, env, self) => {
   <canvas class="wa hr" aria-hidden="true"></canvas>
   `;
 };
-/** @param {import("@11ty/eleventy").UserConfig} config */
+/** @param {import("@11ty/eleventy/src/UserConfig").default} config */
 export default async function(config) {
   config.addDataExtension("yaml", (contents) => yaml.load(contents));
   config.addPassthroughCopy({ "./src/_assets/*.css": "assets/css" });
@@ -38,10 +39,14 @@ export default async function(config) {
   config.addPassthroughCopy({
     "./src/articles/images/*": "assets/img",
   });
+  config.addPassthroughCopy({
+    "./src/_assets/og": "assets/og"
+  })
   config.addPassthroughCopy({ "./src/_assets/*.txt": "/" });
   config.addWatchTarget("./src/_assets/main.css");
   config.addPlugin(EleventyRenderPlugin);
   config.addPlugin(pluginRss);
+
   config.setLibrary("md", mdSetup);
 
   config.addFilter("cleanDate", (contents) => {

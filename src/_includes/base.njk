@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="/assets/css/night-owl.css">
     {% if page.url == "/"%}
     <title>{{title}}</title>
+    <meta property="og:type" content="website" />
     {% else %}
     <title>{{title}} — MM</title>
+    <meta property="og:type" content="article" />
     {% endif %}
     <meta name="description" content="{{description}}">
     {% if canonical %}
@@ -18,6 +20,12 @@
     {% else %}
     <link rel="canonical" href="{{config.url}}{{page.url}}">
     {% endif %}
+    <meta property="og:image" content="{{config.url}}/assets/og/{{og}}"/>
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:url" content="{{config.url}}{{page.url}}" />
+    <meta property="og:description" content="{{description}}" />
+
+
   </head>
   {% from 'logo.njk' import m %}
   <body>
