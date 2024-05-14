@@ -1,5 +1,15 @@
 <script>
-const url = document.URL
-let gif = `{{config.analyticsUrl}}?ref=${encodeURIComponent(document.referrer)}&url=${encodeURIComponent(url)}`
-document.querySelector('body').insertAdjacentHTML('beforeend', `<img alt="" src="${gif}" onerror="this.style.display='none'" />`)
+  // Hi there 👋
+  // I track page hits and where you came from. Your IP is cached in-memory for a max of a 5 minutes on the server.
+  // I store a rough location (Town / Region / Country), the time of visit, the page, and what site referred you. Nothing more.
+  // If you'd rather your visits never send anything, you can run the following line in the console (CMD+OPT+J):
+  // localStorage.setItem('wave', false)
+  // To revert it and allow it again, clear your local storage or run localStorage.removeItem('wave')
+  // Thanks for stopping by!
+
+  if (!localStorage.getItem('wave')) {
+    const url = document.URL
+    let gif = `{{config.analyticsUrl}}?ref=${encodeURIComponent(document.referrer)}&url=${encodeURIComponent(url)}`
+    document.querySelector('body').insertAdjacentHTML('beforeend', `<img alt="" src="${gif}" onerror="this.style.display='none'" />`)
+  }
 </script>
