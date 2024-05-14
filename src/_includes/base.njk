@@ -20,7 +20,8 @@
     {% else %}
     <link rel="canonical" href="{{config.url}}{{page.url}}">
     {% endif %}
-    <meta property="og:image" content="{{config.url}}/assets/og/{{og}}"/>
+    {# <meta property="og:image" content="{{config.url}}/assets/og/{{og}}"/> #}
+    <meta property="og:image" content="{{config.url}}{{page.url}}{{ title | ogImage }}"/>
     <meta property="og:title" content="{{title}}" />
     <meta property="og:url" content="{{config.url}}{{page.url}}" />
     <meta property="og:description" content="{{description}}" />
