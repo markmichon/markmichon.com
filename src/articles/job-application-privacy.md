@@ -7,13 +7,15 @@ og: "job-application-privacy.jpg"
 
 _TLDR: The lack of widespread data protection laws in the US is putting job-seekers at risk, and the future doesn’t look promising._
 
-The job market is rough. Tech continues its purge as money is no longer free. If you've spent time entering data into Greenhouse, Workday, Lever, or other talent management platforms, my condolences.
+The job market is rough. Tech continues its purge as money is no longer free. If you're stuck in the loop putting personal details into Greenhouse, Workday, Lever, or other talent management platforms, my condolences.
 
-If you haven't, you may be completely unaware how invasive job applications have become. I'm not talking about tracking links and cookies on job boards, but rather the applications themselves. Remote job-seekers apply for dozens, sometimes hundreds of roles, each hungry for personal data. Let's look at some of the data you
+If you haven't, you may be unaware of how invasive job applications have become. I'm not talking about tracking links and cookies on job boards, but rather the applications themselves. Remote job-seekers apply for dozens, sometimes hundreds of roles, each containing an application yearning for more personal data. Let's look at some of the data your future coworkers are asked to input when applying for exciting new roles.
+
+If you work in hiring, feel free to jump down to [What can HR and talent teams do to help protect applicants](#what-can-hr-and-talent-teams-do-to-help-protect-applicants%3F).
 
 ## A long list of common application fields
 
-Companies request more data from candidates than is needed.
+Companies request more data than they need. Not news, but still alarming.
 
 Here's a list of **required** fields I've seen on on job applications in the last year, organized subjectively from most reasonable to least. These are specific to roles in or adjacent to technical writing and software, so your mileage may vary.
 
@@ -57,11 +59,13 @@ The fields above are not _always_ required. Some applications limit themselves t
 
 ![A portion of a job application's demographics section. The race and transgender status questions are required, but offer a "I don't wish to answer" option.](/assets/img/optional-required.png)
 
-My skepticism sensors go up when I see images like this. Explicitly declining to answer is an answer that in some instances provides even more information than the other answers.
+My skepticism sensors go up when I see questions like these. Explicitly declining to answer is an answer on it's own—one that potentially reveals more about the individual and how *compliant* they may be.
 
 ## The applicant privacy policy
 
-In some cases, there is an applicant and candidate privacy policy. These policies are unhelpful to the average applicant. Some include data retention timelines, which is reassuring, while others include their legally required lawful basis, list of third parties, and contact details. On rare occasion you'll find a required acknowledgement checkbox. For all others, it's implied.
+In some cases, applications may come with an attached applicant and candidate privacy policy. These policies are unhelpful to the average person. Some include data retention timelines, which is reassuring, while others include their legally required lawful basis, list of third parties, and contact details. On rare occasion you'll find a required acknowledgement checkbox. For all others, it's implied.
+
+Across hundreds of applications, most lack a clearly visible policy and those that do surface one are clearly following the legal department's guidance.
 
 ## Why does this matter?
 
