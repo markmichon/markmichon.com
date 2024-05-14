@@ -436,7 +436,7 @@ footer .wa {
 /* Article page */
 
 article {
-  padding: 4rem 0;
+  padding: 6rem 0;
   font-family: var(--font-serif);
   font-size: var(--step-1);
   & h1 {
@@ -444,6 +444,7 @@ article {
     text-align: center;
     margin-bottom: 4rem;
     font-weight: 600;
+    line-height: 1.5;
   }
 }
 
