@@ -4,6 +4,9 @@ import { EleventyRenderPlugin } from "@11ty/eleventy"
 import filters from './src/_11ty/filters.js'
 import markdown from "./src/_11ty/markdown.js"
 import opengraphImages from "./src/_11ty/plugins/opengraph-images/index.js"
+import subfont from 'subfont'
+import path from 'path'
+
 const CONTENT_GLOBS = {
   articles: "src/articles/**/**.md",
 };
@@ -38,6 +41,25 @@ export default async function(config) {
   config.addPlugin(markdown);
 
   config.addPlugin(opengraphImages)
+
+  config.on(
+    "eleventy.after",
+    async ({dir,results,runMode,outputMode})=>{
+      if (process.env.ELEVENTY_ENV == 'production') {
+        console.log("Starting subfont...")
+        await subfont({
+          root: dir.output,
+          inPlace: true,
+          inlineCss: true,
+          silent: true,
+          fallbacks: false,
+          text: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+          // fontDisplay: "auto",
+        })
+        console.log("Completed subfont...")
+      }
+    }
+  )
 
   return {
     markdownTemplateEngine: "njk",

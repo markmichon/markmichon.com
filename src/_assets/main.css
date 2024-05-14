@@ -12,7 +12,7 @@
   --step-4: clamp(2.07rem, calc(1.73rem + 1.7vw), 3.05rem);
   --step-5: clamp(2.49rem, calc(2.03rem + 2.31vw), 3.82rem);
 
-  --font-serif: "Source Serif VF", Georgia, serif;
+  --font-serif: "Source Serif VF", "Source Serif VF-Fallback", Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segou UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe U Symbol";
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -52,6 +52,12 @@
     url("/assets/fonts/SourceSerif4Variable-Italic.ttf.woff2") format("woff2"),
     url("/assets/fonts/SourceSerif4Variable-Italic.ttf.woff") format("woff"),
     url("/assets/fonts/SourceSerif4Variable-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"Source Serif VF-Fallback";
+  size-adjust: 95%;
+  src: local("Georgia");
 }
 
 /* reset */

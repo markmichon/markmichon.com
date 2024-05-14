@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx @11ty/eleventy --serve",
     "clean": "rm -rf dist",
-    "build": "npx @11ty/eleventy"
+    "build": "ELEVENTY_ENV=production npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,8 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-highlightjs": "^4.0.1",
     "prettier": "^3.1.0",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.3",
+    "subfont": "^7.2.1"
   },
   "dependencies": {
     "markdown-it": "^13.0.1",
