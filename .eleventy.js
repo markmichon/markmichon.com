@@ -3,6 +3,7 @@ import pluginRss from "@11ty/eleventy-plugin-rss"
 import { EleventyRenderPlugin } from "@11ty/eleventy"
 import filters from './src/_11ty/filters.js'
 import markdown from "./src/_11ty/markdown.js"
+import opengraphImages from "./src/_11ty/plugins/opengraph-images/index.js"
 const CONTENT_GLOBS = {
   articles: "src/articles/**/**.md",
 };
@@ -35,6 +36,8 @@ export default async function(config) {
 
   // Markdown config
   config.addPlugin(markdown);
+
+  config.addPlugin(opengraphImages)
 
   return {
     markdownTemplateEngine: "njk",
