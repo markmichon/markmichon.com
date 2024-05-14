@@ -62,6 +62,8 @@ export default async function(config) {
     return arr.slice(0, limit)
   });
 
+  config.addShortcode("now", ()=> new Date().getFullYear())
+
   return {
     markdownTemplateEngine: "njk",
     dir: {
