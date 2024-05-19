@@ -4,7 +4,6 @@ date: '2019-06-13'
 title: 'Adding Automatic Retries to Fetch'
 categories: ['javascript']
 description: How to add automatic retries to fetch without any libraries.
-og: "automatic-retries-with-fetch.jpg"
 ---
 
   >This article was first published in 2019. Many of the concepts still apply, and support for Fetch is widespread.

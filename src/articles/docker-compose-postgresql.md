@@ -2,7 +2,7 @@
 title: Quickly set up local PostgreSQL with Docker Compose
 description: Set up postgres and adminer locally with docker compose.
 permalink: /docker-compose-postgresql/
-og: "docker-compose-postgresql.jpg"
+date: "2024-05-11"
 ---
 
 [Docker Compose](https://docs.docker.com/compose/) is the fastest way to run a PostgreSQL server locally—even if you've never touched docker before. In fact, Docker Compose is a light-touch entry into using docker for more complex stacks.

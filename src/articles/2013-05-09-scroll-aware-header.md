@@ -5,7 +5,6 @@ description: One technique for designing a scroll-dependent hidden navigation ba
 title: Creating a Scroll Dependent Navigation
 permalink: /scroll-aware-header/
 categories: ['development']
-og: "scroll-aware-header-jpg"
 ---
 
   >This article was first published in 2013 and the information may be out of date

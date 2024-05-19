@@ -3,7 +3,6 @@ permalink: '/advanced-custom-mdx-components/'
 date: '2019-05-15'
 title: 'Custom Footnotes with MDX in Gatsby'
 description: 'Using the MDX wrapper key to customize your MDX output'
-og: "custom-footnotes-mdx-gatsby.jpg"
 ---
 
   >This article was first published in 2019 and this site no longer runs on Gatsby.
