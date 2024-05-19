@@ -260,9 +260,9 @@ function setUp(
   keyframes.forEach((keyframe, idx) => {
     circles.push([]);
     for (var j = 1; j < keyframe.length; j++) {
-      for (var i = 0; i <= 100; i++) {
+      for (var i = 0; i <= 120; i++) {
         // create a frame that takes the last blob, the current blob, and a timing function to tween the gap
-        let frame = lerpNodes(keyframe[j - 1], keyframe[j], ease(i / 100));
+        let frame = lerpNodes(keyframe[j - 1], keyframe[j], ease(i / 120));
         circles[idx].push(frame);
       }
     }
@@ -300,7 +300,7 @@ function draw(circles, canvas) {
   circles.forEach((circleFrames) => {
     let nodes = circleFrames.shift();
 
-    const circle = createBlob({ nodes }).render(ctx);
+    createBlob({ nodes }).render(ctx);
     circleFrames.push(nodes);
   });
   if (window) {
@@ -312,6 +312,6 @@ function draw(circles, canvas) {
 (() => {
   const canvases = document.querySelectorAll(".wa");
   canvases.forEach((canvas) => {
-    setUp(canvas, {});
+    setUp(canvas, { frames: 10, easing: "sinusoidal" });
   });
 })();
