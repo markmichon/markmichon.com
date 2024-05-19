@@ -18,6 +18,7 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-serif-heading: "Source Serif VF", "Source Serif VF-Fallback-Bold", Georgia, serif;
   --font-w-bold: 800;
   --max-width: 36rem;
 
@@ -56,7 +57,12 @@
 
 @font-face {
   font-family:"Source Serif VF-Fallback";
-  size-adjust: 95%;
+  size-adjust: 105.5%;
+  src: local("Georgia");
+}
+@font-face {
+  font-family:"Source Serif VF-Fallback-Bold";
+  size-adjust: 97.5%;
   src: local("Georgia");
 }
 
@@ -195,11 +201,6 @@ ol {
   --flow-space: 0.5em;
 }
 
-article {
-  max-width: 60ch;
-  margin-inline: auto;
-}
-
 blockquote {
   max-width: 50ch;
   border-left: 0.5rem solid var(--color-primary);
@@ -319,7 +320,7 @@ pre code {
   font-size: var(--step-2);
 }
 .intro h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-serif-heading);
   font-size: var(--step-4);
   margin-top: 0;
 }
@@ -368,7 +369,7 @@ pre code {
   }
   & a h3 {
     font-size: var(--step-1);
-    font-family: var(--font-serif);
+    font-family: var(--font-serif-heading);
     text-decoration: none;
     position: relative;
     overflow: hidden;
@@ -442,11 +443,13 @@ footer .wa {
 /* Article page */
 
 article {
+  max-width: 800px;
+  margin-inline: auto;
   padding: 6rem 0;
   font-family: var(--font-serif);
   font-size: var(--step-1);
   & h1 {
-    font-family: var(--font-serif);
+    font-family: var(--font-serif-heading);
     text-align: center;
     margin-bottom: 4rem;
     font-weight: 600;
