@@ -2,7 +2,7 @@
 title: "Today’s job search is a data privacy hellscape"
 description: "Companies are harvesting candidate personal data and there's not much we can do about it."
 permalink: /employer-privacy-job-search/
-og: "job-application-privacy.jpg"
+date: "2024-05-13"
 ---
 
 _TLDR: The lack of widespread data protection laws in the US is putting job-seekers at risk, and the future doesn’t look promising._

@@ -3,7 +3,6 @@ permalink: '/classroom-probot/'
 date: '2019-04-03'
 title: 'Powering up GitHub Classroom with Probot'
 description: 'Automate low-hanging feedback and default settings'
-og: "classroom-probot-jpg"
 ---
 
   >This article was first published in 2019 and the information may be out of date.

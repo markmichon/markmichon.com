@@ -3,7 +3,6 @@ date: "2013-03-29"
 description: "A handful of problems & a few solid upsides to the static site generator"
 title: "Initial impressions of Jekyll"
 permalink: /initial-impressions-of-jekyll/
-og: "initial-impressions-of-jekyll.jpg"
 # categories: ['development']
 ---
 

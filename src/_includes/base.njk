@@ -20,7 +20,6 @@
     {% else %}
     <link rel="canonical" href="{{config.url}}{{page.url}}">
     {% endif %}
-    {# <meta property="og:image" content="{{config.url}}/assets/og/{{og}}"/> #}
     <meta property="og:image" content="{{config.url}}{{page.url}}{{ title | ogImage }}"/>
     <meta property="og:title" content="{{title}}" />
     <meta property="og:url" content="{{config.url}}{{page.url}}" />
@@ -36,12 +35,9 @@
           {{ m() }}
         </a>
         <ul>
-          <li>
-            <a href="/articles/">Articles</a>
-          </li>
-          <li>
-            <a href="/hire/" class="active">Hire me</a>
-          </li>
+          <li><a href="/articles/">Articles</a></li>
+          <li><a href="/now/">Now</a></li>
+          <li><a href="/hire/" class="active">Hire me</a></li>
         </ul>
       </div>
       <main>
