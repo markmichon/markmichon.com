@@ -1,6 +1,6 @@
 :root {
   --color-dark: hsl(0, 0%, 20%);
-  --color-mid: hsl(0,0%,40%);
+  --color-mid: hsl(0, 0%, 40%);
   --color-light: hsl(180, 100%, 100%);
   --color-primary: hsl(352, 67%, 53%);
   --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
@@ -18,7 +18,8 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --font-serif-heading: "Source Serif VF", "Source Serif VF-Fallback-Bold", Georgia, serif;
+  --font-serif-heading: "Source Serif VF", "Source Serif VF-Fallback-Bold",
+    Georgia, serif;
   --font-w-bold: 800;
   --max-width: 36rem;
 
@@ -38,10 +39,8 @@
   font-weight: 200 900;
   font-style: normal;
   font-stretch: normal;
-  src:
-    url("/assets/fonts/SourceSerif4Variable-Roman.ttf.woff2") format("woff2"),
-    url("/assets/fonts/SourceSerif4Variable-Roman.ttf.woff") format("woff"),
-    url("/assets/fonts/SourceSerif4Variable-Roman.ttf") format("truetype");
+  font-display: swap;
+  src: url("/assets/fonts/SourceSerif4Variable-Roman.ttf.woff2") format("woff2");
 }
 
 @font-face {
@@ -49,19 +48,18 @@
   font-weight: 200 900;
   font-style: italic;
   font-stretch: normal;
-  src:
-    url("/assets/fonts/SourceSerif4Variable-Italic.ttf.woff2") format("woff2"),
-    url("/assets/fonts/SourceSerif4Variable-Italic.ttf.woff") format("woff"),
-    url("/assets/fonts/SourceSerif4Variable-Italic.ttf") format("truetype");
+  font-display: swap;
+  src: url("/assets/fonts/SourceSerif4Variable-Italic.ttf.woff2")
+    format("woff2");
 }
 
 @font-face {
-  font-family:"Source Serif VF-Fallback";
+  font-family: "Source Serif VF-Fallback";
   size-adjust: 105.5%;
   src: local("Georgia");
 }
 @font-face {
-  font-family:"Source Serif VF-Fallback-Bold";
+  font-family: "Source Serif VF-Fallback-Bold";
   size-adjust: 97.5%;
   src: local("Georgia");
 }
@@ -167,12 +165,10 @@ h4 {
 
 h1 {
   font-size: var(--step-4);
-  /* max-width: 20ch; */
 }
 
 h2 {
   font-size: var(--step-3);
-  /* max-width: 28ch; */
 }
 
 h3 {
@@ -259,10 +255,11 @@ pre code {
 
 .nav {
   display: flex;
+  flex-direction: column;
   margin-top: 0.5rem;
   margin-left: 0;
   margin-right: 1rem;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 
   & ul {
@@ -284,6 +281,12 @@ pre code {
     }
   }
 }
+@media (min-width: 500px) {
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 
 .logo-container {
   color: inherit;
@@ -291,18 +294,32 @@ pre code {
   background-color: var(--color-dark);
   position: relative;
   padding: 0.5rem;
+  margin-top: -3rem;
   margin-left: 0;
   transition: width 200ms ease-in-out;
 }
 .logo-container::before {
   content: "";
-  height: 100%;
-  width: 1rem;
-  left: -1rem;
-  top: 0;
+  height: 2rem;
+  top: -1.5rem;
+  left: 0;
+  right: 0;
   position: absolute;
   background-color: inherit;
   z-index: 1;
+}
+
+@media (min-width: 500px) {
+  .logo-container {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  .logo-container::before {
+    height: 100%;
+    width: 1rem;
+    left: -1rem;
+    top: 0;
+  }
 }
 
 /* index layout */
@@ -443,13 +460,19 @@ footer .wa {
 /* Article page */
 
 article {
-  max-width: 800px;
+  max-width: 730px;
   margin-inline: auto;
   padding: 6rem 0;
   font-family: var(--font-serif);
   font-size: var(--step-1);
-  & h1 {
+  & h1,
+  h2,
+  h3,
+  h4,
+  h5 {
     font-family: var(--font-serif-heading);
+  }
+  & h1 {
     text-align: center;
     margin-bottom: 4rem;
     font-weight: 600;
@@ -475,7 +498,7 @@ article {
   & time {
     font-family: var(--font-mono);
     font-size: var(--step--1);
-    padding-top: .25rem;
+    padding-top: 0.25rem;
     text-align: right;
     color: var(--color-mid);
   }
