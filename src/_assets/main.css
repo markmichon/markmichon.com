@@ -216,6 +216,11 @@ a:focus {
   color: var(--color-primary);
 }
 
+::selection {
+  color:var(--color-light);
+  background-color: var(--color-primary);
+}
+
 /* code blocks */
 code {
   font-family: var(--font-mono);
@@ -461,11 +466,16 @@ footer .wa {
 /* Article page */
 
 article {
-  max-width: 730px;
   margin-inline: auto;
   padding: 6rem 0;
   font-family: var(--font-serif);
   font-size: var(--step-1);
+  > * {
+      max-width: 730px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
   & h1,
   h2,
   h3,
