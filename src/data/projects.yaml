@@ -2,7 +2,7 @@
   url: https://github.com/markmichon/classroom-master-lockdown
   description: A tool for automatically protecting the master branch on newly generated repositories.
 - title: Not a Whippet
-  url: https://notawhippet.com
+  url: https://github.com/markmichon/notawhippet.com
   description: An app using custom vision to detect dog breeds.
 - title: gatsby-plugin-feed-generator
   url: https://github.com/markmichon/gatsby-plugin-feed-generator
