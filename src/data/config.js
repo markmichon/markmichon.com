@@ -8,6 +8,7 @@ export default {
   author: {
     name: "Mark Michon",
     email: "hello@markmichon.com",
+    fediverse: "@markmichon@mastodon.social"
   },
   pathPrefix: "/",
   siteDescription: "The personal site of educator and developer, Mark Michon",
