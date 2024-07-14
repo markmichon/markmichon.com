@@ -2,7 +2,7 @@
 title: Be careful mixing ch units with webfonts
 description: The ch unit is an easy way to restrict an element's measure in CSS, but it can have unintended layout shift problems when combined with webfonts.
 permalink: /ch-unit-webfont-layout-shift/
-date: "2024-06-16"
+date: "2024-07-14"
 ---
 In a recent refactor of this site, I changed the main article wrapper from a *rem-based* max-width to a *ch-based* max-width. As webfonts loaded, the page shifted—dramatically. Not the usual *flicker* you might expect, but a pronounced shift. Roll the tape:
 
