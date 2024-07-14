@@ -5,7 +5,7 @@ permalink: /employer-privacy-job-search/
 date: "2024-05-13"
 ---
 
-_TLDR: The lack of widespread data protection laws in the US is putting job-seekers at risk, and the future doesn’t look promising._
+*TLDR: The lack of widespread data protection laws in the US is putting job-seekers at risk, and the future doesn’t look promising.*
 
 The job market is rough. Tech continues its purge as money is no longer free. If you're stuck in the loop putting personal details into Greenhouse, Workday, Lever, or other talent management platforms, my condolences.
 
@@ -35,7 +35,7 @@ Here's a list of **required** fields I've seen on on job applications in the las
 
 - City / State / Country
 
-- High school performance (_and explain it_)
+- High school performance (*and explain it*)
 
 - Gender
 
@@ -55,7 +55,7 @@ Additionally, it's common to see optional demographic information requests, incl
 
 - Hispanic/Latino status
 
-The fields above are not _always_ required. Some applications limit themselves to only require the necessary fields. They are the outliers. Bad defaults? Overzealous job posters? Regardless, it's invasive.
+The fields above are not *always* required. Some applications limit themselves to only require the necessary fields. They are the outliers. Bad defaults? Overzealous job posters? Regardless, it's invasive.
 
 ![A portion of a job application's demographics section. The race and transgender status questions are required, but offer a "I don't wish to answer" option.](/assets/img/optional-required.png)
 
@@ -69,13 +69,13 @@ Across hundreds of applications, most lack a clearly visible policy and those th
 
 ## Why does this matter?
 
-It's easy to overlook the importance of consent when it comes to sharing information. The same person putting hours of their life on social media each week deserves to choose whether or not a hiring manager can see their address. _I can only imagine how scary the situation must be for more targeted and vulnerable groups—especially in tech._
+It's easy to overlook the importance of consent when it comes to sharing information. The same person putting hours of their life on social media each week deserves to choose whether or not a hiring manager can see their address. *I can only imagine how scary the situation must be for more targeted and vulnerable groups—especially in tech.*
 
 For most job-seekers, there's a power imbalance that forces them to choose between a job—and income, healthcare, etc.—and privacy.
 
 ## What can HR and talent teams do to help protect applicants?
 
-The first step is auditing the type of information you request from applicants. _The first rule of data is only collect what you need._ Okay, protecting the data is more important, but only collect what you need!
+The first step is auditing the type of information you request from applicants. *The first rule of data is only collect what you need.* Okay, protecting the data is more important, but only collect what you need!
 
 Here's a basic list of items you may need:
 
@@ -83,7 +83,7 @@ Here's a basic list of items you may need:
 
 - Email
 
-- Phone _(if you intend to call them as part of the process)_
+- Phone *(if you intend to call them as part of the process)*
 
 - Resume/CV
 
@@ -93,7 +93,7 @@ That's it. You can also include role-related questions or prompts if your hiring
 
 You can set guidelines for who can review the information. It's hard, if not impossible, to truly anonymize candidate details. Many companies had a good go at it, but candidates include revealing details in their cover letters and résumés. A better solution is to limit who can see application data. It's surprisingly easy to reveal an applicant's full résumé and personal contact details to team members. I've seen personal contact information for applicants while completing Greenhouse's candidate scorecard system.
 
-Finally, scrutinize your data processors. Default features and fields offered by talent platforms are _hungry_. Set short data retention times. Delete data after hiring. We all know you're not reaching out to candidates "when similar roles open up."
+Finally, scrutinize your data processors. Default features and fields offered by talent platforms are *hungry*. Set short data retention times. Delete data after hiring. We all know you're not reaching out to candidates "when similar roles open up."
 
 ## What can job-seekers do?
 
@@ -101,7 +101,7 @@ The job market is tough. When the situation improves, we need to demand better p
 
 Several services exist for removing personal data. The Consumer Report's [Permission Slip](https://www.permissionslipcr.com/) is free and automates data removal requests, but it’s unclear if they cover talent platforms. Other privacy tools like [Mozilla Monitor](https://monitor.mozilla.org) are paid options for ongoing data deletion, with varying effectiveness.
 
-We can also demand better personal data protection. In the US, that's pretty unlikely. There's an uptick in [states introducing consumer privacy laws](https://iapp.org/resources/article/us-state-privacy-legislation-tracker/), but little chance of anything substantial at the national level. Even in my state of Oregon, which _finally_ approved the Oregon Consumer Privacy Act, there's an unfortunate clause that exempts any data provided to employers or in the process of applying to a job. **This isn't good enough.** If you're looking for another reason to contact your local representatives, privacy is a good one.
+We can also demand better personal data protection. In the US, that's pretty unlikely. There's an uptick in [states introducing consumer privacy laws](https://iapp.org/resources/article/us-state-privacy-legislation-tracker/), but little chance of anything substantial at the national level. Even in my state of Oregon, which *finally* approved the Oregon Consumer Privacy Act, there's an unfortunate clause that exempts any data provided to employers or in the process of applying to a job. **This isn't good enough.** If you're looking for another reason to contact your local representatives, privacy is a good one.
 
 My best advice is: Provide as little information as possible.
 

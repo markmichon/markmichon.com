@@ -4,7 +4,6 @@ permalink: /now/
 layout: article.njk
 ---
 
-
 Welcome to `markmichon/now`. Here's what I'm up to lately. This page in inspired by [the /now movement](https://nownownow.com/about). If you see something of interest here, let me know on [Mastodon](https://mastodon.social/@markmichon).
 
 *Last updated: May 14, 2024*

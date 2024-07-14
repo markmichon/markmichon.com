@@ -1,11 +1,11 @@
 ---
-permalink: '/classroom-probot/'
-date: '2019-04-03'
-title: 'Powering up GitHub Classroom with Probot'
-description: 'Automate low-hanging feedback and default settings'
+permalink: "/classroom-probot/"
+date: "2019-04-03"
+title: "Powering up GitHub Classroom with Probot"
+description: "Automate low-hanging feedback and default settings"
 ---
 
-  >This article was first published in 2019 and the information may be out of date.
+> This article was first published in 2019 and the information may be out of date.
 
 Managing student work with GitHub offers an opportunity to give software development students practical experience with the platform and provides realistic feedback in a way they will experience in their future career.
 
@@ -20,10 +20,10 @@ Probot is essentially a framework that wraps the GitHub API, app setup, and webh
 Let's take a look at their default example:
 
 ```js
-module.exports = app => {
-  app.on('issues.opened', async context => {
+module.exports = (app) => {
+  app.on("issues.opened", async (context) => {
     const params = context.issure({
-      body: 'Hello World!',
+      body: "Hello World!",
     })
     await context.github.issues.createComment(params)
   })
@@ -39,23 +39,21 @@ For my courses, I require students to submit via a pull request. This allows for
 To handle this we can write a small Probot app to listen for repository imports[^1] and set the desired branch protection rules for the new repository. I suggest going through their [Getting Started documentation](https://github.com/probot/probot) if you haven't already.
 
 ```js
-module.exports = app => {
+module.exports = (app) => {
   // Watch for the import
-  app.on('repository_import', async context => {
+  app.on("repository_import", async (context) => {
     const { repository } = context.payload
     // Confirm the success of the of the import
-    if (context.payload.status !== 'success') {
+    if (context.payload.status !== "success") {
       return null
     }
     // Send a PUT request to the correct endpoint
     return context.github.request({
-      baseUrl: 'https://api.github.com',
-      url: `/repos/${repository.owner.login}/${
-        repository.name
-      }/branches/master/protection`,
-      method: 'PUT',
+      baseUrl: "https://api.github.com",
+      url: `/repos/${repository.owner.login}/${repository.name}/branches/master/protection`,
+      method: "PUT",
       headers: {
-        accept: 'application/vnd.github.luke-cage-preview+json',
+        accept: "application/vnd.github.luke-cage-preview+json",
       },
       // Send the appropriate branch rules
       required_status_checks: null,
