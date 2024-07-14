@@ -3,14 +3,16 @@
   --color-mid: hsl(0, 0%, 40%);
   --color-light: hsl(180, 100%, 100%);
   --color-primary: hsl(352, 67%, 53%);
-  --step--2: clamp(0.69rem, calc(0.66rem + 0.18vw), 0.8rem);
-  --step--1: clamp(0.83rem, calc(0.78rem + 0.29vw), 1rem);
-  --step-0: clamp(1rem, calc(0.91rem + 0.43vw), 1.25rem);
-  --step-1: clamp(1.2rem, calc(1.07rem + 0.63vw), 1.56rem);
-  --step-2: clamp(1.44rem, calc(1.26rem + 0.89vw), 1.95rem);
-  --step-3: clamp(1.73rem, calc(1.48rem + 1.24vw), 2.44rem);
-  --step-4: clamp(2.07rem, calc(1.73rem + 1.7vw), 3.05rem);
-  --step-5: clamp(2.49rem, calc(2.03rem + 2.31vw), 3.82rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --step--2: clamp(0.6944rem, 0.6913rem + 0.0157vi, 0.7035rem);
+  --step--1: clamp(0.8333rem, 0.797rem + 0.1816vi, 0.9377rem);
+  --step-0: clamp(1rem, 0.913rem + 0.4348vi, 1.25rem);
+  --step-1: clamp(1.2rem, 1.0378rem + 0.8109vi, 1.6663rem);
+  --step-2: clamp(1.44rem, 1.1683rem + 1.3585vi, 2.2211rem);
+  --step-3: clamp(1.728rem, 1.2992rem + 2.1439vi, 2.9607rem);
+  --step-4: clamp(2.0736rem, 1.4221rem + 3.2575vi, 3.9467rem);
+  --step-5: clamp(2.4883rem, 1.5239rem + 4.8219vi, 5.2609rem);
 
   --font-serif: "Source Serif VF", "Source Serif VF-Fallback", Georgia, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segou UI", Helvetica, Arial,
@@ -111,7 +113,7 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture {
+picture, video {
   max-width: 100%;
   display: block;
 }
@@ -225,14 +227,21 @@ a:focus {
 code {
   font-family: var(--font-mono);
   border-radius: 0.25rem;
-  font-size: var(--step--1);
+  font-size: .75em;
   /* white-space: nowrap; */
   /* display: inline-block; */
   padding: 0.25rem;
 }
 pre code {
-  font-size: var(--step--2);
+  font-size: var(--step--1);
   border-radius: 1rem;
+}
+
+figcaption {
+  font-size: var(--step-0);
+  text-align: center;
+  font-style: italic;
+  margin-top: var(--step--2);
 }
 
 .icon {
@@ -344,7 +353,7 @@ pre code {
 }
 .intro h2 {
   font-family: var(--font-serif-heading);
-  font-size: var(--step-4);
+  font-size: var(--step-3);
   margin-top: 0;
 }
 .intro p {
