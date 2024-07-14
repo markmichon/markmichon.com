@@ -5,6 +5,7 @@ import filters from './src/_11ty/filters.js'
 import markdown from "./src/_11ty/markdown.js"
 import opengraphImages from "./src/_11ty/plugins/opengraph-images/index.js"
 import pluginSubfont from './src/_11ty/plugins/eleventy-plugin-subfont/index.js'
+
 const CONTENT_GLOBS = {
   articles: "src/articles/**/**.md",
 };
@@ -20,6 +21,7 @@ export default async function(config) {
   config.addPassthroughCopy({"./src/_assets/fonts/*": "assets/fonts",});
   config.addPassthroughCopy({"./src/_assets/*.js": "assets/js",});
   config.addPassthroughCopy({"./src/articles/images/*": "assets/img",});
+  config.addPassthroughCopy({"./src/articles/videos/*": "assets/videos",});
   config.addPassthroughCopy({"./src/_assets/og": "assets/og"})
   config.addPassthroughCopy({ "./src/_assets/*.txt": "/" });
 
@@ -48,7 +50,7 @@ export default async function(config) {
 
 
   return {
-    markdownTemplateEngine: "njk",
+    // markdownTemplateEngine: "njk",
     dir: {
       output: "dist",
       input: "src",
