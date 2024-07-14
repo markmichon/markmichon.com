@@ -9,22 +9,21 @@ code.hljs {
 }
 
 .hljs {
-    --brand: hsl(352, 67%, 60%);
-    --indigo: hsl(211, 57%, 17%);
-    --indigo-1: hsl(211, 57%, 40%);
-    --indigo-2: hsl(211, 57%, 70%);
-    --indigo-3: #286983;
-    --grey: #9893A5;
-    --white: #fff;
-    --beige: hsl(40, 21%, 60%);
-    --beige-1: hsl(41, 50%, 91%);
-    --beige-2: hsl(45, 15%, 90%);
-    --background: hsl(40, 31%, 94%);
-  
-    background-color: hsl(40, 31%, 94%);
-    color: var(--indigo);
-}
+  --brand: hsl(352, 67%, 60%);
+  --indigo: hsl(211, 57%, 17%);
+  --indigo-1: hsl(211, 57%, 40%);
+  --indigo-2: hsl(211, 57%, 70%);
+  --indigo-3: #286983;
+  --grey: #9893a5;
+  --white: #fff;
+  --beige: hsl(40, 21%, 60%);
+  --beige-1: hsl(41, 50%, 91%);
+  --beige-2: hsl(45, 15%, 90%);
+  --background: hsl(40, 31%, 94%);
 
+  background-color: hsl(40, 31%, 94%);
+  color: var(--indigo);
+}
 
 .hljs-subst {
   /* default */
@@ -57,7 +56,6 @@ code.hljs {
   color: var(--brand);
 }
 
-
 .hljs-attribute,
 .hljs-keyword,
 .hljs-selector-tag,
@@ -67,7 +65,6 @@ code.hljs {
   /* font-weight: bold; */
   /* color: var(--indigo-2); */
 }
-
 
 .hljs-type,
 .hljs-number,
@@ -102,7 +99,6 @@ code.hljs {
   color: var(--brand);
 }
 
-
 .hljs-literal {
   color: #695;
 }
@@ -114,7 +110,6 @@ code.hljs {
   color: #397300;
 }
 
-
 .hljs-meta {
   color: #1f7199;
 }
@@ -122,7 +117,6 @@ code.hljs {
 .hljs-meta .hljs-string {
   color: #38a;
 }
-
 
 /* Misc effects */
 

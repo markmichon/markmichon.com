@@ -1,10 +1,10 @@
-import subfont from 'subfont'
+import subfont from "subfont"
 
 export default async function (eleventyConfig, options = {}) {
   options = {
     enabled: true,
     ...options,
-  };
+  }
   if (options.enabled) {
     eleventyConfig.on("eleventy.after", async ({ dir }) => {
       options = Object.assign(
@@ -14,11 +14,11 @@ export default async function (eleventyConfig, options = {}) {
           fallbacks: false,
         },
         options,
-      );
-      delete options.enabled;
+      )
+      delete options.enabled
       await subfont({
         ...options,
-      });
-    });
+      })
+    })
   }
-};
+}

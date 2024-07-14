@@ -1,9 +1,9 @@
 ---
-title: 'How to publish code in blog posts with Webflow'
+title: "How to publish code in blog posts with Webflow"
 permalink: /code-webflow/
-description: 'The tedius process of adding code to blog posts in Webflow'
+description: "The tedius process of adding code to blog posts in Webflow"
 canonical: "https://www.bearer.com/blog/webflow-blog-code-blocks"
-date: '2022-04-26'
+date: "2022-04-26"
 og: "webflow-code.jpg"
 ---
 

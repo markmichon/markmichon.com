@@ -41,11 +41,14 @@ Some examples of the kinds of developer content I can write can be found on the 
 Interested in making it easier for engineers to write for your company blog? I can help launch writing initiatives for your team, act as an editor, and transform drafts and ideas into valuable blog posts. If you're struggling with culture-fit and attracting passionate team members, don't slack on your team's blog.
 
 Examples:
+
 <!-- vale off -->
+
 - [Infinite scrolling pagination with Rails, Hotwire, and Turbo](https://www.bearer.com/blog/infinite-scrolling-pagination-hotwire) *([backup link](https://web.archive.org/web/20230323122530/https://www.bearer.com/blog/infinite-scrolling-pagination-hotwire))*
 - [Improving Bearer CLI's precision and recall](https://www.bearer.com/blog/improving-precision-and-recall) *([backup link](https://web.archive.org/web/20230804184004/https://www.bearer.com/blog/improving-precision-and-recall))*
 - [Five tips to jumpstart your SaaS hiring efforts](https://www.bearer.com/blog/saas-hiring-tips) *([backup link](https://web.archive.org/web/20230323105733/https://www.bearer.com/blog/saas-hiring-tips))*
 <!-- vale on -->
+
 ## Get in touch
 
 Let's work together! If you'd like to discuss a project or chat about ways I can help your team, [contact me via email](mailto:hello@markmichon.com) or on [LinkedIn](https://www.linkedin.com/in/markmichon).

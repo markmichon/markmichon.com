@@ -4,6 +4,7 @@ description: The ch unit is an easy way to restrict an element's measure in CSS,
 permalink: /ch-unit-webfont-layout-shift/
 date: "2024-07-14"
 ---
+
 In a recent refactor of this site, I changed the main article wrapper from a *rem-based* max-width to a *ch-based* max-width. As webfonts loaded, the page shifted—dramatically. Not the usual *flicker* you might expect, but a pronounced shift. Roll the tape:
 
 <figure>
@@ -48,8 +49,8 @@ That's much better. I'd classify this as "good enough" for any resource-constrai
 
 Unless you only intend to use system fonts[^2] on all projects, I'd advise against including `ch` units in your baseline styles. It's an incredible feature, and can make *designing in the browser* much easier, but isn't ideal for cases where you need consistent widths.
 
-
 Further reading on usage and dangers of `ch`:
+
 - [Use of ch unit considered inappropriate (in certain circumstances)](https://clagnut.com/blog/2432)
 - [What is the CSS ‘ch’ Unit?](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/)
 
@@ -59,9 +60,9 @@ To further reduce how webfonts shift as they load in, create an altered "copy" o
 
 ```css
 @font-face {
-	font-family: "Fallback";
-	size-adjust: 105.5;
-	src: local("Georgia");
+  font-family: "Fallback";
+  size-adjust: 105.5;
+  src: local("Georgia");
 }
 ```
 
@@ -77,16 +78,15 @@ Be cautious with varied weights and styles. A bold weight will cause different `
 
 ```css
 @font-face {
-	font-family: "Fallback";
-	size-adjust: 105.5%;
-	src: local("Georgia");
-
+  font-family: "Fallback";
+  size-adjust: 105.5%;
+  src: local("Georgia");
 }
 
 @font-face {
-	font-family: "Fallback-Bold";
-	size-adjust: 97.5%;
-	src: local("Georgia");
+  font-family: "Fallback-Bold";
+  size-adjust: 97.5%;
+  src: local("Georgia");
 }
 ```
 

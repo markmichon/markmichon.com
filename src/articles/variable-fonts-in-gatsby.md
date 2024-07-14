@@ -1,14 +1,15 @@
 ---
 permalink: /variable-fonts-gatsby/
-date: '2019-08-29'
-title: 'Adding Variable Fonts to a Gatsby Site'
-description: 'Using CSS-in-JS to manage variable fonts in a Gatsby site'
-templateEngineOverride: 'md'
+date: "2019-08-29"
+title: "Adding Variable Fonts to a Gatsby Site"
+description: "Using CSS-in-JS to manage variable fonts in a Gatsby site"
+templateEngineOverride: "md"
 og: "variable-fonts-in-gatsby.jpg"
 ---
-  >This article was first published in 2019 and this site no longer runs on Gatsby.
 
-Variable fonts are a great way to add flexibility to a design, while _potentially_ also reducing the overhead of loading multiple variations of a typeface. If you're new to Gatsby, or haven't spent much time dealing with assets in webpack, it can be quite difficult to know where to begin. In this article we will go over the key techniques to get started.
+> This article was first published in 2019 and this site no longer runs on Gatsby.
+
+Variable fonts are a great way to add flexibility to a design, while *potentially* also reducing the overhead of loading multiple variations of a typeface. If you're new to Gatsby, or haven't spent much time dealing with assets in webpack, it can be quite difficult to know where to begin. In this article we will go over the key techniques to get started.
 
 For an overview on variable font usage in general, take a look at [MDN's guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide). This site is using the increasingly popular [Inter](https://rsms.me/inter/) and [Source Serif Pro](https://github.com/adobe-fonts/source-serif-pro)'s variable version.
 
@@ -27,17 +28,17 @@ Let's look at both scenarios, as depending on your needs you may find one more a
 To import with webpack, we can treat the font file as we would any other import. Here it is given a name, any will work, and then included in the fontface declaration.
 
 ```js
-import sourceSerif from './SourceSerifVariable-Roman.ttf.woff2'
+import sourceSerif from "./SourceSerifVariable-Roman.ttf.woff2"
 
 const globals = css`
   @font-face {
-    font-family: 'source-serif-var';
-    src: url(${sourceSerif}) format('truetype');
+    font-family: "source-serif-var";
+    src: url(${sourceSerif}) format("truetype");
     font-weight: 100 800;
   }
 
   html {
-    font-family: 'source-serif-var', serif;
+    font-family: "source-serif-var", serif;
   }
 `
 ```
@@ -51,13 +52,13 @@ The [static folder](https://www.gatsbyjs.org/docs/static-folder) method may be u
 ```js
 const globals = css`
   @font-face {
-    font-family: 'source-serif-var';
-    src: url('./SourceSerifVariable-Roman.ttf.woff2') format('truetype');
+    font-family: "source-serif-var";
+    src: url("./SourceSerifVariable-Roman.ttf.woff2") format("truetype");
     font-weight: 100 800;
   }
 
   html {
-    font-family: 'source-serif-var', serif;
+    font-family: "source-serif-var", serif;
   }
 `
 ```
@@ -72,19 +73,19 @@ If you're using object styles, perhaps with something like [Theme UI](https://th
 <Layout>
   <Global
     styles={{
-      '@font-face': {
-        fontFamily: 'Inter',
+      "@font-face": {
+        fontFamily: "Inter",
         src: `url(${inter}) format('woff2')`,
-        fontWeight: '100 900',
+        fontWeight: "100 900",
       },
     }}
   />
   <Global
     styles={{
-      '@font-face': {
-        fontFamily: 'source-serif-var',
+      "@font-face": {
+        fontFamily: "source-serif-var",
         src: `url(${sourceSerif}) format('truetype')`,
-        fontWeight: '100 800',
+        fontWeight: "100 800",
       },
     }}
   />
@@ -96,7 +97,9 @@ If you're using object styles, perhaps with something like [Theme UI](https://th
 This method prevents any rule conflicts, and still gives you access to both families.
 
 While variable fonts still require a some extra work and occasionally extra overhead, if your site is making use of multiple weights or styles you may find that including them saves resources. To explore variable fonts further, have a look at the following resources:
+
 <!-- vale mm.spelling = NO -->
+
 - [Getting started with variable fonts - Richard Rutter](https://medium.com/@clagnut/get-started-with-variable-fonts-c055fd73ecd7)
 <!-- vale mm.spelling = YES -->
 - [v-fonts](https://v-fonts.com/)

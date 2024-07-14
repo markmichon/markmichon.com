@@ -1,11 +1,11 @@
 ---
-permalink: '/advanced-custom-mdx-components/'
-date: '2019-05-15'
-title: 'Custom Footnotes with MDX in Gatsby'
-description: 'Using the MDX wrapper key to customize your MDX output'
+permalink: "/advanced-custom-mdx-components/"
+date: "2019-05-15"
+title: "Custom Footnotes with MDX in Gatsby"
+description: "Using the MDX wrapper key to customize your MDX output"
 ---
 
-  >This article was first published in 2019 and this site no longer runs on Gatsby.
+> This article was first published in 2019 and this site no longer runs on Gatsby.
 
 MDX offers a pretty straightforward way to handle replacing the default HTML elements via the `MDXProvider` component in `@mdx-js/react`, but what happens when you need to replace an element that isn't in the default component list or one that is unique in some way?
 
@@ -22,8 +22,8 @@ We'll use this functionality to iterate over the children, find the `div` with a
 const components = {
   wrapper: ({ children, ...props }) => {
     // updatedChildren becomes our new list of children, including any modifications
-    const updatedChildren = children.map(child => {
-      if (child.props.className === 'footnotes') {
+    const updatedChildren = children.map((child) => {
+      if (child.props.className === "footnotes") {
         // Since we only have one element that will ever match this
         // the key doesn't matter, but react will yell without a key.
         return <Footnotes key={1} {...child.props} />

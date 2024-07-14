@@ -1,8 +1,8 @@
 ---
-title: 'Designing CLI documentation from the ground up'
-tags: ['article', 'case study']
+title: "Designing CLI documentation from the ground up"
+tags: ["article", "case study"]
 permalink: /bearer-cli-case-study/
-description: 'A case study on launching the Bearer CLI docs'
+description: "A case study on launching the Bearer CLI docs"
 og: "bearer-cli-case-study.jpg"
 date: "2023-11-28"
 ---
@@ -36,7 +36,7 @@ I made the decision early on to loosely base the structural organization on the 
 
 For Bearer CLI, we muddy the tutorial/how-to categories a bit into a single "Guides" section. In part to reduce friction for contributors and others on the team, but also because the tool is *small* in task surface. There's a more detailed explanation here, but that's better suited for a dedicated article.
 
-![Bearer CLI documentation](/assets/img/bearer-docs-home.jpg 'Screenshot of Bearer documentation homepage')
+![Bearer CLI documentation](/assets/img/bearer-docs-home.jpg "Screenshot of Bearer documentation homepage")
 
 This leaves the docs with a *quickstart*, three primary sections, and an additional area dedicated to contributions. The information architecture, as shown in the sidebar looks a bit like this:
 
@@ -82,7 +82,7 @@ Documentation like this acts as an exploration guide as much as it does a learni
 
 It was important from the very beginning to make documentation a priority. One of our biggest commitments to this best demonstrated by the deep documentation links directly in the CLI output.
 
-![Bearer CLI report output](/assets/img/error-messaging.jpg 'CLI output screenshot')
+![Bearer CLI report output](/assets/img/error-messaging.jpg "CLI output screenshot")
 
 For the less common detection warnings, the addition of a documentation link was incredibly valuable. It enabled us to remove the need for developers to google the error or hunt for remediation steps. Instead, they could simply click through to the docs.
 
