@@ -17,7 +17,7 @@ This is not an article about how to use Jekyll. There are plenty of those out th
 
 ## Learning not to hate
 
-I like trying new platforms and languages. I find it makes me not only a better developer, but a better designer. I learned the web, as many of my generation, by experimenting and failing. Deciding on Jekyll was an exercise in learning not to hate a system that is the opposite of everything I stand for as a designer. _Simple_ means something different to me than it does to the Jekyll community.
+I like trying new platforms and languages. I find it makes me not only a better developer, but a better designer. I learned the web, as many of my generation, by experimenting and failing. Deciding on Jekyll was an exercise in learning not to hate a system that is the opposite of everything I stand for as a designer. *Simple* means something different to me than it does to the Jekyll community.
 
 There are certainly aspects that are simple, such as creating posts and deploying to a server. There are other aspects that are cumbersome, like troubleshooting and finding resources. Simple is relative in this case.
 
@@ -43,7 +43,7 @@ GitHub’s Mac app has been known for similar problems with error messaging, so 
 
 Due in part to the name, and in part to the lack of aggregation, it can be difficult to find proper resources. There are some phenomenal articles written by people like [Paul Stamatiou](http://paulstamatiou.com/how-to-wordpress-to-jekyll) and [Andrew Munsell](http://www.andrewmunsell.com/tutorials/jekyll-by-example/), but information is scattered and niche features are often found by browsing the source code of a person’s setup on GitHub (if they provide it).
 
-The other issue comes with the nature of GitHub and the encouragement to fork Jekyll. I love the concept, but this is complex for non-rubyists and seems counter-intuitive to a plugin culture. There are also interesting projects like [Octopress](http://octopress.org/), but these look to be really focused on creating a WP-style environment with pre-built templates and that generic _bootstrapped_ feel. They also seem to add an extra level of structure, rather than modifying that which is found in Jekyll.
+The other issue comes with the nature of GitHub and the encouragement to fork Jekyll. I love the concept, but this is complex for non-rubyists and seems counter-intuitive to a plugin culture. There are also interesting projects like [Octopress](http://octopress.org/), but these look to be really focused on creating a WP-style environment with pre-built templates and that generic *bootstrapped* feel. They also seem to add an extra level of structure, rather than modifying that which is found in Jekyll.
 
 ## Accepting the obvious
 

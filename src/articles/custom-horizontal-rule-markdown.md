@@ -1,8 +1,8 @@
 ---
-title: 'Custom horizontal rules with markdown-it and Eleventy'
+title: "Custom horizontal rules with markdown-it and Eleventy"
 description: "By overriding markdown-it's default rendering, we can replace the horizontal rule with any element"
 permalink: /custom-hr-markdown/
-tags: ['11ty']
+tags: ["11ty"]
 date: "2023-11-28"
 ---
 
@@ -12,7 +12,7 @@ When I migrated this site over from Gatsby, MDX, and React to [Eleventy](https:/
 
 I'm a heavy *emdash* user, so it's no surprise that I styled its content-wide cousin, the horizontal rule. Look, they aren't related in any way other than appearance, but humor me. Throughout this site—at the time of this writing—you'll encounter the pulsing *wa*[^1] blob in a few places. Here's a static screenshot in case the theme has changed.
 
-![Screenshot of HR graphic](/assets/img/wa-screenshot.jpg 'Screenshot of horizontal rule on this site')
+![Screenshot of HR graphic](/assets/img/wa-screenshot.jpg "Screenshot of horizontal rule on this site")
 
 As much as I love the effect as a hero image on the homepage, it brings me much more joy as an `<hr />` replacement. In the previous build of the site, MDX would interpret the `---` markdown syntax and render out a `<canvas>` element for the animation instead.
 
@@ -25,15 +25,14 @@ It isn't clear from the readme, but the [architecture](https://github.com/markdo
 ```js
 // ...
 // Import markdown-it
-const markdownIt = require("markdown-it");
+const markdownIt = require("markdown-it")
 
 const mdSetup = markdownIt()
 // any additional plugins here
 
 module.exports = function (eleventyConfig) {
-
-// set the markdown renderer to markdown-it
-  eleventyConfig.setLibrary("md", mdSetup);
+  // set the markdown renderer to markdown-it
+  eleventyConfig.setLibrary("md", mdSetup)
 }
 ```
 
@@ -57,8 +56,8 @@ mdSetup.renderer.rules.hr = (tokens, idx, options, env, self) => {
   return `
   <hr class="sr-only" />
   <canvas class="wa hr" aria-hidden="true"></canvas>
-  `;
-};
+  `
+}
 ```
 
 Here I'm returning an `<hr />` with my screen-reader-only CSS class, along with a `<canvas>` element with the classes I use to target and style the element. `aria-hidden=true` ensures that screen readers don't try to interpret the element.
@@ -68,7 +67,7 @@ Eleventy will now render this new HTML instead of `<hr />`. This only applies to
 Here is the full code:
 
 ```js
-const markdownIt = require("markdown-it");
+const markdownIt = require("markdown-it")
 
 const mdSetup = markdownIt()
 
@@ -76,11 +75,11 @@ mdSetup.renderer.rules.hr = (tokens, idx, options, env, self) => {
   return `
   <hr class="sr-only" />
   <canvas class="wa hr" aria-hidden="true"></canvas>
-  `;
-};
+  `
+}
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setLibrary("md", mdSetup);
+  eleventyConfig.setLibrary("md", mdSetup)
 }
 ```
 
@@ -89,4 +88,5 @@ module.exports = function (eleventyConfig) {
 Overriding markdown rendering is the entrypoint for responsive images, custom code blocks, and endless customization. You may ask: *Why not use a shortcode instead?* The answer is future-proofing. By keeping the content as markdown, we prevent any lock-in to Eleventy or the renderer. Worst case scenario, we lose our nice horizontal rule visual, but semantically the element remains.
 
 <!-- vale off -->
+
 [^1]: The theme of the site was heavily inspired by [Julia Hasting's beautiful cover design](https://juliahasting.com/WA-The-Essence-of-Japanese-Design) for "Wa: The Essence of Japanese Design".

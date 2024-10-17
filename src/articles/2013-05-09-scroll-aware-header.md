@@ -1,13 +1,13 @@
 ---
-date: '2013-05-09T00:00:00Z'
+date: "2013-05-09T00:00:00Z"
 keywords: css, html, tutorial
 description: One technique for designing a scroll-dependent hidden navigation bar
 title: Creating a Scroll Dependent Navigation
 permalink: /scroll-aware-header/
-categories: ['development']
+categories: ["development"]
 ---
 
-  >This article was first published in 2013 and the information may be out of date
+> This article was first published in 2013 and the information may be out of date
 
 Fixed headers are popular in web design these days. They offer an extra layer of visual depth, as well as providing a way for the user to easily explore a site without returning to the top of a page. Unfortunately, there are a few drawbacks to this technique. Here is a [live demo](http://codepen.io/markmichon/full/yicGB), and here is the full, [coded version on CodePen](http://codepen.io/markmichon/pen/yicGB).
 
@@ -15,7 +15,7 @@ Fixed headers are popular in web design these days. They offer an extra layer of
 
 Depending on the height of your header and the height of the users browser, valuable screen real estate may be sacrificed in order for your design to accommodate the fixed header. Additionally, depending on the type of content you have, a constant bar across the top of the viewport might draw focus away. This is especially noticeable with starker contrasts and text-heavy pages.
 
-When creating the scroll-dependent version, I set out to try and anticipate when the user might want to check the navigation. Generally, we find that when a user begins to scroll back up the page, they are attempting to either return back to a previous portion of the article or a different page of the site. With this in mind, I've decided that by monitoring the upward scroll of the page, we can create a fairly accurate _guess_ that the user wants to go somewhere else.
+When creating the scroll-dependent version, I set out to try and anticipate when the user might want to check the navigation. Generally, we find that when a user begins to scroll back up the page, they are attempting to either return back to a previous portion of the article or a different page of the site. With this in mind, I've decided that by monitoring the upward scroll of the page, we can create a fairly accurate *guess* that the user wants to go somewhere else.
 
 ## Time for Some Code
 
@@ -60,9 +60,9 @@ At this point we have a standard fixed header that follows the user as they scro
 
 ```js
 //Requires JQuery or Zepto
-$(document).ready(function() {
+$(document).ready(function () {
   // Cache Header
-  var $header = $('.global-header')
+  var $header = $(".global-header")
 
   // Get height of global-header to use later as starting point
   var $hHeight = $header.height()
@@ -71,12 +71,12 @@ $(document).ready(function() {
   var prevTop = $(window).scrollTop()
 
   // Scroll event
-  $(window).on('scroll', function(e) {
+  $(window).on("scroll", function (e) {
     st = $(this).scrollTop() // Set scroll location
     if (st > prevTop && st > $hHeight) {
-      $header.addClass('global-header-scrolling')
+      $header.addClass("global-header-scrolling")
     } else {
-      $header.removeClass('global-header-scrolling')
+      $header.removeClass("global-header-scrolling")
     }
     prevTop = st
   })
