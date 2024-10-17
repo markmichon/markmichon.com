@@ -1,11 +1,13 @@
 ---
-title: Technical writer for hire
+title: Technical writer
 description: Technical editor, writer, and documentation engineer for hire.
 permalink: /hire/
 layout: article.njk
 ---
 
 Hi there, I'm Mark :wave:.
+
+**I'm not currently accepting new roles**, but we can always chat about docs!
 
 I'm a technical writer and editor that works with companies of all sizes. Below you'll find some areas where I can help, and examples to give you a better idea of the work I do. If anything sounds like something your company needs help with, [get in touch](mailto:hello@markmichon.com).
 

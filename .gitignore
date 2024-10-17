@@ -3,6 +3,8 @@ node_modules
 yarn-error.log
 .DS_Store
 .env*
+# draft symlink
+src/drafts
 # Build directory
 dist/
 public/
