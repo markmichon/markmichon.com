@@ -23,24 +23,29 @@
   },
   "homepage": "https://github.com/markmichon/markmichon.com#readme",
   "devDependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.13",
-    "@11ty/eleventy-img": "^3.1.8",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.4.0",
-    "@sindresorhus/slugify": "^2.2.1",
-    "canvas": "^2.11.2",
-    "highlight.js": "^11.8.0",
-    "js-yaml": "^4.1.0",
-    "markdown-it-footnote": "^3.0.3",
-    "markdown-it-highlightjs": "^4.0.1",
-    "prettier": "^3.1.0",
-    "sharp": "^0.33.3"
+    "@11ty/eleventy": "3.1.2",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "@sindresorhus/slugify": "^3.0.0",
+    "highlight.js": "^11.11.1",
+    "js-yaml": "^4.1.1",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-highlightjs": "^4.2.0",
+    "prettier": "^3.7.4",
+    "sharp": "^0.34.5"
   },
   "dependencies": {
+    "canvas": "^3.2.0",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^8.6.7",
-    "markdown-it-emoji": "^2.0.2",
-    "subfont": "^6.12.5"
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-emoji": "^3.0.0",
+    "subfont": "^7.2.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "canvas"
+    ]
   }
 }
