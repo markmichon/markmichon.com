@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production
     
     steps:
       - name: Checkout repository
@@ -44,7 +45,7 @@ jobs:
       
       - name: Deploy to server via SSH
         uses: easingthemes/ssh-deploy@v5.1.0
-        env:
+        with:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
