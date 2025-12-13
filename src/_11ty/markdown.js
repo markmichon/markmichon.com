@@ -1,5 +1,5 @@
 import markdownIt from "markdown-it"
-import markdownItEmoji from "markdown-it-emoji"
+import {full as markdownItEmoji} from "markdown-it-emoji"
 import markdownItAnchor from "markdown-it-anchor"
 import markdownItHighlightJS from "markdown-it-highlightjs"
 import markdownItFootnote from "markdown-it-footnote"
