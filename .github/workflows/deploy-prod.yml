@@ -44,16 +44,15 @@ jobs:
       
       - name: Deploy to server via SSH
         uses: easingthemes/ssh-deploy@v5.1.0
-        with:
-          ssh_private_key: ${{ secrets.KEY }}
-          remote_host: ${{ secrets.HOST }}
-          remote_user: ${{ secrets.USERNAME }}
-          source: "dist/"  # 11ty output directory
-          target: ${{ secrets.REMOTE_TARGET }}
-          exclude: "/node_modules/, /.git/, /.github/"
-          script_before: |
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
+          SOURCE: "dist/"
+          EXCLUDE: "/node_modules/, /.git/, /.github/"
+          SCRIPT_BEFORE: |
             whoami
             ls -la
-          script_after: |
+          SCRIPT_AFTER: |
             echo "Deployment completed successfully"
-            ls -la ${{ secrets.REMOTE_TARGET }}
