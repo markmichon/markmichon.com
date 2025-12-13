@@ -4,7 +4,7 @@
   "description": "The personal site of Mark Michon",
   "type": "module",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -27,7 +27,7 @@
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "@11ty/eleventy-plugin-webc": "^0.11.1",
+    "@11ty/eleventy-plugin-webc": "^0.4.0",
     "@sindresorhus/slugify": "^2.2.1",
     "canvas": "^2.11.2",
     "highlight.js": "^11.8.0",
@@ -41,6 +41,6 @@
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-emoji": "^2.0.2",
-    "subfont": "^7.2.1"
+    "subfont": "^6.12.5"
   }
 }
