@@ -1,0 +1,42 @@
+name: Build and Deploy 11ty Site
+
+on:
+  push:
+    branches:
+      - main  # Change to your default branch if different
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23'  # Adjust to your Node version
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build 11ty site
+        run: npm run build  # Adjust if your build command is different
+      
+      - name: Deploy to server via SSH
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          SOURCE: "dist/"  # 11ty output directory
+          TARGET: ${{ secrets.REMOTE_TARGET }}
+          EXCLUDE: "/node_modules/, /.git/, /.github/"
+          SCRIPT_BEFORE: |
+            whoami
+            ls -la
+          SCRIPT_AFTER: |
+            echo "Deployment completed successfully"
+            ls -la ${{ secrets.REMOTE_TARGET }}
