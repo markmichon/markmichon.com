@@ -49,7 +49,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.KEY }}
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
-          REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
           SOURCE: "dist/"
           EXCLUDE: "/node_modules/, /.git/, /.github/"
           SCRIPT_BEFORE: |
