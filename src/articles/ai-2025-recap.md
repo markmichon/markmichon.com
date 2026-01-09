@@ -3,7 +3,7 @@ title: "How AI helped me write docs in 2025"
 tags: ["article"]
 permalink: /2025-ai-recap/
 description: "Some of the tasks AI helped with in 2025, and my hopes for 2026"
-date: "2026-01-05"
+date: "2026-01-09"
 ---
 
 Tech is filled with justifiable fear, grandious claims, and outright mischaracterizations about what AI can and cannot do. This article is about how I used AI in 2025 to work on documentation. Writing, project management, editing, building features. The whole deal.
