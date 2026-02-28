@@ -15,13 +15,15 @@
   --step-5: clamp(2.4883rem, 1.5239rem + 4.8219vi, 5.2609rem);
 
   --font-serif: "Source Serif VF", "Source Serif VF-Fallback", Georgia, serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segou UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe U Symbol";
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segou UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe U Symbol";
+  --font-mono:
+    ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  --font-serif-heading: "Source Serif VF", "Source Serif VF-Fallback-Bold",
-    Georgia, serif;
+  --font-serif-heading:
+    "Source Serif VF", "Source Serif VF-Fallback-Bold", Georgia, serif;
   --font-w-bold: 800;
   --max-width: 36rem;
 
@@ -495,9 +497,15 @@ article {
   }
   & h1 {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-weight: 600;
     line-height: 1.5;
+  }
+  & p.description {
+    text-align: center;
+    font-size: var(--step-0);
+    color: var(--color-mid);
+    margin-bottom: 2rem;
   }
 }
 
@@ -536,4 +544,8 @@ article {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.center-text {
+  text-align: center;
 }
